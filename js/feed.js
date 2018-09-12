@@ -61,8 +61,7 @@ function getToken()	{
 	$.ajax({
 			type: 'get',
 		  crossOrigin: true,
-		  url: 'https://azapp-services.azurewebsites.net/api/Info/GetUpdatesAndDeletes/?',
-		  data: newsData,
+		  url: 'https://azapp-services.azurewebsites.net/api/Info/GetUpdatesAndDeletes/?page=0&records=30&date='+dateISO+'&id=5&lang=PT&theme=Noticias',
 		  headers: newsHeaders,
 		  success: function(data) {
 			adata = data;
