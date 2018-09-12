@@ -60,6 +60,7 @@ function getToken()	{
 	var adata;
 	
 	$.ajax({
+			type: 'get',
 		  crossOrigin: true,
 		  url: newsEndpoint,
 		  headers: newsHeaders,
