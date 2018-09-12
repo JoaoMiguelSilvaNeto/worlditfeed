@@ -47,8 +47,7 @@ function getToken()	{
 	const newsHeaders = {
     	"Authorization": "Bearer " + key,
     	"Content-Type": "application/x-www-form-urlencoded",
-    	"Access-Control-Allow-Origin": "*",
-    	"crossDomain": "true",
+    	'credentials': 'include'
   	};
 
 	const newsOptions = {
