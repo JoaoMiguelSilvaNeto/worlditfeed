@@ -3,7 +3,7 @@
 	in getNews().
  */
 
-export function getToken()	{
+function getToken()	{
 
 	const tokenEndpoint =  'https://azapp-services.azurewebsites.net/api/security/token';
 
@@ -29,7 +29,7 @@ export function getToken()	{
 	to be displayed in the webpage
  */
  
- export function getNews(token)	{
+ function getNews(token)	{
 
 	let key = token['access_token'];
 	let keyType = token['token_type'];
