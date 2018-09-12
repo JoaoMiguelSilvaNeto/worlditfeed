@@ -42,10 +42,10 @@ function getToken()	{
 
 	const newsData = 'page=0&records=30&date='+dateISO+'&id=5&lang=PT&theme=Noticias';
 
-	const newsEndpoint =  ' https://azapp-services.azurewebsites.net/api/Info/GetUpdatesAndDeletes/?'+newsData;
+	const newsEndpoint =  'https://azapp-services.azurewebsites.net/api/Info/GetUpdatesAndDeletes/?'+newsData;
 
 	const newsHeaders = {
-		"Access-Control-Allow-Origin": "https://azapp-services.azurewebsites.net",
+		"Access-Control-Allow-Origin": "https://azapp-services.azurewebsites.nethttps://azapp-services.azurewebsites.net/api/Info/GetUpdatesAndDeletes/",
     	"Authorization": "Bearer " + key,
     	"Content-Type": "application/x-www-form-urlencoded"
   	};
