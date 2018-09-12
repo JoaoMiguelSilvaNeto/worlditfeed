@@ -72,3 +72,7 @@ function setFeed(updates)	{
 	
 	document.getElementById("table1").innerHTML = html;
 };
+
+function hello(name)	{
+	return "Hello "+name;
+}
