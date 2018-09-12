@@ -33,7 +33,7 @@ function getToken()	{
 
 	let key = token['access_token'];
 	let keyType = token['token_type'];
-	console.log(key);
+	consolo.log('oi news');
 	//const date = '2018-09-12T15:48:30.743Z';
 
 	var date = new Date();
@@ -51,7 +51,8 @@ function getToken()	{
 
 	const newsOptions = {
     	method: "get", 
-    	headers: newsHeaders
+    	headers: newsHeaders,
+    	mode: 'no-cors'
  	};
 
 	return fetch(newsEndpoint, newsOptions)
