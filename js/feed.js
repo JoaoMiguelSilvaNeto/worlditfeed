@@ -36,7 +36,7 @@ function getToken()	{
 	console.log('oi news');
 	//const date = '2018-09-12T15:48:30.743Z';
 
-	/*var date = new Date();
+	var date = new Date();
     //var dateISO = date.toISOString();
 	var dateISO = '2018-08-11T15:48:30.743Z';
 
@@ -56,8 +56,8 @@ function getToken()	{
  	};
 
 	return fetch(newsEndpoint, newsOptions)
-		.then(newsResponse => newsResponse.json());*/
-	var a;
+		.then(newsResponse => newsResponse.json());
+	/*var a;
 	
 	var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
@@ -69,7 +69,7 @@ function getToken()	{
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("page=0&records=30&date='+dateISO+'&id=5&lang=PT&theme=Noticias");
 	
-	return a;
+	return a;*/
 	
 };
 
