@@ -55,21 +55,20 @@ function getToken()	{
     	headers: newsHeaders
  	};
 
-	return fetch(newsEndpoint, newsOptions)
-		.then(newsResponse => newsResponse.json());
-	/*var a;
+	/*return fetch(newsEndpoint, newsOptions)
+		.then(newsResponse => newsResponse.json());*/
+	var adata;
 	
-	var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-	    if (this.readyState == 4 && this.status == 200) {
-	      a = this.responseText;
-	    }
-	  };
-	xhttp.open("GET", "https://azapp-services.azurewebsites.net/api/Info/GetUpdatesAndDeletes/?", true);
-	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("page=0&records=30&date='+dateISO+'&id=5&lang=PT&theme=Noticias");
+	$.ajax({
+		  crossOrigin: true,
+		  url: newsEndpoint,
+		  headers: newsHeaders,
+		  success: function(data) {
+			adata = data;
+		  }
+		});
 	
-	return a;*/
+	return adata;
 	
 };
 
