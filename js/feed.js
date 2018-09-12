@@ -47,7 +47,7 @@ function getToken()	{
 	const newsHeaders = {
     	"Authorization": "Bearer " + key,
     	"Content-Type": "application/x-www-form-urlencoded",
-    	"Access-Control-Allow-Origin": "http://worldit.pt"
+    	"Access-Control-Allow-Origin": "worldit.pt"
   	};
 
 	const newsOptions = {
