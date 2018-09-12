@@ -65,10 +65,12 @@ function getToken()	{
 		  headers: newsHeaders,
 		  success: function(data) {
 			adata = data;
+			console.log(data);
+			return data;
 		  }
 		});
 	
-	return adata;
+	//return adata;
 	
 };
 
