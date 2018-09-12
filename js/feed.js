@@ -16,7 +16,8 @@ function getToken()	{
 	const tokenOptions = {
     "method": "post", 
     "headers": tokenHeaders, 
-    "body": tokenData
+    "body": tokenData,
+   	"mode": 'no-cors'
   };
 
   return fetch(tokenEndpoint, tokenOptions)
