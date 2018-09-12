@@ -65,6 +65,7 @@ function getToken()	{
 		  headers: newsHeaders,
 		  success: function(data) {
 			adata = data;
+			console.log('oi');
 			console.log(data);
 			return data;
 		  }
