@@ -1,8 +1,40 @@
 <html>
 <header>
-<script type="text/javascript" src="//static.parastorage.com/services/js-sdk/1.96.0/js/wix.min.js"></script>  
+<script type="text/javascript" src="//static.parastorage.com/services/js-sdk/1.96.0/js/wix.min.js"></script>
+<script type="text/javascript" src="/js/feed.js"></script>  
 <title>This is title</title></header>
 <body>
-Hello world
+<script>
+// self executing function 
+(function() {
+   
+   getToken()
+	.then(token => {
+
+		console.log(token);
+
+		getNews(token)
+			.then(news => {
+				console.log(news);
+
+				const updates = news['updates'];
+
+				console.log(news['updates'][0]['HTML_EDITOR']);
+			
+				setFeed(updates);
+
+					
+			});
+
+		});
+
+})();
+</script>
+
+<table id="table1">
+  <tr>
+    <th></th>
+  </tr>
+</table>
 </body>
 </html>
