@@ -47,7 +47,8 @@ function getToken()	{
 	const newsHeaders = {
     	"Authorization": "Bearer " + key,
     	"Content-Type": "application/x-www-form-urlencoded",
-    	"Access-Control-Allow-Origin": "https://joaomiguelsilvaneto.github.io"
+    	"Access-Control-Allow-Origin": "*",
+    	"crossDomain": "true",
   	};
 
 	const newsOptions = {
