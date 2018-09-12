@@ -46,13 +46,13 @@ function getToken()	{
 
 	const newsHeaders = {
     	"Authorization": "Bearer " + key,
-    	"Content-Type": "application/x-www-form-urlencoded",
-    	'credentials': 'include'
+    	"Content-Type": "application/x-www-form-urlencoded"
   	};
 
 	const newsOptions = {
     	method: "get", 
-    	headers: newsHeaders
+    	headers: newsHeaders,
+    	credentials: 'include'
  	};
 
 	return fetch(newsEndpoint, newsOptions)
