@@ -45,15 +45,14 @@ function getToken()	{
 	const newsEndpoint =  ' https://azapp-services.azurewebsites.net/api/Info/GetUpdatesAndDeletes/?'+newsData;
 
 	const newsHeaders = {
+		"Access-Control-Allow-Origin": "*",
     	"Authorization": "Bearer " + key,
     	"Content-Type": "application/x-www-form-urlencoded"
   	};
 
 	const newsOptions = {
     	method: "get", 
-    	headers: newsHeaders,
-    	credentials: 'include',
-    	mode: 'cors'
+    	headers: newsHeaders
  	};
 
 	return fetch(newsEndpoint, newsOptions)
