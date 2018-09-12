@@ -22,7 +22,7 @@ function getToken()	{
   return fetch(tokenEndpoint, tokenOptions)
 	.then(response => response.json());
 
-};
+}
 
 /*
 	getNews(): to obtain JSON with the news from the Endpoint, using GET method,
@@ -61,14 +61,14 @@ function getToken()	{
 
 function setFeed(updates)	{
 
-  var html = '<h2>Notícias</h2>';
+	var html = '<h2>Notícias</h2>';
 
 	updates.forEach(function (entry) {
-	  html += '<tr>';
-    html += '<th><a href="'+entry['LINK']+'"><h1>'+entry['TITLE']+'</h1></a></th>';
-	  html += entry['HTML_EDITOR'];
+		html += '<tr>';
+		html += '<th><a href="'+entry['LINK']+'"><h1>'+entry['TITLE']+'</h1></a></th>';
+		html += entry['HTML_EDITOR'];
 		html += '</tr>';
 	});
 	
 	document.getElementById("table1").innerHTML = html;
-
+}
