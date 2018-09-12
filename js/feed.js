@@ -33,7 +33,7 @@ function getToken()	{
 
 	let key = token['access_token'];
 	let keyType = token['token_type'];
-	consolo.log('oi news');
+	console.log('oi news');
 	//const date = '2018-09-12T15:48:30.743Z';
 
 	var date = new Date();
