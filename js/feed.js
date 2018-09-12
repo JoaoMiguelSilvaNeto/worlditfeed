@@ -52,8 +52,7 @@ function getToken()	{
 
 	const newsOptions = {
     	method: "get", 
-    	headers: newsHeaders,
-    	mode: 'no-cors'
+    	headers: newsHeaders
  	};
 
 	return fetch(newsEndpoint, newsOptions)
