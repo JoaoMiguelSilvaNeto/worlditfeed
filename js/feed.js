@@ -68,6 +68,9 @@ function getToken()	{
 			console.log('oi');
 			console.log(data);
 			return data;
+		  },
+		  error: function(data)	{
+			  console.log(data);
 		  }
 		});
 	console.log(adata);
