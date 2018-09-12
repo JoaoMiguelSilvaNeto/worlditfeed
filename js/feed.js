@@ -71,8 +71,8 @@ function getToken()	{
 			return data;
 		  }
 		});
-	
-	//return adata;
+	console.log(adata);
+	return adata;
 	
 };
 
