@@ -33,7 +33,7 @@ function getToken()	{
 
 	let key = token['access_token'];
 	let keyType = token['token_type'];
-	console.log('oi news');
+	
 	//const date = '2018-09-12T15:48:30.743Z';
 
 	var date = new Date();
@@ -56,25 +56,6 @@ function getToken()	{
 
 	return fetch(newsEndpoint, newsOptions)
 		.then(newsResponse => newsResponse.json());
-	var adata;
-	
-	/*$.ajax({
-			type: 'get',
-		  crossOrigin: true,
-		  url: 'https://azapp-services.azurewebsites.net/api/Info/GetUpdatesAndDeletes/?page=0&records=30&date='+dateISO+'&id=5&lang=PT&theme=Noticias',
-		  headers: newsHeaders,
-		  success: function(data) {
-			adata = data;
-			console.log('oi');
-			console.log(data);
-			return data;
-		  },
-		  error: function(data)	{
-			  console.log(data);
-		  }
-		});
-	console.log(adata);
-	return adata;*/
 	
 };
 
@@ -84,7 +65,7 @@ function setFeed(updates)	{
 
 	updates.forEach(function (entry) {
 		html += '<tr>';
-		html += '<th><a href="'+entry['LINK']+'"><h1>'+entry['TITLE']+'</h1></a></th>';
+		html += '<th class="tg-0pky"><a href="'+entry['LINK']+'"><h1>'+entry['TITLE']+'</h1></a></th>';
 		html += entry['HTML_EDITOR'];
 		html += '</tr>';
 	});
