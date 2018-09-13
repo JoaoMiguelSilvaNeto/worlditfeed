@@ -16,35 +16,12 @@
 	<body>
 		settings page...
 		<wix-control name="UI.panelTabs" ref="panelTabs" props='{defaultTabIndex: 0}'>
-		<!-- <div  
-			wix-ctrl="Checkbox" 
-			id="sampleCheckbox" 
-       		wix-options="	{
-                    			label:'Check me...', 
-                    			defaultValue:'true'
-                    		}"
-       		wix-param="show_title">
- 
-		</div>-->
  
 <script>
 //onChange function
 $(document).ready(function(){
 	
-	$scope.refs={};
-	this.onButtonClicked = function () {
-	 console.log("Main button clicked - switch to tab #1");
-	 $scope.refs.panelTabs.setActiveTab(1);
-	};
 	
-    /*  $("#sampleCheckbox").getCtrl().onChange(function (value) {
-              console.log(value);
-          });
-//getValue function
-console.log($("#sampleCheckbox").getCtrl().getValue());
- 
-//setValue function
-$("#sampleCheckbox").getCtrl().setValue(true);*/
  
 });
 </script>
