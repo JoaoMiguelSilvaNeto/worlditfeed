@@ -17,25 +17,25 @@
     <!--main tab-->
 
     <div tab="Main" class="main-tab">
-        <img class="app-logo" src="src/settings/svg/logo.svg" alt="app logo"/>
+        <img class="app-logo" src="images/wix_icon.png" alt="app logo"/>
         <p class="app-description">
-            This is the Wix App settings demo.<br/>
-            Please add a short description of your App + CTA for the main action.
+            Página de configuração<br/>
+            Configurações do feed da worldit.
         </p>
 
         <div class="main-cta-button"
              wix-ctrl="Button"
              wix-options="{
-                    label: 'Main CTA',
+                    label: 'WorldIT',
                     className: 'btn-confirm-primary'
                 }"
              id="main-cta"
         ></div>
 
-        <div class="main-bottom">
+        <!-- <div class="main-bottom">
           <hr class="divider-long"/>
           <p>
-            Upgrade now to get more features and enjoy everything our app has to offer!
+            Upgrade!
           </p>
           <div wix-ctrl="Button"
                wix-options="{
@@ -46,7 +46,7 @@
                 onClick="Wix.Settings.openBillingPage()"
           ></div>
       </div>
-    </div>
+    </div>-->
 
     <!--settings tab-->
 
@@ -55,19 +55,17 @@
              wix-ctrl="DropDown"
              wix-param="dropdown"
              wix-options="{
-                    title: 'When image is clicked',
+                    title: 'Origem do feed',
                     defaultValue: '0',
                     options: [
-                        { value: '0', label: 'Enter expand mode'},
-                        { value: '1', label: 'Show on full screen'},
-                        { value: '2', label: 'Do nothing'}
+                        { value: '0', label: 'Notícias'}
                     ]
                 }"
         ></div>
 
         <hr class="divider-long"/>
 
-        <div wix-ctrl="SectionDividerLabeled"
+        <!-- <div wix-ctrl="SectionDividerLabeled"
              wix-options="{label: 'Enable functionality'}">
         </div>
 
@@ -176,11 +174,11 @@
                     isMultiLine: true
                 }"
         ></div>
-    </div>
+    </div>-->
 
     <!--layout tab-->
 
-    <div tab="Layout">
+    <!-- <div tab="Layout">
         <hr class="divider-long"/>
 
         <div wix-ctrl="SectionDividerLabeled"
@@ -213,11 +211,11 @@
                     defaultValue: 10
                 }"
         ></div>
-    </div>
+    </div>-->
 
     <!--Design tab-->
 
-    <div tab="Design" style="margin-bottom: 20px">
+    <!-- <div tab="Design" style="margin-bottom: 20px">
         <hr class="divider-long"/>
 
         <div wix-ctrl="SectionDividerLabeled"
@@ -341,11 +339,11 @@
                     startWithColor: 'color-8'
                 }"
         ></div>
-    </div>
+    </div>-->
 
     <!--Animations tab-->
 
-    <div tab="Animations" class="animations-tab">
+    <!-- <div tab="Animations" class="animations-tab">
         <div id=dropdown class="animations_type"
              wix-ctrl="DropDown"
              wix-param="animation"
@@ -417,7 +415,7 @@
                         infoText: 'some information text should be here'
                     }"
         ></div>
-    </div>
+    </div>-->
 
     <hr class="divider-short"/>
 
@@ -435,15 +433,15 @@
         <ul class="developer-info">
             <li>
                 <div wix-ctrl="Symbol" wix-options="{name: 'email'}"></div>
-                <a href="mailto:support@wix.com">support@wix.com</a>
+                <a href="mailto:info@worldit.pt">info@worldit.pt</a>
             </li>
             <li>
                 <div wix-ctrl="Symbol" wix-options="{name: 'globe'}"></div>
-                <a href="https://dev.wix.com">Developer Website</a>
+                <a href="https://worldit.pt">WorldIT</a>
             </li>
             <li>
                 <div wix-ctrl="Symbol" wix-options="{name: 'phone'}"></div>
-                <a href="tel:1-408-974-4897">1-408-974-4897</a>
+                <a href="tel:21 793 36 30">21 793 36 30</a>
             </li>
         </ul>
 
@@ -512,14 +510,14 @@
 
 
 
-    <div wix-ctrl="Button"
+    <!-- <div wix-ctrl="Button"
          wix-options="{
                 className: 'btn-upgrade-nav',
                 label: 'Upgrade'
             }"
         onClick="Wix.Settings.openBillingPage()"
     ></div>
-</div>
+</div>-->
 
 <script src="dist/settings.js"></script>
 </body>
