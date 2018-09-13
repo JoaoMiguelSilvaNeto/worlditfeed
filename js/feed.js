@@ -65,8 +65,8 @@ function setFeed(updates)	{
 
 	updates.forEach(function (entry) {
 		html += '<tr>';
-		html += '<th class="tg-0pky"><a href="'+entry['LINK']+'"><h1>'+entry['TITLE']+'</h1></a></th>';
-		html += entry['HTML_EDITOR'];
+		html += '<th class="tg-0pky"><a href="'+entry['LINK']+'"><h1>'+entry['TITLE']+'</h1></a>'+entry['HTML_EDITOR'];+'</th>';
+		//html += entry['HTML_EDITOR'];
 		html += '</tr>';
 	});
 	
