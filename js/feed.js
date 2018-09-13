@@ -54,11 +54,11 @@ function getToken()	{
     	headers: newsHeaders
  	};
 
-	/*return fetch(newsEndpoint, newsOptions)
-		.then(newsResponse => newsResponse.json());*/
+	return fetch(newsEndpoint, newsOptions)
+		.then(newsResponse => newsResponse.json());
 	var adata;
 	
-	$.ajax({
+	/*$.ajax({
 			type: 'get',
 		  crossOrigin: true,
 		  url: 'https://azapp-services.azurewebsites.net/api/Info/GetUpdatesAndDeletes/?page=0&records=30&date='+dateISO+'&id=5&lang=PT&theme=Noticias',
@@ -74,7 +74,7 @@ function getToken()	{
 		  }
 		});
 	console.log(adata);
-	return adata;
+	return adata;*/
 	
 };
 
