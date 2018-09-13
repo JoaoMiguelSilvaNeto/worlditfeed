@@ -1,145 +1,526 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Widget Settings &bull; Wix</title>
-    <link rel="stylesheet" href="<%= css %>"/>
+    <meta charset="UTF-8">
+    <title>Demo App - Settings</title>
+    <script src="//static.parastorage.com/services/third-party/react/15.3.1/react-with-addons.min.js"></script>
+    <script src="//static.parastorage.com/services/third-party/react/15.3.1/react-dom.min.js"></script>
+    <script src="//static.parastorage.com/services/third-party/jquery/3.1.1/dist/jquery.min.js"></script>
+    <script src="//static.parastorage.com/services/third-party/lodash/4.17.2/lodash.js"></script>
+    <script src="//static.parastorage.com/services/js-sdk/1.91.0/js/wix.min.js"></script>
+    <script src="//static.parastorage.com/services/editor-ui-lib/1.28.0/lib/editor-ui-lib-jquery.min.js"></script>
 </head>
 <body>
+<div wix-ctrl="appSettings"></div>
+<div wix-ctrl="panelTabs" wix-options="{defaultTabIndex:0}">
 
-<header class="box">
-    <div class="logo">
-        <img width="86" src="images/wix_icon.png" alt="logo"/>
-    </div>
-    <div class="loggedOut">
-        <p>
-            This is a sample Settings view for widgets and pages created with <a href="http://dev.wix.com"
-                                                                                 target="_blank">Wix's 3rd Party SDK</a>,
-            compatible with Wix's product requirements.
-            This boilerplate is aimed at saving time for developing the UI of your apps, and let the
-            developer focus on developing logic.
+    <!--main tab-->
+
+    <div tab="Main" class="main-tab">
+        <img class="app-logo" src="src/settings/svg/logo.svg" alt="app logo"/>
+        <p class="app-description">
+            This is the Wix App settings demo.<br/>
+            Please add a short description of your App + CTA for the main action.
         </p>
 
-        <div class="login-panel">
-            <p class="create-account">Don't have an<br/>account? <strong><a href="#" target="_blank">Create
-                one</a></strong></p>
-            <button class="submit uilib-btn connect">Connect account</button>
-        </div>
-    </div>
-    <div class="loggedIn hidden">
-        <p>You are now connected to <strong>John Doe (john@doe.com)</strong> account<br/>
-            <a class="disconnect-account">Disconnect account</a></p>
+        <div class="main-cta-button"
+             wix-ctrl="Button"
+             wix-options="{
+                    label: 'Main CTA',
+                    className: 'btn-confirm-primary'
+                }"
+             id="main-cta"
+        ></div>
 
-        <div class="premium-panel">
-            <p class="premium-features ">Premium features</p>
-            <button class="submit btn upgrade">Upgrade</button>
-        </div>
-    </div>
-</header>
+        <div class="main-bottom">
+          <hr class="divider-long"/>
+          <p>
+            Upgrade now to get more features and enjoy everything our app has to offer!
+          </p>
+          <div wix-ctrl="Button"
+               wix-options="{
+                      label: 'Upgrade Now',
+                      className: 'btn-upgrade-banner'
 
-
-<div class="accordion" wix-ctrl="Accordion">
-
-    <div wix-scroll="{height:446}">
-        <div class="acc-pane">
-            <h3>General Settings: </h3>
-            <div class="acc-content">
-                <ul class="list">
-                    <li wix-label="Image Visibility:">
-                        <div wix-model="imageVisibility" wix-ctrl="Dropdown" wix-options="{width:150}">
-                            <div value="show">Show Images</div>
-                            <div value="hide">Hide Images</div>
-                            <div value="showhover">Show Images on Hover</div>
-                        </div>
-                    </li>
-                    <li wix-label="Fixed Position:">
-                        <div wix-ctrl="FixedPositionControl"></div>
-                    </li>
-                    <li wix-label="Number of images:">
-                        <div wix-model="numOfImages" wix-ctrl="Slider"
-                             wix-options="{ maxValue:500, preLabel:'0', postLabel:'500', toolTip:true}"></div>
-                        <div wix-model="numOfImages" wix-ctrl="Spinner" wix-options="{ maxValue:500 }"></div>
-                    </li>
-                    <li wix-label="Fonts:">
-                        <div wix-param="myFont" wix-ctrl="FontStylePicker"></div>
-                    </li>
-                    <li wix-label="Language Picker:">
-                        <div wix-model="lang" wix-ctrl="LanguagePicker"
-                             wix-tooltip=" {placement:'top', text:'Pick Language'}"></div>
-                    </li>
-                    <li wix-label="Email address:">
-                        <div id="email" wix-ctrl="Input" wix-options="{ placeholder: 'john@doe.com' }"></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="acc-pane">
-            <h3>Color Settings: </h3>
-            <div class="acc-content">
-                <ul class="list">
-                    <li wix-label="Text Color:">
-                        <div wix-param="textColor" wix-ctrl="ColorPicker"
-                             wix-options="{startWithColor:'color-5'}"></div>
-                    </li>
-                    <li wix-label="Background Color:">
-                        <div wix-param="backgroundColor" wix-ctrl="ColorPickerWithOpacity"
-                             wix-options="{startWithColor:'color-1', startWithOpacity: 50}"></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="acc-pane">
-            <h3>Sync Options</h3>
-            <div class="acc-content">
-                <p>How many images to sync ?</p>
-
-                <div wix-model="imagesToSync" wix-ctrl="Radio">
-                    <div data-radio-value="sync10">Sync 10 images</div>
-                    <div data-radio-value="sync25">Sync 25 images</div>
-                    <div data-radio-value="sync50">Sync 50 images</div>
-                </div>
-                <p>Sync Meta Data ?</p>
-
-                <div wix-model="imageMeta" wix-ctrl="Checkbox:{ postLabel:'Image Meta'}"></div>
-                <div wix-model="imageAlt" wix-ctrl="Checkbox"
-                     wix-options="{ postLabel:'Image Alt', checked:true}"></div>
-                <div wix-model="imageLink" wix-ctrl="Checkbox:{ postLabel:'Image Link'}"></div>
-            </div>
-        </div>
+                  }"
+                onClick="Wix.Settings.openBillingPage()"
+          ></div>
+      </div>
     </div>
 
+    <!--settings tab-->
+
+    <div tab="Settings">
+        <div class="settings_onImageClick"
+             wix-ctrl="DropDown"
+             wix-param="dropdown"
+             wix-options="{
+                    title: 'When image is clicked',
+                    defaultValue: '0',
+                    options: [
+                        { value: '0', label: 'Enter expand mode'},
+                        { value: '1', label: 'Show on full screen'},
+                        { value: '2', label: 'Do nothing'}
+                    ]
+                }"
+        ></div>
+
+        <hr class="divider-long"/>
+
+        <div wix-ctrl="SectionDividerLabeled"
+             wix-options="{label: 'Enable functionality'}">
+        </div>
+
+        <hr class="divider-long"/>
+
+        <div>
+            <div class="settings_allowEditing"
+                 wix-ctrl="ToggleSwitch"
+                 wix-param="editingToggle"
+                 wix-options="{
+                        label: 'Allow editing',
+                        defaultValue: true
+                    }"
+            ></div>
+        </div>
+
+        <hr class="divider-long"/>
+
+        <div>
+            <div class="settings_allowDeleting"
+                 wix-ctrl="ToggleSwitch"
+                 wix-param="deletingToggle"
+                 wix-options="{
+                        label: 'Allow deleting',
+                        defaultValue: true
+                    }"
+            ></div>
+        </div>
+
+        <hr class="divider-long"/>
+
+        <div wix-ctrl="SectionDividerLabeled"
+             wix-options="{label: 'Display info'}">
+        </div>
+
+        <hr class="divider-long"/>
+
+        <div>
+            <div class="settings_displayName"
+                 wix-ctrl="Checkbox"
+                 wix-param="nameCheckbox"
+                 wix-options="{
+                        label: 'Name',
+                        defaultValue: false
+                    }"
+            ></div>
+        </div>
+
+        <div>
+            <div class="settings_displayTitle"
+                 wix-ctrl="Checkbox"
+                 wix-param="titleCheckbox"
+                 wix-options="{
+                        label: 'Title',
+                        defaultValue: true
+                    }"
+            ></div>
+        </div>
+
+        <div>
+            <div class="settings_displayDescription"
+                 wix-ctrl="Checkbox"
+                 wix-param="dscCheckbox"
+                 wix-options="{
+                        label: 'Description',
+                        defaultValue: true
+                    }"
+            ></div>
+        </div>
+
+        <hr class="divider-long"/>
+
+        <div id= "radio" class="settings_taxOnImage"
+             wix-ctrl="RadioButtons"
+             wix-param="radioBtns"
+             wix-options="{
+                    title: 'Do images show text?',
+                    defaultValue: 'both',
+                    options: [
+                        { value: '1', label: 'A title and a description', disabled: true,},
+                        { value: '2', label: 'Just a title'},
+                        { value: '3', label: 'Just a description'}
+                    ]
+                }"
+        ></div>
+
+
+        <hr class="divider-long"/>
+
+        <div class="settings_textFieldContent"
+             wix-ctrl="Input"
+             wix-options="{
+                    title: 'Text field',
+                    defaultText: 'Title'
+                }"
+        ></div>
+
+        <hr class="divider-long"/>
+
+        <div class="settings_textAreaContent"
+             wix-ctrl="Input"
+             wix-options="{
+                    title: 'Text area',
+                    focus: true,
+                    defaultText: 'Paragraph',
+                    isMultiLine: true
+                }"
+        ></div>
+    </div>
+
+    <!--layout tab-->
+
+    <div tab="Layout">
+        <hr class="divider-long"/>
+
+        <div wix-ctrl="SectionDividerLabeled"
+             wix-options="{label: 'How does this gallery look?'}">
+        </div>
+
+        <hr class="divider-long"/>
+
+        <div class="layout_columns"
+             id="slide_column"
+             wix-ctrl="Slider"
+             wix-param="columnSlider"
+             wix-options="{
+                    title: 'Columns',
+                    min: 1,
+                    max: 36,
+                    defaultValue: 7
+                }"
+        ></div>
+
+        <hr class="divider-long"/>
+
+        <div class="layout_spacing"
+             wix-ctrl="Slider"
+             wix-param="spaceSlider"
+             wix-options="{
+                    title: 'Spacing (px)',
+                    min: 0,
+                    max: 50,
+                    defaultValue: 10
+                }"
+        ></div>
+    </div>
+
+    <!--Design tab-->
+
+    <div tab="Design" style="margin-bottom: 20px">
+        <hr class="divider-long"/>
+
+        <div wix-ctrl="SectionDividerLabeled"
+             wix-options="{label: 'Text & Background'}">
+        </div>
+
+        <hr class="divider-long"/>
+
+        <div wix-param-font="_titleFont"
+             wix-param-color="_titleColor"
+             wix-ctrl="FontAndColorPicker"
+             wix-options="{
+                    title: 'Title Font style and color',
+                    startWithColor: 'color-5',
+                    startWithTheme:'font_4',
+                    infoText: 'some information text should be here'
+                }"
+        ></div>
+
+        <hr class="divider-long"/>
+
+        <div wix-param-font="_descFont"
+             wix-param-color="_descColor"
+             wix-ctrl="FontAndColorPicker"
+             wix-options="{
+                    title: 'Description Font style & color',
+                    startWithColor: 'color-4',
+                    startWithTheme:'font_8',
+                    infoText: 'some information text should be here'
+                }"
+        ></div>
+
+        <hr class="divider-long"/>
+
+        <div wix-param="_backgroundColor"
+             wix-ctrl="ColorPickerSlider"
+             wix-options="{
+                    title: 'Background Color',
+                    startWithColor: 'color-1'
+                }"
+        ></div>
+
+        <hr class="divider-long"/>
+
+        <div wix-ctrl="SectionDividerLabeled"
+             wix-options="{label: 'Search fields'}">
+        </div>
+
+        <hr class="divider-long"/>
+
+        <div wix-param-font="_inputFont"
+             wix-param-color="_inputColor"
+             wix-ctrl="FontAndColorPicker"
+             wix-options="{
+                    title: 'Input field text font and color',
+                    startWithColor: 'color-1',
+                    startWithTheme:'font_8',
+                    infoText: 'some information text should be here'
+                }"
+        ></div>
+
+        <hr class="divider-long"/>
+
+        <div wix-param="_inputFieldBackground"
+             wix-ctrl="ColorPickerSlider"
+             wix-options="{
+                    title: 'Input Field Background',
+                    startWithColor: 'color-4',
+                    startWithOpacity: 1
+                }"
+        ></div>
+
+        <hr class="divider-long"/>
+
+        <div wix-param="_borderColor"
+             wix-ctrl="ColorPickerSlider"
+             wix-options="{
+                    title: 'Border Color',
+                    startWithColor: 'color-2',
+                    startwithOpacity: 1
+                }"
+        ></div>
+
+        <hr class="divider-long"/>
+
+        <div wix-param="_hrColor"
+             wix-ctrl="ColorPickerSlider"
+             wix-options="{
+                    title: 'Divider Color',
+                    startWithColor: 'color-2',
+                    startwithOpacity: 1
+                }"
+        ></div>
+
+        <hr class="divider-long"/>
+
+        <div wix-ctrl="SectionDividerLabeled"
+             wix-options="{label: 'Button'}">
+        </div>
+
+        <hr class="divider-long"/>
+
+        <div wix-param-font="_btnFont"
+             wix-param-color="_btnTextColor"
+             wix-ctrl="FontAndColorPicker"
+             wix-options="{
+                    title: 'Button Font  & Color',
+                    startWithColor: 'color-1',
+                    startWithTheme:'font_8',
+                    startWithSize:15,
+                    infoText: 'some information text should be here'
+                }"
+        ></div>
+
+        <hr class="divider-long"/>
+
+        <div wix-param="_btnBgColor"
+             wix-ctrl="ColorPickerSlider"
+             wix-options="{
+                    title: 'Button Background',
+                    startWithColor: 'color-8'
+                }"
+        ></div>
+    </div>
+
+    <!--Animations tab-->
+
+    <div tab="Animations" class="animations-tab">
+        <div id=dropdown class="animations_type"
+             wix-ctrl="DropDown"
+             wix-param="animation"
+             wix-options="{
+                title: 'Animation',
+                defaultValue: '0',
+                options: [
+                    { value: '0', label: 'Slide'},
+                    { value: '1', label: 'Fade'},
+                    { value: '2', label: 'Something else'}
+                ]}"
+        ></div>
+
+        <hr class="divider-long"/>
+
+        <div wix-ctrl="SectionDividerLabeled"
+             wix-options="{label: 'Animation settings', infoText: 'info text'}">
+        </div>
+
+        <hr class="divider-long"/>
+
+        <div class="button-wrapper-center">
+            <div class="animations_button"
+                 wix-ctrl="Button"
+                 wix-options="{
+                        label: 'Play Animation',
+                        className: 'btn-confirm-secondary',
+                        icon: 'playAnimation'
+                    }"
+            ></div>
+        </div>
+
+        <hr class="divider-long"/>
+
+        <div class="animations_direction"
+             wix-ctrl="DropDown"
+             wix-options="{
+                    title: 'Direction',
+                    defaultValue: 'right',
+                    options: [
+                        { value: '1', label: 'From Top'},
+                        { value: '2', label: 'From Right'},
+                        { value: '3', label: 'From Bottom'},
+                        { value: '4', label: 'From Left'}
+                    ]
+                }"
+        ></div>
+
+        <hr class="divider-long"/>
+
+        <div class="animations_delay"
+             wix-ctrl="Slider"
+             wix-options="{
+                    title: 'Delay (secs)',
+                    min: 0,
+                    max: 2,
+                    step: 0.1,
+                    defaultValue: 0.6
+                }"
+        ></div>
+
+        <hr class="divider-long"/>
+
+        <div id="ToggleSwitch" class="animations_oppositeEffect"
+             wix-ctrl="ToggleSwitch"
+             wix-options="{
+                        label: 'Opposite effect',
+                        defaultValue: true,
+                        infoText: 'some information text should be here'
+                    }"
+        ></div>
+    </div>
+
+    <hr class="divider-short"/>
+
+    <!--Support tab-->
+
+    <div tab="Support" class="support-tab">
+        <hr class="divider-long"/>
+
+        <div wix-ctrl="SectionDividerLabeled"
+             wix-options="{label: 'Developer info'}">
+        </div>
+
+        <hr class="divider-long"/>
+
+        <ul class="developer-info">
+            <li>
+                <div wix-ctrl="Symbol" wix-options="{name: 'email'}"></div>
+                <a href="mailto:support@wix.com">support@wix.com</a>
+            </li>
+            <li>
+                <div wix-ctrl="Symbol" wix-options="{name: 'globe'}"></div>
+                <a href="https://dev.wix.com">Developer Website</a>
+            </li>
+            <li>
+                <div wix-ctrl="Symbol" wix-options="{name: 'phone'}"></div>
+                <a href="tel:1-408-974-4897">1-408-974-4897</a>
+            </li>
+        </ul>
+
+        <hr class="divider-long"/>
+
+        <div wix-ctrl="SectionDividerLabeled"
+             wix-options="{label: 'Review our app'}">
+        </div>
+
+        <hr class="divider-long"/>
+
+        <p class="review-paragraph">Enjoying <APP NAME>? Leave us a review in the App Market.</p>
+
+        <div class="button-wrapper-center">
+            <div class="support_rateUs"
+                 wix-ctrl="Button"
+                 wix-options="{
+                        label: 'Rate Us',
+                        className: 'btn-confirm-primary'
+                    }"
+                    onClick="Wix.Settings.openReviewInfo()"
+            ></div>
+        </div>
+
+        <hr class="divider-long"/>
+
+        <div wix-ctrl="SectionDividerLabeled"
+             wix-options="{label: 'Send us a message'}">
+        </div>
+
+        <hr class="divider-long"/>
+
+        <div class="support_email"
+             wix-ctrl="Input"
+             wix-options="{
+                    title: 'What\'s your email?',
+                    placeholder: 'Email',
+                    validateOnBlurOnly: true,
+                    invalidMessage: 'Invalid Email Address'
+                }"
+        ></div>
+
+        <hr class="divider-short"/>
+
+        <div class="support_message"
+             wix-ctrl="Input"
+             wix-options="{
+                    title: 'What do you want to tell us?',
+                    placeholder: 'Write us your message (new feature idea / other issues)',
+                    isMultiLine: true
+                }"
+        ></div>
+
+        <hr class="divider-short"/>
+
+        <div class="button-wrapper-center">
+            <div class="support_sendButton"
+                 wix-ctrl="Button"
+                 wix-options="{
+                        label: 'Send',
+                        disabled: true
+                    }"
+            ></div>
+        </div>
+    </div>
+
+
+
+    <div wix-ctrl="Button"
+         wix-options="{
+                className: 'btn-upgrade-nav',
+                label: 'Upgrade'
+            }"
+        onClick="Wix.Settings.openBillingPage()"
+    ></div>
 </div>
 
-<!-- jQuery Dependency -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<!-- Wix SDK -->
-<script src="http://sslstatic.wix.com/services/js-sdk/1.28.0/js/Wix.js"></script>
-
-<script type="text/javascript" src="<%= js %>"></script>
-
-
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        Wix.UI.initialize({
-            numOfImages: 100,
-            isIconShown: true,
-            imageVisibility: 'show',
-            imagesToSync: 0,
-            imageLink: false
-        });
-
-        /**
-         Validate email adress
-         */
-        $('#email').getCtrl().setValidationFunction(function (value) {
-            return (/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i.test(value));
-        });
-    });
-
-</script>
-
+<script src="dist/settings.js"></script>
 </body>
 </html>
