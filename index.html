@@ -1,50 +1,91 @@
 <html>
-<meta charset="UTF-8">
-<header>
-<title>This is title</title>
-<script src="//static.parastorage.com/services/js-sdk/1.96.0/js/wix.min.js" type="text/javascript"></script>
-<!-- <script src="https://gist.githubusercontent.com/leovarmak/956b1c33e65543ea095c07471c737640/raw/7e3f1e772dee5c17d200fad06a01db5869f9f29a/jquery.ajax-cross-origin.min.js" type="text/javascript"></script>-->
-<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
-<script src="js/feed.js"type="text/javascript"></script>
+	<meta charset="UTF-8">
+	<header>
+	
+		<title>This is title</title>
+		
+		<!-- Necessary script to work as WiX app -->
+		<script src="//static.parastorage.com/services/js-sdk/1.96.0/js/wix.min.js" type="text/javascript"></script>
+		
+		<!-- Include javascript file with functions to retrieve feed -->
+		<script src="js/feed.js"type="text/javascript"></script>
 
-</header>
-<body>
-<script>
-// self executing function 
-(function() {
+	</header>
+	<body>
+	
+		<script>
+			// self executing function 
+			(function() {
    
-   getToken()
-	.then(token => {
+				//Call Endpoint for token
+   				getToken()
+					.then(token => {
 
-		console.log(token['access_token']);
+						console.log(token['access_token']);
 
-		getNews(token)
-			.then(news => {
-				console.log(news);
+						//Send token and chosen category to Endpoint in order to retrieve feed
+						getNews(token, 'Noticias')
+							.then(news => {
+							
+								console.log(news);
 
-				const updates = news['updates'];
+								const updates = news['updates'];
 
-				console.log(news['updates'][0]['HTML_EDITOR']);
+								console.log(news['updates'][0]['HTML_EDITOR']);
+								
+								//update table1
+								setFeed(updates);
+		
+							});
+
+						});
+
+			})();
+		</script>
+
+		<style type="text/css">
+	
+			.tg 			{
+								border-collapse:collapse;
+								border-spacing:0;
+							}
 			
-				setFeed(updates);
+			.tg td			{
+								font-family:Arial, sans-serif;
+								font-size:9px;
+								padding:10px 5px;
+								border-style:solid;
+								border-width:1px;
+								overflow:hidden;
+								word-break:normal;
+								border-color:black;
+							}
+				
+			.tg th			{
+								font-family:Arial, sans-serif;
+								font-size:9px;
+								font-weight:normal;
+								padding:10px 5px;
+								border-style:solid;
+								border-width:1px;
+								overflow:hidden;
+								word-break:normal;
+								border-color:black;
+							}
+				
+			.tg .tg-0pky	{
+								border-color:inherit;
+								text-align:left;
+								vertical-align:top
+							}
+						
+		</style>
+	
 
-					
-			});
-
-		});
-
-})();
-</script>
-<style type="text/css">
-	.tg  {border-collapse:collapse;border-spacing:0;}
-	.tg td{font-family:Arial, sans-serif;font-size:9px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-	.tg th{font-family:Arial, sans-serif;font-size:9px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-	.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-</style>
-<table id="table1" class="tg">
-  <tr>
-    <th class="tg-0pky">Notícias</th>
-  </tr>
-</table>
-</body>
+		<table id="table1" class="tg">
+ 			<tr>
+    			<th class="tg-0pky">Notícias</th>
+  			</tr>
+		</table>
+	</body>
 </html>
