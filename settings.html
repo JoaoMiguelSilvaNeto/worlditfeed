@@ -7,9 +7,19 @@
 		<!-- Necessary script to work as WiX app -->
 		<script src="//static.parastorage.com/services/js-sdk/1.96.0/js/wix.min.js" type="text/javascript"></script>
 		
+		<!-- Necessary for UI -->
+		<script src="//static.parastorage.com/services/third-party/jquery/3.1.1/dist/jquery.min.js"></script>
+		<script src="//static.parastorage.com/services/editor-ui-lib/1.28.0/lib/editor-ui-lib-jquery.min.js"></script>
+		
 	</head>
 	<body>
 		settings page...
+		
+		<div>
+    <UI.checkbox label="Show title" defaultValue="{true}" onChange= "{(newVal)=>console.log(newVal)}">
+    	wix-param="show_title"
+    </UI.checkbox>
+</div>
 
 	</body>
 </html>
