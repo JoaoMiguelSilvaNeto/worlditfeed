@@ -9,6 +9,7 @@
     <script src="//static.parastorage.com/services/third-party/lodash/4.17.2/lodash.js"></script>
     <script src="//static.parastorage.com/services/js-sdk/1.91.0/js/wix.min.js"></script>
     <script src="//static.parastorage.com/services/editor-ui-lib/1.28.0/lib/editor-ui-lib-jquery.min.js"></script>
+    <script src="js/settings.js"></script>
 </head>
 <body>
 <div wix-ctrl="appSettings"></div>
@@ -54,7 +55,8 @@
 
     <div tab="Account">
         
-        <div class="settings_onImageClick"
+        <div class="settings_onImageClick" 
+        	 id="category" 
              wix-ctrl="DropDown"
              wix-param="dropdown"
              wix-options="{
