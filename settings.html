@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Demo App - Settings</title>
+    <title>WorldIT Feed - Settings</title>
     <script src="//static.parastorage.com/services/third-party/react/15.3.1/react-with-addons.min.js"></script>
     <script src="//static.parastorage.com/services/third-party/react/15.3.1/react-dom.min.js"></script>
     <script src="//static.parastorage.com/services/third-party/jquery/3.1.1/dist/jquery.min.js"></script>
@@ -19,8 +19,8 @@
     <div tab="Main" class="main-tab">
         <img class="app-logo" src="images/wix_icon.png" alt="app logo"/>
         <p class="app-description">
-            Página de configuração<br/>
-            Configurações do feed da worldit.
+            <h1>Settings page</h1>
+            <p>Settings to personalize the WorldIT Feed App to fit your website.</p>
         </p>
 
         <div class="main-cta-button"
@@ -48,23 +48,56 @@
       </div>-->
     </div>
 
-    <!--settings tab-->
+    <!-- General settings tab-->
 
-    <div tab="Settings">
+    <div tab="General">
+    
+        <div class="layout_spacing"
+             wix-ctrl="Slider"
+             wix-param="spaceSlider"
+             wix-options="{
+                    title: 'Results per page',
+                    min: 0,
+                    max: 50,
+                    defaultValue: 10
+                }"
+        ></div>
+
+        <hr class="divider-long"/>
+        
         <div class="settings_onImageClick"
              wix-ctrl="DropDown"
              wix-param="dropdown"
              wix-options="{
-                    title: 'Origem do feed',
-                    defaultValue: '0',
+                    title: 'Category',
+                    defaultValue: 'Noticias',
                     options: [
-                        { value: '0', label: 'Notícias'}
+                        { value: 'Noticias', label: 'Notícias'},
+                        { value: 'Outras', label: 'Outras'}
                     ]
                 }"
         ></div>
 
         <hr class="divider-long"/>
 
+        <div class="settings_textFieldContent"
+             wix-ctrl="Input"
+             wix-options="{
+                    title: 'Event Id:',
+                    defaultText: 'Event Id'
+                }"
+        ></div>
+        
+        <hr class="divider-long"/>
+
+        <div class="settings_textFieldContent"
+             wix-ctrl="Input"
+             wix-options="{
+                    title: 'Authentication Key:',
+                    defaultText: 'Authenticantion Key'
+                }"
+        ></div>
+        
         <!-- <div wix-ctrl="SectionDividerLabeled"
              wix-options="{label: 'Enable functionality'}">
         </div>
