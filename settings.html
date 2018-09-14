@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WorldIT Feed - Settings</title>
+    <title>azapp Feed - Settings</title>
     <script src="//static.parastorage.com/services/third-party/react/15.3.1/react-with-addons.min.js"></script>
     <script src="//static.parastorage.com/services/third-party/react/15.3.1/react-dom.min.js"></script>
     <script src="//static.parastorage.com/services/third-party/jquery/3.1.1/dist/jquery.min.js"></script>
@@ -23,16 +23,16 @@
             	<h1>azapp Feed</h1>
             	<p>Settings to personalize the azapp Feed to fit your website.</p>
         	</p>
-		</center>
-        	<div class="main-cta-button-center"
+
+        	<div class="main-cta-button"
              	wix-ctrl="Button"
              	wix-options="{
-                    	label: 'Apply Settings',
+                    	label: 'azapp Credentials',
                     	className: 'btn-confirm-primary'
                 	}"
              	id="main-cta"
         	></div>
-        
+        </center>
 
         <!-- <div class="main-bottom">
           <hr class="divider-long"/>
@@ -50,23 +50,9 @@
       </div>-->
     </div>
 
-    <!-- General settings tab-->
+    <!-- Account settings tab-->
 
-    <div tab="General">
-    
-        <div class="layout_spacing"
-             wix-ctrl="Slider"
-             wix-param="spaceSlider"
-             wix-options="{
-                    title: 'Results per page',
-                    min: 0,
-                    max: 50,
-                    step: 10,
-                    defaultValue: 10
-                }"
-        ></div>
-
-        <hr class="divider-long"/>
+    <div tab="Account">
         
         <div class="settings_onImageClick"
              wix-ctrl="DropDown"
@@ -252,6 +238,19 @@
     <!--Design tab-->
 
     <div tab="Design" style="margin-bottom: 20px">
+    
+    	<div class="layout_spacing"
+             wix-ctrl="Slider"
+             wix-param="spaceSlider"
+             wix-options="{
+                    title: 'Results per page',
+                    min: 0,
+                    max: 50,
+                    step: 10,
+                    defaultValue: 10
+                }"
+        ></div>
+
         <hr class="divider-long"/>
 
         <div wix-ctrl="SectionDividerLabeled"
