@@ -55,22 +55,10 @@
 
     <div tab="Account">
         
-        <div class="settings_onImageClick" 
-        	 id="category" 
-             wix-ctrl="DropDown"
-             wix-param="dropdown"
-             wix-options="{
-                    title: 'Category',
-                    defaultValue: 'Noticias',
-                    options: [
-                        { value: 'Noticias', label: 'Notícias'},
-                        { value: 'Outras', label: 'Outras'}
-                    ]
-                }"
-        ></div>
-
-        <hr class="divider-long"/>
-
+		<div wix-ctrl="SectionDividerLabeled"
+             wix-options="{label: 'azapp Credentials'}">
+        </div>
+        
         <div class="settings_textFieldContent"
              wix-ctrl="Input"
              wix-options="{
@@ -86,6 +74,25 @@
              wix-options="{
                     title: 'Authentication Key:',
                     defaultText: 'Authenticantion Key'
+                }"
+        ></div>
+        
+      	<!-- <hr class="divider-long"/> -->
+      	<div wix-ctrl="SectionDividerLabeled"
+             wix-options="{label: 'azapp Feed Category'}">
+        </div>
+        
+        <div class="settings_onImageClick" 
+        	 id="category" 
+             wix-ctrl="DropDown"
+             wix-param="dropdown"
+             wix-options="{
+                    title: 'Category',
+                    defaultValue: 'Noticias',
+                    options: [
+                        { value: 'Noticias', label: 'Notícias'},
+                        { value: 'Outras', label: 'Outras'}
+                    ]
                 }"
         ></div>
         
