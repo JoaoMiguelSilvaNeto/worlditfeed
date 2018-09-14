@@ -10,7 +10,7 @@ $(document).ready(function(){
 	
 	// Retrieve settings
 	
-	$("#category").setAttribute("wix-options","{title: 'Category', defaultValue: 'Noticias',options: [{ value: 'Noticias', label: 'Notícias'},{ value: 'Tweets', label: 'Tweets'}{ value: 'Outras', label: 'Outras'}]}");
+	$("#category").attr("wix-options","{title: 'Category', defaultValue: 'Noticias',options: [{ value: 'Noticias', label: 'Notícias'},{ value: 'Tweets', label: 'Tweets'}{ value: 'Outras', label: 'Outras'}]}");
 	
 	//getValue function
 	//console.log($("#sampleCheckbox").getCtrl().getValue());
