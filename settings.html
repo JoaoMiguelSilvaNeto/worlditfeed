@@ -265,7 +265,7 @@
                     title: 'Title Font style and color',
                     startWithColor: 'color-5',
                     startWithTheme:'font_4',
-                    infoText: 'some information text should be here'
+                    infoText: 'Choose the Font style and color for the text of the title on top of the feed.'
                 }"
         ></div>
 
@@ -278,7 +278,31 @@
                     title: 'Description Font style & color',
                     startWithColor: 'color-4',
                     startWithTheme:'font_8',
-                    infoText: 'some information text should be here'
+                    infoText: 'Choose the Font style and color for the text of every feed.'
+                }"
+        ></div>
+        
+        <div>
+            <div class="settings_displayDescription"
+                 wix-ctrl="Checkbox"
+                 wix-param="titleCheckbox"
+                 wix-options="{
+                        label: 'Show Title',
+                        defaultValue: true
+                    }"
+            ></div>
+        </div>
+
+        <hr class="divider-long"/>
+        
+        <div wix-param-font="_descFont"
+             wix-param-color="_linkColor"
+             wix-ctrl="FontAndColorPicker"
+             wix-options="{
+                    title: 'Link Font style & color',
+                    startWithColor: 'color-4',
+                    startWithTheme:'font_8',
+                    infoText: 'Choose the Font style and color for the hyperlink text of every feed.'
                 }"
         ></div>
 
@@ -292,7 +316,7 @@
                 }"
         ></div>
 
-        <hr class="divider-long"/>
+        <!-- <hr class="divider-long"/>
 
         <div wix-ctrl="SectionDividerLabeled"
              wix-options="{label: 'Search fields'}">
