@@ -19,7 +19,7 @@ $(document).ready(function(){
 	
 	// Retrieve settings
 	
-	console.log($("#descFont").getCtrl().getValue()[1]['family']);
+	console.log($("#descFont").getCtrl().getValue()[1]);
 	
 	
 	
