@@ -11,7 +11,7 @@ $(document).ready(function(){
 	// Retrieve settings
 	
 	//$("#category").attr("wix-options","{title: 'Category', defaultValue: 'Noticias', options: [{ value: 'Noticias', label: 'Notícias'},{ value: 'Tweets', label: 'Tweets'}{ value: 'Outras', label: 'Outras'}]}");
-	$("#category").getCtrl().setValue('2');
+	$("#category").getCtrl().setValue("{ value: 'Tweets', label: 'Tweets'}");
 	//getValue function
 	//console.log($("#sampleCheckbox").getCtrl().getValue());
  
