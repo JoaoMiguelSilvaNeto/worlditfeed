@@ -3,10 +3,8 @@
 	
 $(document).ready(function(){
 	
-	// Save Settings
-	
-	$("#category").getCtrl().onChange(function (value) {
-		console.log(value);
+	window.onload = function() {
+		
 		document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
 				"defaultValue: 'Noticias', " +
 				"options: [" +
@@ -16,6 +14,13 @@ $(document).ready(function(){
 				"], " +
 				"InfoText: 'Category of the feed to show.'" +
 				"}");
+		}
+	
+	// Save Settings
+	
+	$("#category").getCtrl().onChange(function (value) {
+		console.log(value);
+		
     });
 	
 	// Retrieve settings
