@@ -94,7 +94,7 @@
         	document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
 				"defaultValue: 'Noticias', " +
 				"options: "+getCategories()+","+
-				"InfoText: 'Category of the feed to show.'" +
+				"infoText: 'Category of the feed to show.'" +
 				"}"
 			);
 		</script>
@@ -250,7 +250,7 @@
 
     <div tab="Design" style="margin-bottom: 20px">
     
-    	<div class="layout_spacing"
+    	<div id="resultsPerPage" class="layout_spacing"
              wix-ctrl="Slider"
              wix-param="spaceSlider"
              wix-options="{
