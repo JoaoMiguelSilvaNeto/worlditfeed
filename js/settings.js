@@ -22,14 +22,12 @@ $(document).ready(function(){
 			"	{ value: 'Outras', label: 'Outras'}" +
 			"], " +
 			"InfoText: 'Category of the feed to show.'" +
-			"}").trigger('change');
+			"}");
 	
-	
+	location.reload();
 	//$("#category").getCtrl().wix-options(categories);
 	//getValue function
 	//console.log($("#sampleCheckbox").getCtrl().getValue());
  
  
 });
-
-$("#category").trigger('change');
