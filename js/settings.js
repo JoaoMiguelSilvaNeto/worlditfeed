@@ -24,7 +24,7 @@ $(document).ready(function(){
 			"InfoText: 'Category of the feed to show.'" +
 			"}");
 	
-	$("#category").getCtrl().setValue('2');
+	
 	//$("#category").getCtrl().wix-options(categories);
 	//getValue function
 	//console.log($("#sampleCheckbox").getCtrl().getValue());
