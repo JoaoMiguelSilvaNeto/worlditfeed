@@ -2,6 +2,7 @@
 
 $(document).ready(function(){
 	
+	console.log(getCategories());
 	// Save Settings
 	
 	$("#category").getCtrl().onChange(function (value) {
