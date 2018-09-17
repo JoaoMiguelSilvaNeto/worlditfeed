@@ -96,16 +96,16 @@
                     ]
                 }"-->
         ></div>
-        <script>document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
+        <script>
+        
+        		
+        	document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
 				"defaultValue: 'Noticias', " +
-				"options: [" +
-				"	{ value: 'Noticias', label: 'Notícias'}," +
-				"	{ value: 'Tweets', label: 'Tweets'}," +
-				"	{ value: 'Outras', label: 'Outras'}" +
-				"], " +
-				"InfoText: 'Category of the feed to show.'" +
+				"options: " +getCategories()+
+				",InfoText: 'Category of the feed to show.'" +
 				"}");
-		}</script>
+			}
+		</script>
         <!-- <div wix-ctrl="SectionDividerLabeled"
              wix-options="{label: 'Enable functionality'}">
         </div>
