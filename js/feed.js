@@ -86,7 +86,8 @@ function getCategories()	{
 
 $(document).ready(function(){
 	
-	document.getElementById("table1").style.font = $("#descFont").getCtrl().getValue()['font'];
+	//document.getElementById("table1").style.font = $("#descFont").getCtrl().getValue()['font'];
+	console.log($("#descFont").getCtrl().getValue());
 	
 });
 
