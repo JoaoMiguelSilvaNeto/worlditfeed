@@ -70,7 +70,7 @@ function setFeed(updates)	{
 		html += '</tr>';
 	});
 	
-	document.getElementById("table1").style('font') = $("#descFont").getCtrl().getValue()['font'];
+	document.getElementById("table1").style.font = $("#descFont").getCtrl().getValue()['font'];
 	document.getElementById("table1").innerHTML = html;
 	
 };
