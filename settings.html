@@ -98,10 +98,12 @@
         ></div>
         <script>
         
-        		
+        	var categories = getCategories();
+        	console.log(categories);
+        	
         	document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
 				"defaultValue: 'Noticias', " +
-				"options: " +getCategories()+
+				"options: " +categories+
 				",InfoText: 'Category of the feed to show.'" +
 				"}");
 			}
