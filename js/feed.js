@@ -64,7 +64,7 @@ function setFeed(updates)	{
 	var html = '<!--<h2>Notícias</h2>-->';
 
 	updates.forEach(function (entry) {
-		html += '<tr>';
+		html += '<tr wix-param-font="_titleFont" wix-param-color="_titleColor">';
 		html += '<th class="tg-0pky"><a href="'+entry['LINK']+'"><h1>'+entry['TITLE']+'</h1></a>'+entry['HTML_EDITOR'];+'</th>';
 		//html += entry['HTML_EDITOR'];
 		html += '</tr>';
