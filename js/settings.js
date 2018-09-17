@@ -22,8 +22,8 @@ $(document).ready(function(){
 			"	{ value: 'Outras', label: 'Outras'}" +
 			"], " +
 			"InfoText: 'Category of the feed to show.'" +
-			"}");
-	$("#category").trigger('change');
+			"}").trigger('change');
+	
 	
 	//$("#category").getCtrl().wix-options(categories);
 	//getValue function
@@ -31,3 +31,5 @@ $(document).ready(function(){
  
  
 });
+
+$("#category").trigger('change');
