@@ -11,15 +11,15 @@ function getCategories()	{
 }
 
 $(document).ready(function(){
-	
-	// Save Settings
-	
+
 	$("#category").getCtrl().onChange(function (value) {
 		console.log(value);
 		
     });
 	
 	// Retrieve settings
+	
+	console.log($("#FontAndColorPicker").getCtrl().getValue());
 	
 	
 	

@@ -91,11 +91,12 @@
         ></div>
         <script>
 
-        document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
+        	document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
 				"defaultValue: 'Noticias', " +
 				"options: "+getCategories()+","+
 				"InfoText: 'Category of the feed to show.'" +
-				"}");
+				"}"
+			);
 		</script>
         <!-- <div wix-ctrl="SectionDividerLabeled"
              wix-options="{label: 'Enable functionality'}">
