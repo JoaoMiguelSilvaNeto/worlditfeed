@@ -1,9 +1,7 @@
 // Javascript file for settings.html
 //$("#category").attr("wix-options","{title: 'Category', defaultValue: 'Noticias', options: [{ 'value': 'Noticias', 'label': 'Notícias'},{ 'value': 'Tweets', 'label': 'Tweets'},{ 'value': 'Outras', 'label': 'Outras'}], InfoText: 'Category of the feed to show.'}");
 	
-$(document).ready(function(){
-	
-	window.onload = function() {
+window.onload = function() {
 		
 		document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
 				"defaultValue: 'Noticias', " +
@@ -15,6 +13,10 @@ $(document).ready(function(){
 				"InfoText: 'Category of the feed to show.'" +
 				"}");
 		}
+
+$(document).ready(function(){
+	
+	
 	
 	// Save Settings
 	
