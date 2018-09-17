@@ -19,7 +19,7 @@ $(document).ready(function(){
 	
 	// Retrieve settings
 	
-	console.log($("#FontAndColorPicker").getCtrl().getValue());
+	console.log($("Slider").getCtrl().getValue());
 	
 	
 	
