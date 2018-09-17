@@ -10,10 +10,10 @@ $(document).ready(function(){
 	
 	// Retrieve settings
 	
-	var categories = [{title: 'Category', defaultValue: 'Noticias', options: [{ value: 'Noticias', label: 'Notícias'},{ value: 'Tweets', label: 'Tweets'},{ value: 'Outras', label: 'Outras'}]}];
+	var categories = [{ value: 'Noticias', label: 'Notícias'},{ value: 'Tweets', label: 'Tweets'},{ value: 'Outras', label: 'Outras'}];
 	
 	//$("#category").attr("wix-options","{title: 'Category', defaultValue: 'Noticias', options: [{ value: 'Noticias', label: 'Notícias'},{ value: 'Tweets', label: 'Tweets'}{ value: 'Outras', label: 'Outras'}]}");
-	$("#category").getCtrl().wix-options(categories);
+	$("#category").getCtrl().wix-options({title: 'Category'}, {defaultValue: 'Noticias'}, categories);
 	//getValue function
 	//console.log($("#sampleCheckbox").getCtrl().getValue());
  
