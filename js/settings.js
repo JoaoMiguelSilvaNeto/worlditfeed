@@ -19,7 +19,7 @@ $(document).ready(function(){
 	
 	// Retrieve settings
 	
-	console.log($("Slider").getCtrl().getValue());
+	console.log($("descFont").getCtrl().getValue());
 	
 	
 	
