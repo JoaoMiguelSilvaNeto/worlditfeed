@@ -90,10 +90,10 @@
              >
         ></div>
         <script>
-        console.log(getCategories());
+        var categories = getCategories;
         document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
 				"defaultValue: 'Noticias', " +
-				"options: "+getCategories()+
+				"options: "+categories+","+
 				"InfoText: 'Category of the feed to show.'" +
 				"}");
 		</script>
