@@ -1,6 +1,6 @@
 // Javascript file for settings.html
 
-function getCategories()	{
+async function getCategories()	{
 	
 	//Call WebService that returns Categories
 	
