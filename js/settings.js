@@ -7,13 +7,6 @@ $(document).ready(function(){
 	
 	$("#category").getCtrl().onChange(function (value) {
 		console.log(value);
-    });
-	
-	// Retrieve settings
-	
-	var categories = {"title": 'Category', "options": [{ "value": 'Noticias', "label": 'Notícias'},{ "value": 'Tweets', "label": 'Tweets'},{ "value": 'Outras', "label": 'Outras'}],  "defaultValue": 'Noticias', "InfoText": 'Category of the feed to show.'};
-	
-	$("#category").getCtrl().onClick(function (value) {
 		document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
 				"defaultValue: 'Noticias', " +
 				"options: [" +
@@ -24,6 +17,11 @@ $(document).ready(function(){
 				"InfoText: 'Category of the feed to show.'" +
 				"}");
     });
+	
+	// Retrieve settings
+	
+	var categories = {"title": 'Category', "options": [{ "value": 'Noticias', "label": 'Notícias'},{ "value": 'Tweets', "label": 'Tweets'},{ "value": 'Outras', "label": 'Outras'}],  "defaultValue": 'Noticias', "InfoText": 'Category of the feed to show.'};
+	
 	
 	
 	
