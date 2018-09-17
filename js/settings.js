@@ -18,8 +18,8 @@ $(document).ready(function(){
     });
 	
 	// Retrieve settings
-	
-	console.log($("#descFont").getCtrl().getValue()[1]);
+	console.log($("#descFont").getCtrl().getValue());
+	console.log($("#descFont").getCtrl().getValue()['font']);
 	
 	
 	
