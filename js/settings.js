@@ -23,6 +23,8 @@ $(document).ready(function(){
 			"], " +
 			"InfoText: 'Category of the feed to show.'" +
 			"}");
+	$("#category").trigger('change');
+	
 	//$("#category").getCtrl().wix-options(categories);
 	//getValue function
 	//console.log($("#sampleCheckbox").getCtrl().getValue());
