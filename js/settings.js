@@ -27,6 +27,7 @@ $(document).ready(function(){
 	
 	
 	
+	
 	/*$("#category").prop("wix-options","" +
 			"{title: 'Category', " +
 			"defaultValue: 'Noticias', " +

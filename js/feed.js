@@ -69,6 +69,6 @@ function setFeed(updates)	{
 		//html += entry['HTML_EDITOR'];
 		html += '</tr>';
 	});
-	
+	console.log("----->"+$("#descFont").getCtrl().getValue()['font']);
 	document.getElementById("table1").innerHTML = html;
 };
