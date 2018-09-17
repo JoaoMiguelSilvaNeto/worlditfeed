@@ -61,7 +61,7 @@ function getToken()	{
 
 function setFeed(updates)	{
 
-	var html = '<!--<p wix-param-font="_titleFont" wix-param-color="_titleColor">Notícias</p>-->';
+	var html = '<!--<p class="Page-title">Notícias</p>-->';
 
 	updates.forEach(function (entry) {
 		html += '<tr>';
