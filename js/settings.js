@@ -20,6 +20,7 @@ $(document).ready(function(){
 	// Retrieve settings
 	console.log($("#descFont").getCtrl().getValue());
 	console.log($("#descFont").getCtrl().getValue()['font']);
+	document.getElementById("table1").style.font = $("#descFont").getCtrl().getValue()['font'];
 	
 	
 	
