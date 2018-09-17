@@ -87,18 +87,10 @@
         	 id="category" 
              wix-ctrl="DropDown"
              wix-param="dropdown" 
-             <!-- wix-options="{
-                    title: 'Category',
-                    defaultValue: 'Noticias',
-                    options: [
-                        { value: 'Noticias', label: 'Notícias'},
-                        { value: 'Outras', label: 'Outras'}
-                    ]
-                }"-->
+             >
         ></div>
         <script>
-        
-        		
+        	
         document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
 				"defaultValue: 'Noticias', " +
 				"options: [" +
@@ -108,7 +100,7 @@
 				"], " +
 				"InfoText: 'Category of the feed to show.'" +
 				"}");
-		}</script>
+		</script>
         <!-- <div wix-ctrl="SectionDividerLabeled"
              wix-options="{label: 'Enable functionality'}">
         </div>
