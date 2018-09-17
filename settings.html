@@ -93,7 +93,7 @@
         var categories = getCategories;
         document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
 				"defaultValue: 'Noticias', " +
-				"options: [{ value: 'Noticias', label: 'Notícias'},{ value: 'Tweets', label: 'Tweets'},{value: 'Outras', label: 'Outras'}],"+
+				"options: "+categories+","+
 				"InfoText: 'Category of the feed to show.'" +
 				"}");
 		</script>
