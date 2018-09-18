@@ -12,10 +12,6 @@ function getCategories()	{
 
 $(document).ready(function(){
 	
-	var category = $('#category').val();
-	console.log('7777->'+category);
-	
-	Wix.Data.Public.set("category", category, { scope: 'APP' }, 
-			function(d){console.log(d)},function(f){console.log(f)});
+
  
 });
