@@ -78,16 +78,16 @@
 					//Check the feed category selected
 		        	switch(_categories) {
 		            	case 0:
-		                	categories = 'Noticias';
+		                	category = 'Noticias';
 		                	break;
 		            	case 1:
-		                	categories = 'Tweets';
+		                	category = 'Tweets';
 		                	break;
 		            	case 2:
-		                	categories = 'Outras';
+		                	category = 'Outras';
 		                	break;
 		            	default:
-		            		categories = 'Noticias';
+		            		category = 'Noticias';
 		        	}
 		        	
 		        	getFeed(category, resultsPerPage);
