@@ -16,6 +16,11 @@ $(document).ready(function(){
 		console.log(value);
 		
     });
+	
+	$("#toggleTitle").getCtrl().onChange(function (value) {
+		console.log(value);
+		
+    });
 
 	
 	// Retrieve settings
