@@ -90,7 +90,7 @@
              >
         </div>
         <script>
-			console.log(document.getElementById('category'));
+        	console.log($("#category").getCtrl().getValue());
         	document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
 				"defaultValue: 'Noticias', " +
 				"options: "+getCategories()+","+
