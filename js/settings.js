@@ -4,7 +4,7 @@ function getCategories()	{
 	
 	//Call WebService that returns Categories
 	
-	var categories = "[{ value: 'Noticias', label: 'Notícias'},{ value: 'Tweets', label: 'Tweets'},{value: 'Outras', label: 'Outras'}]";
+	var categories = "[{ value: 'Noticias', label: 'Notícias'},{ value: 'Informacoes', label: 'Informações'},{value: 'Contactos', label: 'Contactos'}]";
 	
 	return categories;
 	
@@ -12,6 +12,11 @@ function getCategories()	{
 
 $(document).ready(function(){
 	
-
+	$("#category").getCtrl().onChange(function(value){
+        console.log(value, ' selected');
+        
+        Wix.Data.Public.set("category", value, { scope: 'APP' }, 
+    			function(d){console.log('ooooo->'+d['category'])},function(f){console.log(f)});
+    });
  
 });

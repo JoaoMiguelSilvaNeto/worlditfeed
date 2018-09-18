@@ -94,7 +94,7 @@
 				        			function(d){},function(f){console.log(f)});
 		        	}*/
 					
-					Wix.Data.Public.get("category", { scope: 'APP' }, function(d){console.log('------->'+d['category']);getFeed(d, resultsPerPage);},function(f){console.log(f)});
+					Wix.Data.Public.get("category", { scope: 'APP' }, function(d){getFeed(d['category'], resultsPerPage)},function(f){console.log(f)});
 		        	
 		        	
 		        	
