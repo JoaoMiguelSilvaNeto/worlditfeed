@@ -90,13 +90,14 @@
              >
         </div>
         <script>
-        	console.log($("#category").getCtrl().getValue());
+        	
         	document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
 				"defaultValue: 'Noticias', " +
 				"options: "+getCategories()+","+
 				"infoText: 'Category of the feed to show.'" +
 				"}"
 			);
+        	console.log($("#category").getCtrl().getValue());
 		</script>
         <!-- <div wix-ctrl="SectionDividerLabeled"
              wix-options="{label: 'Enable functionality'}">
