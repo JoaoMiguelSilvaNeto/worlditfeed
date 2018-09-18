@@ -52,9 +52,9 @@
 			
 		    	Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function(event) {
 		    		console.log(event);
-		        	console.log("-->_toggleTitle: "+event['booleans']['_toggleTitle']);
 		        	
-		        	var titlebol 	= event['booleans']['_toggleTitle'];
+		        	var titlebol 		= event['booleans']['_toggleTitle'];
+		        	var resultsPerPage 	= event['numbers']['_resultsPerPage'];
 		        	
 		        	if(titlebol)
 		        	{
@@ -65,12 +65,34 @@
 		        		$('#title').hide();
 		        	}
 		        	
-		    	})
+		    	});
+		    	
+		    	getToken()
+				.then(token => {
+
+					console.log(token['access_token']);
+
+					//Send token and chosen category to Endpoint in order to retrieve feed
+					getNews(token, 'Noticias')
+						.then(news => {
+						
+							console.log(news);
+
+							const updates = news['updates'];
+
+							console.log(news['updates'][0]['HTML_EDITOR']);
+							
+							//update table1
+							setFeed(updates);
+	
+						});
+
+					});
 		    
 		  	});
 		
 		</script>
-		<script>
+		<!-- <script>
 			// self executing function 
 			(function() {
 				
@@ -98,7 +120,7 @@
 						});
 
 			})();
-		</script>
+		</script>-->
 		
 		<!-- table style -->
 		<style type="text/css">
