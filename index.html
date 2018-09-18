@@ -48,7 +48,7 @@
 		<script>
 			// self executing function 
 			(function() {
-   				
+   				console.log($("title").css("visibility"));
 				//Call Endpoint for token
    				getToken()
 					.then(token => {
@@ -117,7 +117,7 @@
 		
 		
 		
-		<div id="title"><h2 class="sample-content-title">Notícias</h2></div>
+		<div><h2 id="title" class="sample-content-title">Notícias</h2></div>
 		<div style="display:block; overflow-y: auto; max-height: 650px;">
 			<table id="table1" class="tg">
  				<tr>
