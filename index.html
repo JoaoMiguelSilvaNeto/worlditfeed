@@ -53,7 +53,7 @@
 			
 				var resultsPerPage = 10;
 				var feedName = 'null';
-				var categories = 0;
+				var categories;
 				
 		    	Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function(event) {
 		    		console.log(event);
@@ -69,6 +69,20 @@
 		        	else
 		        	{
 		        		$('#title').hide();
+		        	}
+		        	
+		        	switch(categories) {
+		            	case 0:
+		                	categories = 'Noticias';
+		                	break;
+		            	case 1:
+		                	categories = 'Tweets';
+		                	break;
+		            	case 2:
+		                	categories = 'Outras';
+		                	break;
+		            	default:
+		            		categories = 'Noticias';
 		        	}
 		        	
 		    	});
