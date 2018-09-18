@@ -52,7 +52,6 @@
 			$(document).ready(function() {
 			
 				var resultsPerPage = '10';
-				var _categories = '0';
 				var categories;
 				
 				//Wix listener to monitor any changes in the settings panel, not related to styles (numbers, booleans, fonts, etc)
@@ -62,7 +61,7 @@
 		    		//Read wix stored variables
 		        	var titlebol 		= event['booleans']['_toggleTitle'];
 		        	resultsPerPage 		= event['numbers']['_resultsPerPage'];
-		        	_categories			= event['numbers']['_categories'];
+		        	var _categories			= event['numbers']['_categories'];
 		        	
 		        	//Check if title is to show or hide
 		        	if(titlebol)
