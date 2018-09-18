@@ -4,7 +4,7 @@ function getCategories()	{
 	
 	//Call WebService that returns Categories
 	
-	var categories = "[{ value: 'Noticias', label: 'Notícias'},{ value: 'Tweets', label: 'Tweets'},{value: 'Outras', label: 'Outras'}]";
+	var categories = "[{ value: 'Noticias', label: 'Notícias'},{ value: 'Informacoes', label: 'Informações'},{value: 'Contactos', label: 'Contactos'}]";
 	
 	return categories;
 	
