@@ -61,7 +61,6 @@
 		    		//Read wix stored variables
 		        	var titlebol 		= event['booleans']['_toggleTitle'];
 		        	resultsPerPage 		= event['numbers']['_resultsPerPage'];
-		        	var _categories		= event['numbers']['_categories'];
 
 		        	
 		        	//Check if title is to show or hide
@@ -77,7 +76,7 @@
 		        	
 		        	
 					//Check the feed category selected
-		        	switch(_categories) {
+		        	/*switch(_categories) {
 		            	case 0:
 		            		Wix.Data.Public.set("category", 'Noticias', { scope: 'APP' }, 
 				        			function(d){},function(f){console.log(f)});
@@ -93,11 +92,11 @@
 		            	default:
 		            		Wix.Data.Public.set("category", 'Noticias', { scope: 'APP' }, 
 				        			function(d){},function(f){console.log(f)});
-		        	}
+		        	}*/
 					
-					Wix.Data.Public.get("category", { scope: 'APP' }, function(d){console.log('------->'+d['category'])},function(f){console.log(f)});
+					Wix.Data.Public.get("category", { scope: 'APP' }, function(d){console.log('------->'+d['category']);getFeed(d, resultsPerPage);},function(f){console.log(f)});
 		        	
-		        	getFeed(category, resultsPerPage);
+		        	
 		        	
 		    	});
 		    	
