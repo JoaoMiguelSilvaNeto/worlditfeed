@@ -95,8 +95,7 @@
 				        			function(d){},function(f){console.log(f)});
 		        	}
 					
-					
-					console.log('------->'+Wix.Data.Public.get("category", { scope: 'APP' }, function(d){},function(f){console.log(f)})['category']);
+					Wix.Data.Public.get("category", { scope: 'APP' }, function(d){console.log('------->'+d['category'])},function(f){console.log(f)});
 		        	
 		        	getFeed(category, resultsPerPage);
 		        	
