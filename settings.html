@@ -282,7 +282,7 @@
                 }"
         ></div>
         
-        <div id="TitleToggleSwitch" class="animations_oppositeEffect"
+        <!-- <div id="TitleToggleSwitch" class="animations_oppositeEffect"
              wix-ctrl="ToggleSwitch"
              wix-param = "_toggleTitle" 
              wix-options="{
@@ -290,6 +290,18 @@
                         defaultValue: true,
                         infoText: 'Title on top of the feed can be disabled, to better adapt you site design.'
                     }"
+        ></div>-->
+        <div class="animations_direction"
+             wix-ctrl="DropDown"
+             wix-param="_toggleTitle"
+             wix-options="{
+                    title: 'Show Title',
+                    defaultValue: 'visible',
+                    options: [
+                        { value: 'visible', label: 'Visible'},
+                        { value: 'hidden', label: 'Hidden'}
+                    ]
+                }"
         ></div>
 
         <hr class="divider-long"/>

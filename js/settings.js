@@ -16,21 +16,6 @@ $(document).ready(function(){
 		console.log(value);
 		
     });
-	
-	$("#TitleToggleSwitch").getCtrl().onChange(function (value) {
-		console.log(value);
-		if(value)
-			{
-				$("#TitleToggleSwitch").getCtrl().setValue("visible");
-				console.log($("#TitleToggleSwitch").getCtrl().getValue());
-			}
-		else
-			{
-				$("#TitleToggleSwitch").getCtrl().setValue("hidden");
-				console.log($("#TitleToggleSwitch").getCtrl().getValue());
-			}
-		
-    });
 
 	
 	// Retrieve settings
