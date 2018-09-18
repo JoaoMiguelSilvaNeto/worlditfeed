@@ -52,7 +52,8 @@
 			$(document).ready(function() {
 			
 				var resultsPerPage = '10';
-				var categories = 'Noticias';
+				var _categories = '0';
+				var categories;
 				
 				//Wix listener to monitor any changes in the settings panel, not related to styles (numbers, booleans, fonts, etc)
 		    	Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function(event) {
