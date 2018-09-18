@@ -51,8 +51,8 @@
 		<script>
 			$(document).ready(function() {
 			
-				//var resultsPerPage = '10';
-				//var category = Wix.Data.Public.get("category", { scope: 'APP' }, function(d){},function(f){console.log(f)});
+				var resultsPerPage = '10';
+				var category = Wix.Data.Public.get("category", { scope: 'APP' }, function(d){console.log(d)},function(f){console.log(f)});
 				
 				//Wix listener to monitor any changes in the settings panel, not related to styles (numbers, booleans, fonts, etc)
 		    	Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function(event) {
@@ -61,6 +61,7 @@
 		    		//Read wix stored variables
 		        	var titlebol 		= event['booleans']['_toggleTitle'];
 		        	resultsPerPage 		= event['numbers']['_resultsPerPage'];
+		        	var _categories		= event['numbers']['_categories'];
 
 		        	
 		        	//Check if title is to show or hide
@@ -76,32 +77,32 @@
 		        	
 		        	
 					//Check the feed category selected
-		        	/*switch(_categories) {
+		        	switch(_categories) {
 		            	case 0:
 		            		Wix.Data.Public.set("category", 'Noticias', { scope: 'APP' }, 
-				        			function(d){},function(f){console.log(f)});
+				        			function(d){console.log(d)},function(f){console.log(f)});
 		                	break;
 		            	case 1:
 		            		Wix.Data.Public.set("category", 'Tweets', { scope: 'APP' }, 
-				        			function(d){},function(f){console.log(f)});
+				        			function(d){console.log(d)},function(f){console.log(f)});
 		                	break;
 		            	case 2:
 		            		Wix.Data.Public.set("category", 'Outras', { scope: 'APP' }, 
-				        			function(d){},function(f){console.log(f)});
+				        			function(d){console.log(d)},function(f){console.log(f)});
 		                	break;
 		            	default:
 		            		Wix.Data.Public.set("category", 'Noticias', { scope: 'APP' }, 
-				        			function(d){},function(f){console.log(f)});
-		        	}*/
+				        			function(d){console.log(d)},function(f){console.log(f)});
+		        	}
 					
-					Wix.Data.Public.get("category", { scope: 'APP' }, function(d){getFeed(d['category'], resultsPerPage)},function(f){console.log(f)});
+					
+					console.log('------->'+Wix.Data.Public.get("category", { scope: 'APP' }, function(d){console.log(d)},function(f){console.log(f)})['category']);
 		        	
-		        	
+		        	getFeed(category, resultsPerPage);
 		        	
 		    	});
 		    	
-		    	
-		    	//getFeed(category, resultsPerPage);
+		    	getFeed(category, resultsPerPage);
 		    
 		  	});
 		
