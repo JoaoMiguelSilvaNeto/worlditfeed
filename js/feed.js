@@ -29,7 +29,7 @@ function getToken()	{
 	to be displayed in the webpage
  */
  
- function getNews(token, category)	{
+ function getNews(token, category, results)	{
 
 	let key = token['access_token'];
 	let keyType = token['token_type'];
@@ -40,7 +40,7 @@ function getToken()	{
     //var dateISO = date.toISOString();
 	var dateISO = '2018-08-11T15:48:30.743Z';
 
-	const newsData = 'page=0&records=30&date='+dateISO+'&id=5&lang=PT&theme='+category;
+	const newsData = 'page=0&records='+results+'&date='+dateISO+'&id=5&lang=PT&theme='+category;
 
 	const newsEndpoint =  'https://azapp-services.azurewebsites.net/api/Info/GetUpdatesAndDeletes/?'+newsData;
 

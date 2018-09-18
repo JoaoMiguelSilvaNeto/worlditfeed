@@ -11,7 +11,7 @@ function getCategories()	{
 }
 
 $(document).ready(function(){
-	console.log($("#category").getCtrl().getValue());
+	//console.log($("#category").getCtrl().getValue());
 	/*$("#category").getCtrl().onChange(function (value) {
 		console.log(value);
 		

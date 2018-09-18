@@ -50,15 +50,17 @@
 	
 		<script>
 			$(document).ready(function() {
-			console.log($('#category :selected').text());
+			
 				var resultsPerPage = 10;
 				var feedName = 'null';
+				var categories = 0;
 				
 		    	Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function(event) {
 		    		console.log(event);
 		        	
 		        	var titlebol 		= event['booleans']['_toggleTitle'];
 		        	resultsPerPage 		= event['numbers']['_resultsPerPage'];
+		        	categories			= event['numbers']['_categories'];
 		        	
 		        	if(titlebol)
 		        	{
@@ -77,7 +79,7 @@
 					console.log(token['access_token']);
 					
 					//Send token and chosen category to Endpoint in order to retrieve feed
-					getNews(token, 'Noticias')
+					getNews(token, categories, resultsPerPage)
 						.then(news => {
 						
 							console.log(news);
