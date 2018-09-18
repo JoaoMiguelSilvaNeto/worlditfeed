@@ -52,7 +52,7 @@
 			$(document).ready(function() {
 			
 				var resultsPerPage = '10';
-				var category = Wix.Data.Public.get("category", { scope: 'APP' }, function(d){console.log(d)},function(f){console.log(f)})['category'];
+				var category = Wix.Data.Public.get("category", { scope: 'APP' }, function(d){console.log(d)},function(f){console.log(f)});
 				
 				//Wix listener to monitor any changes in the settings panel, not related to styles (numbers, booleans, fonts, etc)
 		    	Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function(event) {
