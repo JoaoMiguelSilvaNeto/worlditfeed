@@ -61,7 +61,7 @@ function getToken()	{
 
 function setFeed(updates)	{
 
-	var html = '<!--<p class="Page-title">Notícias</p>-->';
+	var html = '<!--<h2>Notícias</h2>-->';
 
 	updates.forEach(function (entry) {
 		html += '<tr>';
