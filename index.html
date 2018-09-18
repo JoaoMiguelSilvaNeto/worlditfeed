@@ -28,6 +28,7 @@
         		
         		{{style._titleFont Body-M}}
             	color: {{style._titleColor color-4}};
+            	visibility: {{style._toggleTitle true}};
         	
         	}
         	
@@ -48,7 +49,16 @@
 			// self executing function 
 			(function() {
    				
-				console.log({{style._toggleTitle true}});
+				var titleVisibility = $(".sample-content-title").css("visibility");
+				
+				if(titleVisibility)
+				{
+					$("#title").show();
+				}
+				else
+				{
+					$("#title").hide();
+				}
 				//Call Endpoint for token
    				getToken()
 					.then(token => {
