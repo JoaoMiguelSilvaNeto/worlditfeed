@@ -61,8 +61,8 @@
 		    		//Read wix stored variables
 		        	var titlebol 		= event['booleans']['_toggleTitle'];
 		        	resultsPerPage 		= event['numbers']['_resultsPerPage'];
-		        	var _categories			= event['numbers']['_categories'];
-		        	console.log(_categories);
+
+		        	
 		        	//Check if title is to show or hide
 		        	if(titlebol)
 		        	{
@@ -73,7 +73,18 @@
 		        		$('#title').hide();
 		        	}
 		        	
-		        	//Check the feed category selected
+		        	
+		        	
+		    	});
+		    	
+		    	//Get token and news feed
+		    	getToken()
+				.then(token => {
+
+					//console.log(token['access_token']);
+					var _categories	= event['numbers']['_categories'];
+					
+					//Check the feed category selected
 		        	switch(_categories) {
 		            	case 0:
 		                	categories = 'Noticias';
@@ -87,14 +98,6 @@
 		            	default:
 		            		categories = 'Noticias';
 		        	}
-		        	
-		    	});
-		    	console.log('---->'+categories);
-		    	//Get token and news feed
-		    	getToken()
-				.then(token => {
-
-					console.log(token['access_token']);
 					
 					//Send token and chosen category to Endpoint in order to retrieve feed
 					getNews(token, categories, resultsPerPage)
