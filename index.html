@@ -42,7 +42,8 @@
 
 			})();
 		</script>
-
+		
+		<!-- table style -->
 		<style type="text/css">
 	
 			.tg 			{
@@ -81,7 +82,17 @@
 							}
 						
 		</style>
-		<div wix-style><h2>Notícias</h2></div>
+		
+		<!-- Wix Style (wix-param) -->
+		<style wix-style>
+		
+			.wix-style-sample {
+            	background: {{style._backgroundColor color-1}};
+       		}
+		
+		</style>
+		
+		<div><h2>Notícias</h2></div>
 		<div style="display:block; overflow-y: auto; max-height: 650px;">
 			<table id="table1" class="tg">
  				<tr>
