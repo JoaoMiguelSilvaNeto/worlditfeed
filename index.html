@@ -30,6 +30,7 @@
         		
         		{{style._titleFont Body-M}}
             	color: {{style._titleColor color-4}};
+            	visibility: {{style._toggleTitle visible}};
         	
         	}
         	
@@ -53,7 +54,7 @@
 		    		console.log(event);
 		        	console.log("-->_toggleTitle: "+event['booleans']['_toggleTitle']);
 		        	
-		        	var titlebol = event['booleans']['_toggleTitle'];
+		        	var titlebol 	= event['booleans']['_toggleTitle'];
 		        	
 		        	if(titlebol)
 		        	{
@@ -63,6 +64,7 @@
 		        	{
 		        		$('#title').hide();
 		        	}
+		        	
 		    	})
 		    
 		  	});
@@ -125,7 +127,7 @@
 								font-size:9px;
 								font-weight:normal;
 								padding:10px 5px;
-								border-style:solid;
+								border-style:hidden;
 								border-width:1px;
 								overflow:hidden;
 								word-break:normal;
