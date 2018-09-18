@@ -12,7 +12,7 @@ function getCategories()	{
 
 $(document).ready(function(){
 	
-	var category = $('#category').value();
+	var category = $('#category').val();
 	
 	Wix.Data.Public.set("category", category, { scope: 'APP' }, 
 			function(d){console.log(d)},function(f){console.log(f)});
