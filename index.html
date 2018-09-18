@@ -52,7 +52,7 @@
 			$(document).ready(function() {
 			
 				var resultsPerPage = '10';
-				var category = Wix.Data.Public.get("category", { scope: 'COMPONENT' }, function(d){console.log(d)},function(f){console.log(f)});;
+				var category = Wix.Data.Public.get("category", { scope: 'APP' }, function(d){console.log(d)},function(f){console.log(f)});;
 				
 				//Wix listener to monitor any changes in the settings panel, not related to styles (numbers, booleans, fonts, etc)
 		    	Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function(event) {
@@ -79,24 +79,24 @@
 					//Check the feed category selected
 		        	switch(_categories) {
 		            	case 0:
-		            		Wix.Data.Public.set("category", 'Noticias', { scope: 'COMPONENT' }, 
+		            		Wix.Data.Public.set("category", 'Noticias', { scope: 'APP' }, 
 				        			function(d){console.log(d)},function(f){console.log(f)});
 		                	break;
 		            	case 1:
-		            		Wix.Data.Public.set("category", 'Tweets', { scope: 'COMPONENT' }, 
+		            		Wix.Data.Public.set("category", 'Tweets', { scope: 'APP' }, 
 				        			function(d){console.log(d)},function(f){console.log(f)});
 		                	break;
 		            	case 2:
-		            		Wix.Data.Public.set("category", 'Outras', { scope: 'COMPONENT' }, 
+		            		Wix.Data.Public.set("category", 'Outras', { scope: 'APP' }, 
 				        			function(d){console.log(d)},function(f){console.log(f)});
 		                	break;
 		            	default:
-		            		Wix.Data.Public.set("category", 'Noticias', { scope: 'COMPONENT' }, 
+		            		Wix.Data.Public.set("category", 'Noticias', { scope: 'APP' }, 
 				        			function(d){console.log(d)},function(f){console.log(f)});
 		        	}
 					
 					
-					console.log('------->'+Wix.Data.Public.get("category", { scope: 'COMPONENT' }, function(d){console.log(d)},function(f){console.log(f)}));
+					console.log('------->'+Wix.Data.Public.get("category", { scope: 'APP' }, function(d){console.log(d)},function(f){console.log(f)}));
 		        	
 		        	getFeed(category, resultsPerPage);
 		        	
