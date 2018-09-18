@@ -49,7 +49,7 @@
 	
 		<script>
 			$(document).ready(function() {
-			
+			console.log($('#category :selected').text(););
 				var resultsPerPage = 10;
 				var feedName = 'null';
 				
@@ -74,9 +74,7 @@
 				.then(token => {
 
 					console.log(token['access_token']);
-					feedCategory		= document.getElementById('category');
-		        	feedName 			= feedCategory.options[feedCategory.selectedIndex].value;
-		        	console.log(feedName);
+					
 					//Send token and chosen category to Endpoint in order to retrieve feed
 					getNews(token, 'Noticias')
 						.then(news => {
