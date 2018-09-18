@@ -52,7 +52,7 @@
 			$(document).ready(function() {
 			
 				var resultsPerPage = '10';
-				var categories;
+				var category = "Noticias";
 				
 				//Wix listener to monitor any changes in the settings panel, not related to styles (numbers, booleans, fonts, etc)
 		    	Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function(event) {
@@ -61,6 +61,7 @@
 		    		//Read wix stored variables
 		        	var titlebol 		= event['booleans']['_toggleTitle'];
 		        	resultsPerPage 		= event['numbers']['_resultsPerPage'];
+		        	var _categories		= event['numbers']['_categories'];
 
 		        	
 		        	//Check if title is to show or hide
@@ -73,16 +74,6 @@
 		        		$('#title').hide();
 		        	}
 		        	
-		        	
-		        	
-		    	});
-		    	
-		    	//Get token and news feed
-		    	getToken()
-				.then(token => {
-
-					//console.log(token['access_token']);
-					var _categories	= event['numbers']['_categories'];
 					
 					//Check the feed category selected
 		        	switch(_categories) {
@@ -98,23 +89,12 @@
 		            	default:
 		            		categories = 'Noticias';
 		        	}
-					
-					//Send token and chosen category to Endpoint in order to retrieve feed
-					getNews(token, categories, resultsPerPage)
-						.then(news => {
-						
-							console.log(news);
-
-							const updates = news['updates'];
-
-							console.log(news['updates'][0]['HTML_EDITOR']);
-							
-							//update table1
-							setFeed(updates);
-	
-						});
-
-					});
+		        	
+		        	getFeed(category, resultsPerPage);
+		        	
+		    	});
+		    	
+		    	getFeed(category, resultsPerPage);
 		    
 		  	});
 		

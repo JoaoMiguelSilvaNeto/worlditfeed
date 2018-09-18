@@ -83,3 +83,29 @@ function getCategories()	{
 	return categories;
 	
 }
+
+function getFeed(categories, resultsPerPage)
+{
+	//Get token and news feed
+	getToken()
+		.then(token => {
+
+			//console.log(token['access_token']);
+		
+			//Send token and chosen category to Endpoint in order to retrieve feed
+			getNews(token, categories, resultsPerPage)
+				.then(news => {
+			
+					console.log(news);
+
+					const updates = news['updates'];
+
+					console.log(news['updates'][0]['HTML_EDITOR']);
+				
+					//update table1
+					setFeed(updates);
+
+				});
+
+			});
+}
