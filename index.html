@@ -50,7 +50,7 @@
 		<script>
 			// self executing function 
 			(function() {
-   				console.log($("title").css("visibility"));
+   				console.log({{style._resultsPerPage 10}});
 				//Call Endpoint for token
    				getToken()
 					.then(token => {
@@ -95,6 +95,8 @@
 								overflow:hidden;
 								word-break:normal;
 								border-color:black;
+								border-left: 0px solid;
+    							border-right: 0px solid;
 							}
 				
 			.tg th			{
