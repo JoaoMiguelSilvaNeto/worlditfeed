@@ -12,6 +12,11 @@ function getCategories()	{
 
 $(document).ready(function(){
 	
-
+	$("#category").getCtrl().onChange(function(value){
+        console.log(value, ' selected');
+        
+        Wix.Data.Public.set("category", value, { scope: 'APP' }, 
+    			function(d){console.log('ooooo->'+d['category'])},function(f){console.log(f)});
+    });
  
 });
