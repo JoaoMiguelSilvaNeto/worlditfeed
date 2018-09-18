@@ -86,11 +86,11 @@
         <div class="settings_onImageClick" 
         	 id="category" 
              wix-ctrl="DropDown"
-             wix-param="dropdown" 
+             wix-param="_categories" 
              >
         </div>
         <script>
-
+			console.log(document.getElementById('category').value());
         	document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
 				"defaultValue: 'Noticias', " +
 				"options: "+getCategories()+","+
