@@ -12,7 +12,7 @@ function getCategories()	{
 
 $(document).ready(function(){
 
-	$("#category").getCtrl().onChange(function (value) {
+	/*$("#category").getCtrl().onChange(function (value) {
 		console.log(value);
 		
     });
@@ -20,7 +20,7 @@ $(document).ready(function(){
 	$("#toggleTitle").getCtrl().onChange(function (value) {
 		console.log(value);
 		
-    });
+    });*/
 
 	
 	// Retrieve settings
