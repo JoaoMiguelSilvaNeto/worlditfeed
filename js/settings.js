@@ -17,6 +17,12 @@ $(document).ready(function(){
 		
     });
 	
+	$("#TitleToggleSwitch").getCtrl().onChange(function (value) {
+		console.log(value);
+		$("#title").toogle();
+		
+    });
+	
 	// Retrieve settings
 	console.log($("#descFont").getCtrl().getValue());
 	console.log($("#descFont").getCtrl().getValue()['font']);
