@@ -4,7 +4,7 @@ function getCategories()	{
 	
 	//Call WebService that returns Categories
 	
-	var categories = "[{ value: '0', label: 'Notícias'},{ value: '1', label: 'Tweets'},{value: '2', label: 'Outras'}]";
+	var categories = "[{ value: 'Noticias', label: 'Notícias'},{ value: 'Tweets', label: 'Tweets'},{value: 'Outras', label: 'Outras'}]";
 	
 	return categories;
 	
@@ -12,6 +12,9 @@ function getCategories()	{
 
 $(document).ready(function(){
 	
- 
+	var category = $('#category').value();
+	
+	Wix.Data.Public.set("category", category, { scope: 'APP' }, 
+			function(d){console.log(d)},function(f){console.log(f)});
  
 });
