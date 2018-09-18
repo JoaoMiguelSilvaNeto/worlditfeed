@@ -52,7 +52,6 @@
 			$(document).ready(function() {
 			
 				var resultsPerPage = '10';
-				var feedName = 'null';
 				var categories;
 				
 		    	Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function(event) {
@@ -72,13 +71,13 @@
 		        	}
 		        	
 		        	switch(categories) {
-		            	case 0:
+		            	case '0':
 		                	categories = 'Noticias';
 		                	break;
-		            	case 1:
+		            	case '1':
 		                	categories = 'Tweets';
 		                	break;
-		            	case 2:
+		            	case '2':
 		                	categories = 'Outras';
 		                	break;
 		            	default:
