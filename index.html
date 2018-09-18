@@ -58,9 +58,6 @@
 		        	
 		        	var titlebol 		= event['booleans']['_toggleTitle'];
 		        	resultsPerPage 		= event['numbers']['_resultsPerPage'];
-		        	feedCategory		= document.getElementById('category');
-		        	feedName 			= feedCategory.options[feedCategory.selectedIndex].value;
-		        	console.log(feedName);
 		        	
 		        	if(titlebol)
 		        	{
@@ -77,7 +74,9 @@
 				.then(token => {
 
 					console.log(token['access_token']);
-
+					feedCategory		= document.getElementById('category');
+		        	feedName 			= feedCategory.options[feedCategory.selectedIndex].value;
+		        	console.log(feedName);
 					//Send token and chosen category to Endpoint in order to retrieve feed
 					getNews(token, 'Noticias')
 						.then(news => {
