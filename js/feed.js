@@ -83,11 +83,3 @@ function getCategories()	{
 	return categories;
 	
 }
-
-$(document).ready(function() {
-	
-    Wix.addEventListener(Wix.Events.SETTINGS_UPDATED, function(event) {
-        console.log(event);
-    })
-    
-  });

@@ -48,6 +48,16 @@
 	<body class="wix-style-sample">
 	
 		<script>
+			$(document).ready(function() {
+			
+		    	Wix.addEventListener(Wix.Events.SETTINGS_UPDATED, function(event) {
+		        	console.log(event);
+		    	})
+		    
+		  	});
+		
+		</script>
+		<script>
 			// self executing function 
 			(function() {
 				
