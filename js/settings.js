@@ -22,18 +22,20 @@ $(document).ready(function(){
 		if(value)
 			{
 				$("#TitleToggleSwitch").getCtrl().setValue("visible");
+				console.log($("#TitleToggleSwitch").getCtrl().getValue());
 			}
 		else
 			{
 				$("#TitleToggleSwitch").getCtrl().setValue("hidden");
+				console.log($("#TitleToggleSwitch").getCtrl().getValue());
 			}
 		
     });
 
 	
 	// Retrieve settings
-	console.log($("#descFont").getCtrl().getValue());
-	console.log($("#descFont").getCtrl().getValue()['font']);
+	//console.log($("#descFont").getCtrl().getValue());
+	//console.log($("#descFont").getCtrl().getValue()['font']);
 	
 	
 	
