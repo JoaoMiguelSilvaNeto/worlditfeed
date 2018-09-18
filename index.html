@@ -51,7 +51,7 @@
 		<script>
 			$(document).ready(function() {
 			
-				var resultsPerPage = 10;
+				var resultsPerPage = '10';
 				var feedName = 'null';
 				var categories;
 				
@@ -91,7 +91,7 @@
 				.then(token => {
 
 					console.log(token['access_token']);
-					
+					console.log('--->'+categories+'->'+resultPerPage);
 					//Send token and chosen category to Endpoint in order to retrieve feed
 					getNews(token, categories, resultsPerPage)
 						.then(news => {
