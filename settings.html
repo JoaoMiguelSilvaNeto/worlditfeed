@@ -26,11 +26,12 @@
             	<p>Settings to personalize the azapp Feed to fit your website.</p>
         	</p>
 
-        	<div id="mainCTA" class="main-cta-button"
+        	<div class="main-cta-button"
              	wix-ctrl="Button"
              	wix-options="{
                     	label: 'azapp Credentials',
-                    	className: 'btn-confirm-primary'
+                    	className: 'btn-confirm-primary',
+                    	onClick: changeTab('Account')
                 	}"
              	id="main-cta"
         	></div>
@@ -54,7 +55,7 @@
 
     <!-- Account settings tab-->
 
-    <div id="Account" tab="Account">
+    <div tab="Account">
         
 		<div wix-ctrl="SectionDividerLabeled"
              wix-options="{label: 'azapp Credentials'}">

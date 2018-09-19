@@ -10,6 +10,10 @@ function getCategories()	{
 	
 }
 
+function changeTab(tab) {
+	  this.refs.tabs.setActiveTab(tab);
+}
+
 $(document).ready(function(){
 	
 	$("#category").getCtrl().onChange(function(value){
@@ -24,9 +28,7 @@ $(document).ready(function(){
      });
 	
 	
-	
-	$("#mainCTA").getCtrl().onClick(function(){
-		window.location.hash = '#Account';
-     });
+
  
 });
+
