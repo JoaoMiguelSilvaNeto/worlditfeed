@@ -10,12 +10,38 @@ function getCategories()	{
 	
 }
 
+function setPanelNotifications($appTabs, eventId, authKey){
+	
+	//Check if TextInput is populated, otherwise show tab notification
+	if(eventId.length == 0 && authKey.length == 0)	{
+		
+		$appTabs.showTabNotification(1, 'Event ID and Authorization Key missing!');
+		
+	}
+	else if (authKey.length == 0)	{
+		
+		$appTabs.showTabNotification(1, 'Authorization Key missing!');
+		
+	}
+	else if(eventId.length == 0)	{
+		
+		$appTabs.showTabNotification(1, 'Event ID missing!');
+		
+	}
+
+	
+}
+
+
 $(document).ready(function(){
 	
 	//Variables
 	var $appTabs 				= $("#panelTabs").getCtrl();
 	var eventIdTextInputCtrl 	= $("#eventId").getCtrl();
 	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
+	
+	var eventId;
+	var authKey;
 
 	//Populate TextInput with Event Id and Authorization Key. 
 	//Getting values stored in Wix.Data.Public
@@ -23,17 +49,8 @@ $(document).ready(function(){
 		
 		eventIdTextInputCtrl.setValue(d['eventId']);
 		
-		//Check if text inserted, in order to remove the tab notification
-		if(d['eventId'].length != 0 && authKeyTextInputCtrl.getValue() != "")	{
-			
-			$appTabs.removeTabNotification(1);
-			
-		}
-		else if(d['eventId'].length == 0 && authKeyTextInputCtrl.getValue() != "")	{
-			
-			$appTabs.showTabNotification(1, 'Event ID missing!');
-			
-		}
+		eventId = d['eventId'];
+		
 		
 	},function(f){console.log(f)});
 	
@@ -41,49 +58,37 @@ $(document).ready(function(){
 		
 		authKeyTextInputCtrl.setValue(d['authKey']);
 		
-		if(d['authKey'].length != 0 && eventIdTextInputCtrl.getValue() != "")	{
-			
-			$appTabs.removeTabNotification(1);
-			
-		}
-		else if(d['authKey'].length == 0 && eventIdTextInputCtrl.getValue() != "")	{
-			
-			$appTabs.showTabNotification(1, 'Authorization Key missing!');
-			
-		}
-
+		authKey = d['authKey'];
+		
 		
 	},function(f){console.log(f)});
 	
-	//Check if TextInput is populated, otherwise show tab notification
-	if(eventIdTextInputCtrl.getValue() == "" && authKeyTextInputCtrl.getValue() == "")	{
-		
-		$appTabs.showTabNotification(1, 'Event ID and Authorization Key missing!');
-		
-	}
-	else if (authKeyTextInputCtrl.getValue() == "")	{
-		
-		$appTabs.showTabNotification(1, 'Authorization Key missing!');
-		
-	}
-	else if(eventIdTextInputCtrl.getValue() == "")	{
-		
-		$appTabs.showTabNotification(1, 'Event ID missing!');
-		
-	}
-
+	
+	//Panel notification pre-check
+	setPanelNotifications($appTabs, eventId, authKey);
+	
 	
 	//Check events for TextInput on Event Id and Authorization Key
 	eventIdTextInputCtrl.onChange(function(value){
         
-        Wix.Data.Public.set("eventId", value, { scope: 'COMPONENT' }, 
-    			function(d){console.log('ggggg->'+d['eventId'])},function(f){console.log(f)});
+        Wix.Data.Public.set("eventId", value, { scope: 'COMPONENT' }, function(d){
+        	
+        	eventId = d['eventId'];
+        	
+        	setPanelNotifications($appTabs, eventId, authKey);
+        	
+        },function(f){console.log(f)});
     });
 	
 	authKeyTextInputCtrl.onChange(function(value){
         
-        Wix.Data.Public.set("authKey", value, { scope: 'COMPONENT' }, 
-    			function(d){console.log('eeeee->'+d['authKey'])},function(f){console.log(f)});
+        Wix.Data.Public.set("authKey", value, { scope: 'COMPONENT' }, function(d){
+        	
+        	authKey = d['authKey'];
+        	
+        	setPanelNotifications($appTabs, eventId, authKey);
+        	
+        },function(f){console.log(f)});
     });
 	
 	
@@ -105,10 +110,5 @@ $(document).ready(function(){
 		$appTabs.setValue(1);
      });
 	
-	
-	
-	
 
- 
 });
-
