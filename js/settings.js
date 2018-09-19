@@ -59,16 +59,7 @@ function setPanelNotifications($appTabs, eventId, authKey){
 	
 }
 
-function account(eventIdTextInputCtrl, authKeyTextInputCtrl)	{
-	
-	var deferred = $.Deferred();
-	
-	deferred.eventId = getEventId(eventIdTextInputCtrl);
-	deferred.authKey = getAuthKey(authKeyTextInputCtrl);
-	
-	return deferred.promise();
-	
-}
+
 
 $(document).ready(function(){
 	
@@ -78,27 +69,14 @@ $(document).ready(function(){
 	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
 
 	
-	$.when(account(eventIdTextInputCtrl, authKeyTextInputCtrl)).done(function(value) {
-	    console.log(value);
-	});
-
-	account(eventIdTextInputCtrl, authKeyTextInputCtrl).then(function(value) {
-		console.log(value);
-	});
+	var eventId = getEventId(eventIdTextInputCtrl);
+	var authKey = getAuthKey(authKeyTextInputCtrl);
 	
-	/*var account = $.Deferred(function (eventIdTextInputCtrl, authKeyTextInputCtrl) {
+	if(eventId.length == 0 || authKey.length == 0)	{
 		
+		$appTabs.showTabNotification(1, 'Account data missing!');
 		
-		  
-	}).promise();
-	
-	$.when(account).then(function () {
-		  
-		console.log(eventId+' '+authKey);
-		setPanelNotifications($appTabs, eventId, authKey);
-		
-	});
-	*/
+	}
 	
 	
 	
@@ -112,7 +90,7 @@ $(document).ready(function(){
         	
         	eventId = d['eventId'];
         	
-        	//setPanelNotifications($appTabs, eventId, authKey);
+        	setPanelNotifications($appTabs, eventId, authKey);
         	
         },function(f){console.log(f)});
     });
@@ -123,7 +101,7 @@ $(document).ready(function(){
         	
         	authKey = d['authKey'];
         	
-        	//setPanelNotifications($appTabs, eventId, authKey);
+        	setPanelNotifications($appTabs, eventId, authKey);
         	
         },function(f){console.log(f)});
     });
