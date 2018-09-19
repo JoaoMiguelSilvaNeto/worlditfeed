@@ -36,7 +36,7 @@ function getAuthKey($appTabs, authKeyTextInputCtrl)	{
 	Wix.Data.Public.get("authKey", { scope: 'COMPONENT' }, function(d){
 		
 		authKeyTextInputCtrl.setValue(d['authKey']);
-		console.log(d['authKey']);
+		
 		if(d['authKey'].length == 0)	{
 			
 			$appTabs.showTabNotification(1, 'Account data missing!');
@@ -93,29 +93,35 @@ $(document).ready(function(){
 	var eventIdTextInputCtrl 	= $("#eventId").getCtrl();
 	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
 
-	//get Event ID and Authorization Key
-	var eventId = getEventId($appTabs, eventIdTextInputCtrl);
-	var authKey = getAuthKey($appTabs, authKeyTextInputCtrl);
+	//get Event ID and Authorization Key from Wix Public Data,
+	//and set them in the TextInputs
+	getEventId($appTabs, eventIdTextInputCtrl);
+	getAuthKey($appTabs, authKeyTextInputCtrl);
 	
 	
-	//Check events for TextInput on Event Id and Authorization Key
+	//Check events on TextInput Event Id
 	eventIdTextInputCtrl.onChange(function(value){
         
+		//set variable on Wix Public Data
         Wix.Data.Public.set("eventId", value, { scope: 'COMPONENT' }, function(d){
         	
         	eventId = d['eventId'];
         	
+        	//change panel tab notification
         	setPanelNotifications($appTabs, eventId, authKey);
         	
         },function(f){console.log(f)});
     });
 	
+	//Check events on TextInput Authorization Key
 	authKeyTextInputCtrl.onChange(function(value){
         
+		//set variable on Wix Public Data
         Wix.Data.Public.set("authKey", value, { scope: 'COMPONENT' }, function(d){
         	
         	authKey = d['authKey'];
         	
+        	//change panel tab notification
         	setPanelNotifications($appTabs, eventId, authKey);
         	
         },function(f){console.log(f)});
@@ -132,9 +138,9 @@ $(document).ready(function(){
 	
 	
 	//Button Actions
-	/*$("#supportButton").getCtrl().onClick(function(){
+	$("#supportButton").getCtrl().onClick(function(){
 		window.open('mailto:joao.neto@worldit.pt?subject=Information Request');
-     });*/
+     });
 	
 	$("#main-cta").getCtrl().onClick(function(){
 		$appTabs.setValue(1);
