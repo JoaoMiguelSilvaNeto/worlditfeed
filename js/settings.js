@@ -27,6 +27,10 @@ $(document).ready(function(){
 		window.open('mailto:joao.neto@worldit.pt?subject=Information Request');
      });
 	
+	$("#main-cta").getCtrl().onClick(function(){
+		changeTab("Account");
+     });
+	
 	
 
  
