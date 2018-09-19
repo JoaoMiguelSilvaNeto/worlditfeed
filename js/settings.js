@@ -51,6 +51,8 @@ $(document).ready(function(){
 		
 		eventId = d['eventId'];
 		
+		setPanelNotifications($appTabs, eventId, authKey);
+		
 		
 	},function(f){console.log(f)});
 	
@@ -59,6 +61,8 @@ $(document).ready(function(){
 		authKeyTextInputCtrl.setValue(d['authKey']);
 		
 		authKey = d['authKey'];
+		
+		setPanelNotifications($appTabs, eventId, authKey);
 		
 		
 	},function(f){console.log(f)});
