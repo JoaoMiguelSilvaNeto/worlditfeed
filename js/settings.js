@@ -32,17 +32,10 @@ function setPanelNotifications($appTabs, eventId, authKey){
 	
 }
 
-
-$(document).ready(function(){
+function getEventId()	{
 	
-	//Variables
-	var $appTabs 				= $("#panelTabs").getCtrl();
-	var eventIdTextInputCtrl 	= $("#eventId").getCtrl();
-	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
+	var eventId;
 	
-	var eventId = "";
-	var authKey = "";
-
 	//Populate TextInput with Event Id and Authorization Key. 
 	//Getting values stored in Wix.Data.Public
 	Wix.Data.Public.get("eventId", { scope: 'COMPONENT' }, function(d){
@@ -51,10 +44,17 @@ $(document).ready(function(){
 		
 		eventId = d['eventId'];
 		
-		setPanelNotifications($appTabs, d['eventId'], authKey);
-		
 		
 	},function(f){console.log(f)});
+	
+	return eventId;
+	
+	
+}
+
+function getAuthKey()	{
+	
+	var authKey;
 	
 	Wix.Data.Public.get("authKey", { scope: 'COMPONENT' }, function(d){
 		
@@ -62,12 +62,33 @@ $(document).ready(function(){
 		
 		authKey = d['authKey'];
 		
-		setPanelNotifications($appTabs, eventId, d['authKey']);
-		
 		
 	},function(f){console.log(f)});
 	
-	setPanelNotifications($appTabs, eventId, authKey);
+	return authKey;
+	
+}
+
+
+$(document).ready(function(){
+	
+	//Variables
+	var $appTabs 				= $("#panelTabs").getCtrl();
+	var eventIdTextInputCtrl 	= $("#eventId").getCtrl();
+	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
+	
+	var auth = {};
+	
+	auth.eventId = getEventId();
+	auth.authKey = getAuthKey();
+		
+	
+	
+	$.when(auth['eventId'], auth['authKey']).done(function(){
+        
+		setPanelNotifications($appTabs, auth['eventId'], auth['authKey']);
+		
+   });
 	
 	//Check events for TextInput on Event Id and Authorization Key
 	eventIdTextInputCtrl.onChange(function(value){
