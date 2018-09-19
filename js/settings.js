@@ -41,7 +41,7 @@ $(document).ready(function(){
 	
 	var auth = [];
 	
-	$.when(getEventId(), getAuthKey()).then(showData);
+	$.when(getEventId(), getAuthKey()).then(showData());
 
 	
 	//Check events for TextInput on Event Id and Authorization Key
