@@ -16,9 +16,13 @@ function getEventId(eventIdTextInputCtrl)	{
 	//Getting values stored in Wix.Data.Public
 	Wix.Data.Public.get("eventId", { scope: 'COMPONENT' }, function(d){
 		
-		eventIdTextInputCtrl.setValue(d['eventId']);
+		eventIdTextInputCtrl.setValue(d['eventId']);	
 		
-		return d['eventId'];	
+		if(d['eventId'] == undefined)	{
+			
+			$appTabs.showTabNotification(1, 'Account data missing!');
+			
+		}
 		
 	},function(f){console.log(f)});
 
@@ -31,7 +35,12 @@ function getAuthKey(authKeyTextInputCtrl)	{
 		
 		authKeyTextInputCtrl.setValue(d['authKey']);
 		
-		return d['authKey'];		
+		if(d['authKey'] == undefined)	{
+			
+			$appTabs.showTabNotification(1, 'Account data missing!');
+			
+		}
+			
 		
 	},function(f){console.log(f)});
 	
@@ -71,17 +80,6 @@ $(document).ready(function(){
 	
 	var eventId = getEventId(eventIdTextInputCtrl);
 	var authKey = getAuthKey(authKeyTextInputCtrl);
-	
-	console.log(eventId+' '+authKey);
-	if(eventId == '' || authKey == '')	{
-		
-		$appTabs.showTabNotification(1, 'Account data missing!');
-		
-	}
-	
-	
-	
-		
 	
 	
 	//Check events for TextInput on Event Id and Authorization Key
