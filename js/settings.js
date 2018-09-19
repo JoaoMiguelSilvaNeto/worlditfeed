@@ -66,12 +66,24 @@ $(document).ready(function(){
 	var eventIdTextInputCtrl 	= $("#eventId").getCtrl();
 	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
 
+	var eventId;
+	var authKey;
 	
-	var eventId = getEventId(eventIdTextInputCtrl);
-	var authKey = getAuthKey(authKeyTextInputCtrl);
+	var account = $.Deferred(function (eventIdTextInputCtrl, authKeyTextInputCtrl) {
+		
+		eventId = getEventId(eventIdTextInputCtrl);
+		authKey = getAuthKey(authKeyTextInputCtrl);
+		  
+	}).promise();
 	
-	console.log(eventId+' '+authKey);
-	setPanelNotifications($appTabs, eventId, authKey);
+	$.when(account).then(function () {
+		  
+		console.log(eventId+' '+authKey);
+		setPanelNotifications($appTabs, eventId, authKey);
+		
+	});
+	
+	
 	
 	
 		
