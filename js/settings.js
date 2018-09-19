@@ -90,10 +90,8 @@ $(document).ready(function(){
 	
 	function showData()	{
 		console.log('showData');
-		auth.eventId = getEventId(eventIdTextInputCtrl);
-		auth.authKey = getAuthKey(authKeyTextInputCtrl);
 		
-		console.log(auth);
+		console.log('-->'+auth);
 			
 		setPanelNotifications($appTabs, auth['eventId'], auth['authKey']);
 		
@@ -101,7 +99,7 @@ $(document).ready(function(){
 	
 	function getEventId()	{
 		console.log('getEventId');
-		var eventId;
+		//var eventId;
 		
 		//Populate TextInput with Event Id and Authorization Key. 
 		//Getting values stored in Wix.Data.Public
@@ -109,30 +107,32 @@ $(document).ready(function(){
 			
 			eventIdTextInputCtrl.setValue(d['eventId']);
 			
-			eventId = d['eventId'];
+			//eventId = d['eventId'];
+			auth['eventId'] = d['eventId'];
 			
 			
 		},function(f){console.log(f)});
 		
-		return eventId;
+		//return eventId;
 		
 		
 	}
 
 	function getAuthKey()	{
 		console.log('getAuthKey');
-		var authKey;
+		//var authKey;
 		
 		Wix.Data.Public.get("authKey", { scope: 'COMPONENT' }, function(d){
 			
 			authKeyTextInputCtrl.setValue(d['authKey']);
 			
-			authKey = d['authKey'];
+			//authKey = d['authKey'];
+			auth['authKey'] = d['authKey'];
 			
 			
 		},function(f){console.log(f)});
 		
-		return authKey;
+		//return authKey;
 		
 	}
 	
