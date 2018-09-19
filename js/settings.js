@@ -18,5 +18,15 @@ $(document).ready(function(){
         Wix.Data.Public.set("category", value, { scope: 'APP' }, 
     			function(d){console.log('ooooo->'+d['category'])},function(f){console.log(f)});
     });
+	
+	$("#supportButton").getCtrl().onClick(function(){
+		window.open('mailto:joao.neto@worldit.pt?subject=Information Request');
+     });
+	
+	
+	
+	$("#mainCTA").getCtrl().onClick(function(){
+		window.location.hash = '#Account';
+     });
  
 });

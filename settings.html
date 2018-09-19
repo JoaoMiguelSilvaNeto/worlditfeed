@@ -26,7 +26,7 @@
             	<p>Settings to personalize the azapp Feed to fit your website.</p>
         	</p>
 
-        	<div class="main-cta-button"
+        	<div id="mainCTA" class="main-cta-button"
              	wix-ctrl="Button"
              	wix-options="{
                     	label: 'azapp Credentials',
@@ -54,7 +54,7 @@
 
     <!-- Account settings tab-->
 
-    <div tab="Account">
+    <div id="Account" tab="Account">
         
 		<div wix-ctrl="SectionDividerLabeled"
              wix-options="{label: 'azapp Credentials'}">
@@ -556,7 +556,7 @@
 
         <hr class="divider-long"/>
 
-        <div class="support_email"
+        <!-- <div class="support_email"
              wix-ctrl="Input"
              wix-options="{
                     title: 'What\'s your email?',
@@ -575,15 +575,15 @@
                     placeholder: 'Write us your message (new feature idea / other issues)',
                     isMultiLine: true
                 }"
-        ></div>
+        ></div>-->
 
         <hr class="divider-short"/>
 
-        <div class="button-wrapper-center">
+        <div id="supportButton" class="button-wrapper-center">
             <div class="support_sendButton"
                  wix-ctrl="Button"
                  wix-options="{
-                        label: 'Send',
+                        label: 'info@worldit.pt',
                         disabled: false
                     }"
             ></div>
