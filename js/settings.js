@@ -38,7 +38,7 @@ function getAuthKey(authKeyTextInputCtrl)	{
 }
 
 function setPanelNotifications($appTabs, eventId, authKey){
-	console.log(eventId+' '+authKey)
+	
 	//Check if TextInput is populated, otherwise show tab notification
 	if(eventId == null && authKey == null)	{
 		
@@ -84,7 +84,7 @@ $(document).ready(function(){
         	
         	eventId = d['eventId'];
         	
-        	setPanelNotifications($appTabs, eventId, authKey);
+        	//setPanelNotifications($appTabs, eventId, authKey);
         	
         },function(f){console.log(f)});
     });
@@ -95,7 +95,7 @@ $(document).ready(function(){
         	
         	authKey = d['authKey'];
         	
-        	setPanelNotifications($appTabs, eventId, authKey);
+        	//setPanelNotifications($appTabs, eventId, authKey);
         	
         },function(f){console.log(f)});
     });
