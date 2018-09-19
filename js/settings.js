@@ -72,10 +72,10 @@ $(document).ready(function(){
 	
 	var auth = [];
 	
-	var eventId = getEventId(eventIdTextInputCtrl);
-	var authKey = getAuthKey(authKeyTextInputCtrl);
+	var eventId;
+	var authKey;
 	
-	$.when(getEventId(eventIdTextInputCtrl), getEventId(eventIdTextInputCtrl)).then(setPanelNotifications($appTabs, eventId, authKey));
+	$.when(eventId = getEventId(eventIdTextInputCtrl), authKey = getEventId(eventIdTextInputCtrl)).then(setPanelNotifications($appTabs, eventId, authKey));
 	
 	
 		
@@ -86,9 +86,9 @@ $(document).ready(function(){
         
         Wix.Data.Public.set("eventId", value, { scope: 'COMPONENT' }, function(d){
         	
-        	auth[0] = d['eventId'];
+        	eventId = d['eventId'];
         	
-        	setPanelNotifications($appTabs, auth[0], auth[1]);
+        	setPanelNotifications($appTabs, eventId, authKey);
         	
         },function(f){console.log(f)});
     });
@@ -97,9 +97,9 @@ $(document).ready(function(){
         
         Wix.Data.Public.set("authKey", value, { scope: 'COMPONENT' }, function(d){
         	
-        	auth[1] = d['authKey'];
+        	authKey = d['authKey'];
         	
-        	setPanelNotifications($appTabs, auth[0], auth[1]);
+        	setPanelNotifications($appTabs, eventId, authKey);
         	
         },function(f){console.log(f)});
     });
