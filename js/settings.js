@@ -10,7 +10,7 @@ function getCategories()	{
 	
 }
 
-function getEventId(eventIdTextInputCtrl)	{
+function getEventId($appTabs, eventIdTextInputCtrl)	{
 	
 	//Populate TextInput with Event Id and Authorization Key. 
 	//Getting values stored in Wix.Data.Public
@@ -29,7 +29,7 @@ function getEventId(eventIdTextInputCtrl)	{
 	
 }
 
-function getAuthKey(authKeyTextInputCtrl)	{
+function getAuthKey($appTabs, authKeyTextInputCtrl)	{
 	
 	Wix.Data.Public.get("authKey", { scope: 'COMPONENT' }, function(d){
 		
@@ -78,8 +78,8 @@ $(document).ready(function(){
 	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
 
 	
-	var eventId = getEventId(eventIdTextInputCtrl);
-	var authKey = getAuthKey(authKeyTextInputCtrl);
+	var eventId = getEventId($appTabs, eventIdTextInputCtrl);
+	var authKey = getAuthKey($appTabs, authKeyTextInputCtrl);
 	
 	
 	//Check events for TextInput on Event Id and Authorization Key
