@@ -64,6 +64,11 @@ function setPanelNotifications($appTabs, eventId, authKey){
 		$appTabs.showTabNotification(1, 'Event ID missing!');
 		
 	}
+	else	{
+		
+		$appTabs.removeTabNotification(1);
+		
+	}
 
 	
 }
