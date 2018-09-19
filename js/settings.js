@@ -139,7 +139,7 @@ $(document).ready(function(){
 
 	//Button Actions
 	$("#supportButton").getCtrl().onClick(function(){
-		window.open('mailto:joao.neto@worldit.pt?subject=Information Request');
+		window.open('mailto:joao.neto@worldit.pt?subject=Information Request', 'self');
      });
 	
 	$("#main-cta").getCtrl().onClick(function(){
