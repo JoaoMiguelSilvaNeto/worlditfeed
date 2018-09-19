@@ -12,7 +12,20 @@ function getCategories()	{
 
 $(document).ready(function(){
 	
-	var $appTabs = $("#panelTabs").getCtrl();
+	var $appTabs 				= $("#panelTabs").getCtrl();
+	var eventIdTextInputCtrl 	= $("#eventId").getCtrl();
+	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
+
+	if(eventIdTextInputCtrl.getValue() == "")	{
+		
+		$appTabs.showTabNotification(1, 'Event ID missing!');
+		
+	}
+	else if (authKeyTextInputCtrl.getValue() == "")	{
+		
+		$appTabs.showTabNotification(1, 'Authorization Key missing!');
+		
+	}
 	
 	
 	$("#category").getCtrl().onChange(function(value){
@@ -29,6 +42,8 @@ $(document).ready(function(){
 	$("#main-cta").getCtrl().onClick(function(){
 		$appTabs.setValue(1);
      });
+	
+	
 	
 	
 
