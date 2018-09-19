@@ -23,11 +23,35 @@ $(document).ready(function(){
 		
 		eventIdTextInputCtrl.setValue(d['eventId']);
 		
+		//Check if text inserted, in order to remove the tab notification
+		if(d['eventId'].length != 0 && authKeyTextInputCtrl.getValue() != "")	{
+			
+			$appTabs.removeTabNotification(1);
+			
+		}
+		else if(d['eventId'].length == 0 && authKeyTextInputCtrl.getValue() != "")	{
+			
+			$appTabs.showTabNotification(1, 'Event ID missing!');
+			
+		}
+		
 	},function(f){console.log(f)});
 	
 	Wix.Data.Public.get("authKey", { scope: 'COMPONENT' }, function(d){
 		
 		authKeyTextInputCtrl.setValue(d['authKey']);
+		
+		if(d['authKey'].length != 0 && eventIdTextInputCtrl.getValue() != "")	{
+			
+			$appTabs.removeTabNotification(1);
+			
+		}
+		else if(d['authKey'].length == 0 && eventIdTextInputCtrl.getValue() != "")	{
+			
+			$appTabs.showTabNotification(1, 'Authorization Key missing!');
+			
+		}
+
 		
 	},function(f){console.log(f)});
 	
