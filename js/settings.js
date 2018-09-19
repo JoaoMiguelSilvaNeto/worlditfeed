@@ -34,7 +34,7 @@ function setPanelNotifications($appTabs, eventId, authKey){
 	
 }
 
-function getEventId()	{
+function getEventId(eventIdTextInputCtrl)	{
 	
 	var eventId;
 	
@@ -54,7 +54,7 @@ function getEventId()	{
 	
 }
 
-function getAuthKey()	{
+function getAuthKey(authKeyTextInputCtrl)	{
 	
 	var authKey;
 	
@@ -81,9 +81,9 @@ $(document).ready(function(){
 	
 	var auth = {};
 	
-	console.log(getEventId());
-	auth.eventId = getEventId();
-	auth.authKey = getAuthKey();
+	console.log(getEventId(eventIdTextInputCtrl));
+	auth.eventId = getEventId(eventIdTextInputCtrl);
+	auth.authKey = getAuthKey(authKeyTextInputCtrl);
 		
 	//setPanelNotifications($appTabs, auth['eventId'], auth['authKey']);
 
