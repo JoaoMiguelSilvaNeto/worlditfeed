@@ -85,15 +85,6 @@ function setPanelNotifications($appTabs, eventId, authKey){
 
 }
 
-function attachListeners() {
-	 
-    //onClick function
-    $("#sampleButton").getCtrl().onClick(function(){
-       console.log('clicked')
-    });
-
-}
-
 
 $(document).ready(function(){
 	
@@ -145,13 +136,11 @@ $(document).ready(function(){
     			function(d){console.log('ooooo->'+d['category'])},function(f){console.log(f)});
     });
 	
-	$(attachListeners);
-	
 
 	//Button Actions
-	/*$("#supportButton").getCtrl().onClick(function(){
+	$("#supportButton").getCtrl().onClick(function(){
 		window.open('mailto:joao.neto@worldit.pt?subject=Information Request');
-     });*/
+     });
 	
 	$("#main-cta").getCtrl().onClick(function(){
 		$appTabs.setValue(1);
