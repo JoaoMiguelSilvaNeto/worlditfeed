@@ -18,7 +18,7 @@ function getEventId(eventIdTextInputCtrl)	{
 		
 		eventIdTextInputCtrl.setValue(d['eventId']);	
 		
-		if(d['eventId'] == '')	{
+		if(d['eventId'].length == 0)	{
 			
 			$appTabs.showTabNotification(1, 'Account data missing!');
 			
@@ -35,7 +35,7 @@ function getAuthKey(authKeyTextInputCtrl)	{
 		
 		authKeyTextInputCtrl.setValue(d['authKey']);
 		console.log(d['authKey']);
-		if(d['authKey'] == '')	{
+		if(d['authKey'].length == 0)	{
 			
 			$appTabs.showTabNotification(1, 'Account data missing!');
 			
