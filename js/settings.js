@@ -16,6 +16,19 @@ $(document).ready(function(){
 	var eventIdTextInputCtrl 	= $("#eventId").getCtrl();
 	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
 
+	Wix.Data.Public.get("eventId", { scope: 'APP' }, function(d){
+		
+		eventIdTextInputCtrl.setValue(d);
+		
+	},function(f){console.log(f)});
+	
+	Wix.Data.Public.get("authKey", { scope: 'APP' }, function(d){
+		
+		authKeyTextInputCtrl.setValue(d);
+		
+	},function(f){console.log(f)});
+	
+
 	if(eventIdTextInputCtrl.getValue() == "" && authKeyTextInputCtrl.getValue() == "")	{
 		
 		$appTabs.showTabNotification(1, 'Event ID and Authorization Key missing!');
@@ -36,6 +49,12 @@ $(document).ready(function(){
         
         Wix.Data.Public.set("eventId", value, { scope: 'APP' }, 
     			function(d){console.log('ggggg->'+d)},function(f){console.log(f)});
+    });
+	
+	authKeyTextInputCtrl.onChange(function(value){
+        
+        Wix.Data.Public.set("authKey", value, { scope: 'APP' }, 
+    			function(d){console.log('eeeee->'+d)},function(f){console.log(f)});
     });
 	
 	$("#category").getCtrl().onChange(function(value){
