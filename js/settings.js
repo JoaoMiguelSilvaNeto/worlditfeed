@@ -82,7 +82,7 @@ $(document).ready(function(){
 	    alert(value);
 	});*/
 
-	account().then(function(value) {
+	account(eventIdTextInputCtrl, authKeyTextInputCtrl).then(function(value) {
 		console.log(value);
 	});
 	
