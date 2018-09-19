@@ -13,17 +13,17 @@ function getCategories()	{
 function setPanelNotifications($appTabs, eventId, authKey){
 	
 	//Check if TextInput is populated, otherwise show tab notification
-	if(eventId.length == null && authKey.length == null)	{
+	if(eventId == null && authKey == null)	{
 		
 		$appTabs.showTabNotification(1, 'Event ID and Authorization Key missing!');
 		
 	}
-	else if (authKey.length == null)	{
+	else if (authKey == null)	{
 		
 		$appTabs.showTabNotification(1, 'Authorization Key missing!');
 		
 	}
-	else if(eventId.length == null)	{
+	else if(eventId == null)	{
 		
 		$appTabs.showTabNotification(1, 'Event ID missing!');
 		
