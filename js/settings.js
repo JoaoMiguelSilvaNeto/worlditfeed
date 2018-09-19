@@ -12,10 +12,13 @@ function getCategories()	{
 
 $(document).ready(function(){
 	
+	//Variables
 	var $appTabs 				= $("#panelTabs").getCtrl();
 	var eventIdTextInputCtrl 	= $("#eventId").getCtrl();
 	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
 
+	//Populate TextInput with Event Id and Authorization Key. 
+	//Getting values stored in Wix.Data.Public
 	Wix.Data.Public.get("eventId", { scope: 'APP' }, function(d){
 		
 		eventIdTextInputCtrl.setValue(d['eventId']);
@@ -28,7 +31,7 @@ $(document).ready(function(){
 		
 	},function(f){console.log(f)});
 	
-
+	//Check if TextInput is populated, otherwise show tab notification
 	if(eventIdTextInputCtrl.getValue() == "" && authKeyTextInputCtrl.getValue() == "")	{
 		
 		$appTabs.showTabNotification(1, 'Event ID and Authorization Key missing!');
@@ -45,6 +48,7 @@ $(document).ready(function(){
 		
 	}
 	
+	//Check events for TextInput on Event Id and Authorization Key
 	eventIdTextInputCtrl.onChange(function(value){
         
         Wix.Data.Public.set("eventId", value, { scope: 'COMPONENT' }, 
@@ -54,9 +58,10 @@ $(document).ready(function(){
 	authKeyTextInputCtrl.onChange(function(value){
         
         Wix.Data.Public.set("authKey", value, { scope: 'COMPONENT' }, 
-    			function(d){console.log('eeeee->'+d['authkey'])},function(f){console.log(f)});
+    			function(d){console.log('eeeee->'+d['authKey'])},function(f){console.log(f)});
     });
 	
+	//Check event when changing feed category
 	$("#category").getCtrl().onChange(function(value){
         console.log(value, ' selected');
         
@@ -64,6 +69,7 @@ $(document).ready(function(){
     			function(d){console.log('ooooo->'+d['category'])},function(f){console.log(f)});
     });
 	
+	//Button Actions
 	/*$("#supportButton").getCtrl().onClick(function(){
 		window.open('mailto:joao.neto@worldit.pt?subject=Information Request');
      });*/
