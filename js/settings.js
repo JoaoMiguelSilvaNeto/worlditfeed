@@ -18,13 +18,13 @@ $(document).ready(function(){
 
 	Wix.Data.Public.get("eventId", { scope: 'APP' }, function(d){
 		
-		eventIdTextInputCtrl.setValue(d);
+		eventIdTextInputCtrl.setValue(d['eventId']);
 		
 	},function(f){console.log(f)});
 	
 	Wix.Data.Public.get("authKey", { scope: 'APP' }, function(d){
 		
-		authKeyTextInputCtrl.setValue(d);
+		authKeyTextInputCtrl.setValue(d['authKey']);
 		
 	},function(f){console.log(f)});
 	
@@ -48,13 +48,13 @@ $(document).ready(function(){
 	eventIdTextInputCtrl.onChange(function(value){
         
         Wix.Data.Public.set("eventId", value, { scope: 'APP' }, 
-    			function(d){console.log('ggggg->'+d)},function(f){console.log(f)});
+    			function(d){console.log('ggggg->'+d['eventId'])},function(f){console.log(f)});
     });
 	
 	authKeyTextInputCtrl.onChange(function(value){
         
         Wix.Data.Public.set("authKey", value, { scope: 'APP' }, 
-    			function(d){console.log('eeeee->'+d)},function(f){console.log(f)});
+    			function(d){console.log('eeeee->'+d['authkey'])},function(f){console.log(f)});
     });
 	
 	$("#category").getCtrl().onChange(function(value){
