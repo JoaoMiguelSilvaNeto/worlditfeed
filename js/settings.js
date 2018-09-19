@@ -59,6 +59,17 @@ function setPanelNotifications($appTabs, eventId, authKey){
 	
 }
 
+function account(eventIdTextInputCtrl, authKeyTextInputCtrl)	{
+	
+	var deferred = $.Deferred();
+	
+	deferred.eventId = getEventId(eventIdTextInputCtrl);
+	deferred.authKey = getAuthKey(authKeyTextInputCtrl);
+	
+	return deferred.promise();
+	
+}
+
 $(document).ready(function(){
 	
 	//Variables
@@ -66,13 +77,18 @@ $(document).ready(function(){
 	var eventIdTextInputCtrl 	= $("#eventId").getCtrl();
 	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
 
-	var eventId;
-	var authKey;
 	
-	var account = $.Deferred(function (eventIdTextInputCtrl, authKeyTextInputCtrl) {
+	/*$.when(account()).done(function(value) {
+	    alert(value);
+	});*/
+
+	account().then(function(value) {
+		console.log(value);
+	});
+	
+	/*var account = $.Deferred(function (eventIdTextInputCtrl, authKeyTextInputCtrl) {
 		
-		eventId = getEventId(eventIdTextInputCtrl);
-		authKey = getAuthKey(authKeyTextInputCtrl);
+		
 		  
 	}).promise();
 	
@@ -82,7 +98,7 @@ $(document).ready(function(){
 		setPanelNotifications($appTabs, eventId, authKey);
 		
 	});
-	
+	*/
 	
 	
 	
