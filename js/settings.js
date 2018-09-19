@@ -16,9 +16,9 @@ $(document).ready(function(){
 	var eventIdTextInputCtrl 	= $("#eventId").getCtrl();
 	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
 
-	if(eventIdTextInputCtrl.getValue() == "")	{
+	if(eventIdTextInputCtrl.getValue() == "" && authKeyTextInputCtrl.getValue() == "")	{
 		
-		$appTabs.showTabNotification(1, 'Event ID missing!');
+		$appTabs.showTabNotification(1, 'Event ID and Authorization Key missing!');
 		
 	}
 	else if (authKeyTextInputCtrl.getValue() == "")	{
@@ -26,9 +26,9 @@ $(document).ready(function(){
 		$appTabs.showTabNotification(1, 'Authorization Key missing!');
 		
 	}
-	else if(eventIdTextInputCtrl.getValue() == "" && authKeyTextInputCtrl.getValue() == "")	{
+	else if(eventIdTextInputCtrl.getValue() == "")	{
 		
-		$appTabs.showTabNotification(1, 'Event ID and Authorization Key missing!');
+		$appTabs.showTabNotification(1, 'Event ID missing!');
 		
 	}
 	
