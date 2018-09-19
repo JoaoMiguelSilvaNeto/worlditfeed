@@ -19,13 +19,11 @@ function getEventId(eventIdTextInputCtrl)	{
 	Wix.Data.Public.get("eventId", { scope: 'COMPONENT' }, function(d){
 		
 		eventIdTextInputCtrl.setValue(d['eventId']);
-		
-		eventId = d['eventId'];	
+		console.log(d['eventId']);
+		return d['eventId'];	
 		
 	},function(f){console.log(f)});
-	console.log(eventId);
-	return eventId;
-	
+
 	
 }
 
@@ -36,13 +34,10 @@ function getAuthKey(authKeyTextInputCtrl)	{
 	Wix.Data.Public.get("authKey", { scope: 'COMPONENT' }, function(d){
 		
 		authKeyTextInputCtrl.setValue(d['authKey']);
-		
-		authKey = d['authKey'];		
+		console.log(d['authKey']);
+		return d['authKey'];		
 		
 	},function(f){console.log(f)});
-	
-	console.log(authKey);
-	return authKey;
 	
 }
 
