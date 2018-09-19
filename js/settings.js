@@ -88,10 +88,10 @@ $(document).ready(function(){
 	
 	function showData()	{
 		console.log('showData');
-		
-		console.log(auth.authKey);
+		console.log(auth);
+		console.log(auth['authKey']);
 			
-		setPanelNotifications($appTabs, auth.eventId, auth.authKey);
+		setPanelNotifications($appTabs, auth['eventId'], auth['authKey']);
 		
 	}
 	
