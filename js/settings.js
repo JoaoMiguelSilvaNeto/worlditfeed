@@ -67,10 +67,10 @@ $(document).ready(function(){
 	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
 
 	
-	var eventId;
+	var eventId = getEventId(eventIdTextInputCtrl);
 	var authKey;
 	
-	$.when(eventId = getEventId(eventIdTextInputCtrl), authKey = getAuthKey(authKeyTextInputCtrl)).then(setPanelNotifications($appTabs, eventId, authKey));
+	$.when(authKey = getAuthKey(authKeyTextInputCtrl)).then(setPanelNotifications($appTabs, eventId, authKey));
 	
 	
 		
