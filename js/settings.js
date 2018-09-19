@@ -72,7 +72,7 @@ $(document).ready(function(){
 	var eventId = getEventId(eventIdTextInputCtrl);
 	var authKey = getAuthKey(authKeyTextInputCtrl);
 	
-	if(eventId.length == 0 || authKey.length == 0)	{
+	if(eventId == '' || authKey == '')	{
 		
 		$appTabs.showTabNotification(1, 'Account data missing!');
 		
