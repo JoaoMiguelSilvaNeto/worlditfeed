@@ -40,17 +40,17 @@ function getAuthKey(authKeyTextInputCtrl)	{
 function setPanelNotifications($appTabs, eventId, authKey){
 	
 	//Check if TextInput is populated, otherwise show tab notification
-	if(eventId == null && authKey == null)	{
+	if(eventId == '' && authKey == '')	{
 		
 		$appTabs.showTabNotification(1, 'Event ID and Authorization Key missing!');
 		
 	}
-	else if (authKey == null)	{
+	else if (authKey == '')	{
 		
 		$appTabs.showTabNotification(1, 'Authorization Key missing!');
 		
 	}
-	else if(eventId == null)	{
+	else if(eventId == '')	{
 		
 		$appTabs.showTabNotification(1, 'Event ID missing!');
 		
