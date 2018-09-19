@@ -78,9 +78,9 @@ $(document).ready(function(){
 	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
 
 	
-	/*$.when(account()).done(function(value) {
-	    alert(value);
-	});*/
+	$.when(account(eventIdTextInputCtrl, authKeyTextInputCtrl)).done(function(value) {
+	    console.log(value);
+	});
 
 	account(eventIdTextInputCtrl, authKeyTextInputCtrl).then(function(value) {
 		console.log(value);
