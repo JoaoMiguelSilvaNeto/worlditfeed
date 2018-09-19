@@ -34,44 +34,6 @@ function setPanelNotifications($appTabs, eventId, authKey){
 	
 }
 
-function getEventId(eventIdTextInputCtrl)	{
-	
-	var eventId;
-	
-	//Populate TextInput with Event Id and Authorization Key. 
-	//Getting values stored in Wix.Data.Public
-	Wix.Data.Public.get("eventId", { scope: 'COMPONENT' }, function(d){
-		
-		eventIdTextInputCtrl.setValue(d['eventId']);
-		
-		eventId = d['eventId'];
-		
-		
-	},function(f){console.log(f)});
-	
-	return eventId;
-	
-	
-}
-
-function getAuthKey(authKeyTextInputCtrl)	{
-	
-	var authKey;
-	
-	Wix.Data.Public.get("authKey", { scope: 'COMPONENT' }, function(d){
-		
-		authKeyTextInputCtrl.setValue(d['authKey']);
-		
-		authKey = d['authKey'];
-		
-		
-	},function(f){console.log(f)});
-	
-	return authKey;
-	
-}
-
-
 $(document).ready(function(){
 	
 	//Variables
@@ -81,12 +43,7 @@ $(document).ready(function(){
 	
 	var auth = {};
 	
-	auth.eventId = getEventId(eventIdTextInputCtrl);
-	auth.authKey = getAuthKey(authKeyTextInputCtrl);
-	
-	console.log(auth['eventId']+'->'+auth['authKey']);
-		
-	//setPanelNotifications($appTabs, auth['eventId'], auth['authKey']);
+	$.when(getEventId(), getAuthKey()).then(showData);
 
 	
 	//Check events for TextInput on Event Id and Authorization Key
@@ -130,6 +87,54 @@ $(document).ready(function(){
 	$("#main-cta").getCtrl().onClick(function(){
 		$appTabs.setValue(1);
      });
+	
+	function showData()	{
+		
+		auth.eventId = getEventId(eventIdTextInputCtrl);
+		auth.authKey = getAuthKey(authKeyTextInputCtrl);
+		
+		console.log(auth['eventId']+'->'+auth['authKey']);
+			
+		setPanelNotifications($appTabs, auth['eventId'], auth['authKey']);
+		
+	}
+	
+	function getEventId()	{
+		
+		var eventId;
+		
+		//Populate TextInput with Event Id and Authorization Key. 
+		//Getting values stored in Wix.Data.Public
+		Wix.Data.Public.get("eventId", { scope: 'COMPONENT' }, function(d){
+			
+			eventIdTextInputCtrl.setValue(d['eventId']);
+			
+			eventId = d['eventId'];
+			
+			
+		},function(f){console.log(f)});
+		
+		return eventId;
+		
+		
+	}
+
+	function getAuthKey()	{
+		
+		var authKey;
+		
+		Wix.Data.Public.get("authKey", { scope: 'COMPONENT' }, function(d){
+			
+			authKeyTextInputCtrl.setValue(d['authKey']);
+			
+			authKey = d['authKey'];
+			
+			
+		},function(f){console.log(f)});
+		
+		return authKey;
+		
+	}
 	
 
 });
