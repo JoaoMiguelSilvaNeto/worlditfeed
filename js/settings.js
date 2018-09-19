@@ -51,7 +51,7 @@ $(document).ready(function(){
 		
 		eventId = d['eventId'];
 		
-		setPanelNotifications($appTabs, eventId, authKey);
+		setPanelNotifications($appTabs, d['eventId'], authKey);
 		
 		
 	},function(f){console.log(f)});
@@ -62,11 +62,12 @@ $(document).ready(function(){
 		
 		authKey = d['authKey'];
 		
-		setPanelNotifications($appTabs, eventId, authKey);
+		setPanelNotifications($appTabs, eventId, d['authKey']);
 		
 		
 	},function(f){console.log(f)});
 	
+	setPanelNotifications($appTabs, eventId, authKey);
 	
 	//Check events for TextInput on Event Id and Authorization Key
 	eventIdTextInputCtrl.onChange(function(value){
