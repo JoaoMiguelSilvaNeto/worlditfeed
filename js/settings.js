@@ -34,7 +34,7 @@ function getAuthKey(authKeyTextInputCtrl)	{
 	Wix.Data.Public.get("authKey", { scope: 'COMPONENT' }, function(d){
 		
 		authKeyTextInputCtrl.setValue(d['authKey']);
-		
+		console.log(d['authKey']);
 		if(d['authKey'] == '')	{
 			
 			$appTabs.showTabNotification(1, 'Account data missing!');
