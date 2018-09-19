@@ -23,7 +23,7 @@ function getEventId(eventIdTextInputCtrl)	{
 		eventId = d['eventId'];	
 		
 	},function(f){console.log(f)});
-	
+	console.log(eventId);
 	return eventId;
 	
 	
@@ -41,6 +41,7 @@ function getAuthKey(authKeyTextInputCtrl)	{
 		
 	},function(f){console.log(f)});
 	
+	console.log(authKey);
 	return authKey;
 	
 }
