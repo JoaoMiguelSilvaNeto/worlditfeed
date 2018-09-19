@@ -39,7 +39,7 @@ $(document).ready(function(){
 	var eventIdTextInputCtrl 	= $("#eventId").getCtrl();
 	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
 	
-	var auth = {};
+	var auth = [];
 	
 	$.when(getEventId(), getAuthKey()).then(showData);
 
