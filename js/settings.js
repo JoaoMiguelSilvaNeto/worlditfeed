@@ -93,7 +93,7 @@ $(document).ready(function(){
 		auth.eventId = getEventId(eventIdTextInputCtrl);
 		auth.authKey = getAuthKey(authKeyTextInputCtrl);
 		
-		console.log(auth['eventId']+'->'+auth['authKey']);
+		console.log(auth);
 			
 		setPanelNotifications($appTabs, auth['eventId'], auth['authKey']);
 		
