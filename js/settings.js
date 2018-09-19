@@ -32,6 +32,11 @@ $(document).ready(function(){
 		
 	}
 	
+	eventIdTextInputCtrl.getCtrl().onChange(function(value){
+        
+        Wix.Data.Public.set("eventId", value, { scope: 'APP' }, 
+    			function(d){console.log('ggggg->'+d)},function(f){console.log(f)});
+    });
 	
 	$("#category").getCtrl().onChange(function(value){
         console.log(value, ' selected');
