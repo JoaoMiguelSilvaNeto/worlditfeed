@@ -91,7 +91,7 @@ $(document).ready(function(){
 	function showData()	{
 		console.log('showData');
 		
-		console.log('-->'+auth);
+		console.log(auth);
 			
 		setPanelNotifications($appTabs, auth['eventId'], auth['authKey']);
 		
