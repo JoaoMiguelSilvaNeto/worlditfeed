@@ -32,7 +32,7 @@ $(document).ready(function(){
 		
 	}
 	
-	eventIdTextInputCtrl.getCtrl().onChange(function(value){
+	eventIdTextInputCtrl.onChange(function(value){
         
         Wix.Data.Public.set("eventId", value, { scope: 'APP' }, 
     			function(d){console.log('ggggg->'+d)},function(f){console.log(f)});
