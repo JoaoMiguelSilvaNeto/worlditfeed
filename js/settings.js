@@ -82,13 +82,8 @@ $(document).ready(function(){
 	auth.eventId = getEventId();
 	auth.authKey = getAuthKey();
 		
-	
-	
-	$.when(auth['eventId'], auth['authKey']).done(function(){
-        
-		setPanelNotifications($appTabs, auth['eventId'], auth['authKey']);
-		
-   });
+	setPanelNotifications($appTabs, auth['eventId'], auth['authKey']);
+
 	
 	//Check events for TextInput on Event Id and Authorization Key
 	eventIdTextInputCtrl.onChange(function(value){
