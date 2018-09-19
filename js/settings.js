@@ -106,7 +106,7 @@ $(document).ready(function(){
 			eventIdTextInputCtrl.setValue(d['eventId']);
 			
 			//eventId = d['eventId'];
-			auth['eventId'] = d['eventId'];
+			auth.push({eventId: d['eventId']});
 			
 			
 		},function(f){console.log(f)});
@@ -125,7 +125,7 @@ $(document).ready(function(){
 			authKeyTextInputCtrl.setValue(d['authKey']);
 			
 			//authKey = d['authKey'];
-			auth['authKey'] = d['authKey'];
+			auth.push({authKey: d['authKey']});
 			
 			
 		},function(f){console.log(f)});
