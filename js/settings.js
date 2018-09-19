@@ -89,7 +89,8 @@ $(document).ready(function(){
 	function showData()	{
 		console.log('showData');
 		console.log(auth);
-		console.log(auth[0]);
+		console.log(''+auth[0]);
+		console.log(''+auth[1]);
 			
 		setPanelNotifications($appTabs, auth[0], auth[1]);
 		
