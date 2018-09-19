@@ -95,8 +95,8 @@ $(document).ready(function(){
 
 	//get Event ID and Authorization Key from Wix Public Data,
 	//and set them in the TextInputs
-	eventId = getEventId($appTabs, eventIdTextInputCtrl);
-	authKey = getAuthKey($appTabs, authKeyTextInputCtrl);
+	var eventId = getEventId($appTabs, eventIdTextInputCtrl);
+	var authKey = getAuthKey($appTabs, authKeyTextInputCtrl);
 	
 	
 	//Check events on TextInput Event Id
