@@ -74,18 +74,12 @@ $(document).ready(function(){
 	
 	//$.when(getEventId(), getAuthKey()).then(showData());
 	
-	getEventId(eventIdTextInputCtrl)
-		.then(eventId => {
-			console.log(eventId);
-			getAuthKey(authKeyTextInputCtrl)
-				.then(authKey => {
-					console.log(authKey);
-					setPanelNotifications($appTabs, eventId, authKey);
-				
-				});
-			
-		});
-
+	var eventId = getEventId(eventIdTextInputCtrl);
+	var authKey = getAuthKey(authKeyTextInputCtrl);
+	
+	setPanelNotifications($appTabs, eventId, authKey);
+		
+	
 	
 	//Check events for TextInput on Event Id and Authorization Key
 	eventIdTextInputCtrl.onChange(function(value){
