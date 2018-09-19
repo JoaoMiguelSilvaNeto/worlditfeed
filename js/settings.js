@@ -72,12 +72,12 @@ $(document).ready(function(){
 	
 	var auth = [];
 	
-	//$.when(getEventId(), getAuthKey()).then(showData());
-	
 	var eventId = getEventId(eventIdTextInputCtrl);
 	var authKey = getAuthKey(authKeyTextInputCtrl);
 	
-	setPanelNotifications($appTabs, eventId, authKey);
+	$.when(getEventId(eventIdTextInputCtrl), getEventId(eventIdTextInputCtrl)).then(setPanelNotifications($appTabs, eventId, authKey));
+	
+	
 		
 	
 	
