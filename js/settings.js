@@ -11,15 +11,13 @@ function getCategories()	{
 }
 
 function getEventId(eventIdTextInputCtrl)	{
-	console.log('getEventId');
-	var eventId;
 	
 	//Populate TextInput with Event Id and Authorization Key. 
 	//Getting values stored in Wix.Data.Public
 	Wix.Data.Public.get("eventId", { scope: 'COMPONENT' }, function(d){
 		
 		eventIdTextInputCtrl.setValue(d['eventId']);
-		console.log(d['eventId']);
+		
 		return d['eventId'];	
 		
 	},function(f){console.log(f)});
@@ -28,13 +26,11 @@ function getEventId(eventIdTextInputCtrl)	{
 }
 
 function getAuthKey(authKeyTextInputCtrl)	{
-	console.log('getAuthKey');
-	var authKey;
 	
 	Wix.Data.Public.get("authKey", { scope: 'COMPONENT' }, function(d){
 		
 		authKeyTextInputCtrl.setValue(d['authKey']);
-		console.log(d['authKey']);
+		
 		return d['authKey'];		
 		
 	},function(f){console.log(f)});
@@ -69,8 +65,7 @@ $(document).ready(function(){
 	var $appTabs 				= $("#panelTabs").getCtrl();
 	var eventIdTextInputCtrl 	= $("#eventId").getCtrl();
 	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
-	
-	var auth = [];
+
 	
 	var eventId;
 	var authKey;
