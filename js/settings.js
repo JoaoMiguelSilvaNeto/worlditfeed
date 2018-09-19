@@ -23,9 +23,9 @@ $(document).ready(function(){
     			function(d){console.log('ooooo->'+d['category'])},function(f){console.log(f)});
     });
 	
-	$("#supportButton").getCtrl().onClick(function(){
+	/*$("#supportButton").getCtrl().onClick(function(){
 		window.open('mailto:joao.neto@worldit.pt?subject=Information Request');
-     });
+     });*/
 	
 	$("#main-cta").getCtrl().onClick(function(){
 		changeTab("Account");
