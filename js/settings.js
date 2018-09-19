@@ -57,9 +57,19 @@ function setPanelNotifications($appTabs, eventId, authKey){
 		$appTabs.showTabNotification(1, 'Event ID and Authorization Key missing!');
 		
 	}
+	else if (authKey == '' && eventId != '')	{
+		
+		$appTabs.showTabNotification(1, 'Authorization Key missing!');
+		
+	}
 	else if (authKey == '')	{
 		
 		$appTabs.showTabNotification(1, 'Authorization Key missing!');
+		
+	}
+	else if(eventId == '' && authKey != '')	{
+		
+		$appTabs.showTabNotification(1, 'Event ID missing!');
 		
 	}
 	else if(eventId == '')	{
