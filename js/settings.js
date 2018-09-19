@@ -19,13 +19,13 @@ $(document).ready(function(){
 
 	//Populate TextInput with Event Id and Authorization Key. 
 	//Getting values stored in Wix.Data.Public
-	Wix.Data.Public.get("eventId", { scope: 'APP' }, function(d){
+	Wix.Data.Public.get("eventId", { scope: 'COMPONENT' }, function(d){
 		
 		eventIdTextInputCtrl.setValue(d['eventId']);
 		
 	},function(f){console.log(f)});
 	
-	Wix.Data.Public.get("authKey", { scope: 'APP' }, function(d){
+	Wix.Data.Public.get("authKey", { scope: 'COMPONENT' }, function(d){
 		
 		authKeyTextInputCtrl.setValue(d['authKey']);
 		
@@ -47,6 +47,7 @@ $(document).ready(function(){
 		$appTabs.showTabNotification(1, 'Event ID missing!');
 		
 	}
+
 	
 	//Check events for TextInput on Event Id and Authorization Key
 	eventIdTextInputCtrl.onChange(function(value){
@@ -61,6 +62,7 @@ $(document).ready(function(){
     			function(d){console.log('eeeee->'+d['authKey'])},function(f){console.log(f)});
     });
 	
+	
 	//Check event when changing feed category
 	$("#category").getCtrl().onChange(function(value){
         console.log(value, ' selected');
@@ -68,6 +70,7 @@ $(document).ready(function(){
         Wix.Data.Public.set("category", value, { scope: 'APP' }, 
     			function(d){console.log('ooooo->'+d['category'])},function(f){console.log(f)});
     });
+	
 	
 	//Button Actions
 	/*$("#supportButton").getCtrl().onClick(function(){
