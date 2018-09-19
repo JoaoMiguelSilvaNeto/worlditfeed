@@ -10,16 +10,9 @@ function getCategories()	{
 	
 }
 
-function changeTab(tab){
+$(document).ready(function(){
 	
 	var $appTabs = $("#panelTabs").getCtrl();
-	
-	$appTabs.setValue(tab);
-	
-}
-
-
-$(document).ready(function(){
 	
 	
 	$("#category").getCtrl().onChange(function(value){
@@ -34,7 +27,7 @@ $(document).ready(function(){
      });*/
 	
 	$("#main-cta").getCtrl().onClick(function(){
-		changeTab(1);
+		$appTabs.setValue(1);
      });
 	
 	
