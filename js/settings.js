@@ -52,32 +52,32 @@ function getAuthKey($appTabs, authKeyTextInputCtrl)	{
 function setPanelNotifications($appTabs, eventId, authKey){
 	
 	//Check if TextInput is populated, otherwise show tab notification
-	if(eventId == '' && authKey == '')	{
+	if(eventId.length == 0 && authKey.length == 0)	{
 		
 		$appTabs.showTabNotification(1, 'Event ID and Authorization Key missing!');
 		
 	}
-	else if (authKey == '' && eventId != '')	{
+	else if (authKey .length == 0 && eventId.length != 0)	{
 		
 		$appTabs.showTabNotification(1, 'Authorization Key missing!');
 		
 	}
-	else if (authKey == '')	{
+	else if (authKey.length == 0)	{
 		
 		$appTabs.showTabNotification(1, 'Authorization Key missing!');
 		
 	}
-	else if(eventId == '' && authKey != '')	{
+	else if(eventId.length == 0 && authKey.length != 0)	{
 		
 		$appTabs.showTabNotification(1, 'Event ID missing!');
 		
 	}
-	else if(eventId == '')	{
+	else if(eventId.length == 0)	{
 		
 		$appTabs.showTabNotification(1, 'Event ID missing!');
 		
 	}
-	else if(eventId != '' && authKey != '')	{
+	else if(eventId.length != 0 && authKey.length != 0)	{
 		
 		$appTabs.removeTabNotification(1);
 		
