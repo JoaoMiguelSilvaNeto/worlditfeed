@@ -40,8 +40,8 @@ $(document).ready(function(){
 	var eventIdTextInputCtrl 	= $("#eventId").getCtrl();
 	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
 	
-	var eventId;
-	var authKey;
+	var eventId = "";
+	var authKey = "";
 
 	//Populate TextInput with Event Id and Authorization Key. 
 	//Getting values stored in Wix.Data.Public
