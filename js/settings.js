@@ -47,13 +47,13 @@ $(document).ready(function(){
 	
 	eventIdTextInputCtrl.onChange(function(value){
         
-        Wix.Data.Public.set("eventId", value, { scope: 'APP' }, 
+        Wix.Data.Public.set("eventId", value, { scope: 'COMPONENT' }, 
     			function(d){console.log('ggggg->'+d['eventId'])},function(f){console.log(f)});
     });
 	
 	authKeyTextInputCtrl.onChange(function(value){
         
-        Wix.Data.Public.set("authKey", value, { scope: 'APP' }, 
+        Wix.Data.Public.set("authKey", value, { scope: 'COMPONENT' }, 
     			function(d){console.log('eeeee->'+d['authkey'])},function(f){console.log(f)});
     });
 	
