@@ -26,6 +26,11 @@ $(document).ready(function(){
 		$appTabs.showTabNotification(1, 'Authorization Key missing!');
 		
 	}
+	else if(eventIdTextInputCtrl.getValue() == "" && authKeyTextInputCtrl.getValue() == "")	{
+		
+		$appTabs.showTabNotification(1, 'Event ID and Authorization Key missing!');
+		
+	}
 	
 	
 	$("#category").getCtrl().onChange(function(value){
