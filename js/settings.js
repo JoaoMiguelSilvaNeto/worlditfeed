@@ -108,6 +108,7 @@ $(document).ready(function(){
 			
 			//eventId = d['eventId'];
 			auth.push(d['eventId']);
+			console.log(auth[0]);
 			
 			
 		},function(f){console.log(f)});
