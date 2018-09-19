@@ -85,6 +85,15 @@ function setPanelNotifications($appTabs, eventId, authKey){
 
 }
 
+function attachListeners() {
+	 
+    //onClick function
+    $("#sampleButton").getCtrl().onClick(function(){
+       console.log('clicked')
+    });
+
+}
+
 
 $(document).ready(function(){
 	
@@ -138,14 +147,7 @@ $(document).ready(function(){
 	
 	$(attachListeners);
 	
-	function attachListeners() {
-		 
-	      //onClick function
-	      $("#sampleButton").getCtrl().onClick(function(){
-	         console.log('clicked')
-	      });
-	 
-	}
+
 	//Button Actions
 	/*$("#supportButton").getCtrl().onClick(function(){
 		window.open('mailto:joao.neto@worldit.pt?subject=Information Request');
