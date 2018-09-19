@@ -136,7 +136,16 @@ $(document).ready(function(){
     			function(d){console.log('ooooo->'+d['category'])},function(f){console.log(f)});
     });
 	
+	$(attachListeners);
 	
+	function attachListeners() {
+		 
+	      //onClick function
+	      $("#sampleButton").getCtrl().onClick(function(){
+	         console.log('clicked')
+	      });
+	 
+	}
 	//Button Actions
 	/*$("#supportButton").getCtrl().onClick(function(){
 		window.open('mailto:joao.neto@worldit.pt?subject=Information Request');
