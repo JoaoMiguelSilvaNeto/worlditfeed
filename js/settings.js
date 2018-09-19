@@ -10,11 +10,17 @@ function getCategories()	{
 	
 }
 
-function changeTab(tab) {
-	  this.refs.tabs.setActiveTab(tab);
+function changeTab(tab){
+	
+	var $appTabs = $("#panelTabs").getCtrl();
+	
+	$appTabs.setValue(tab);
+	
 }
 
+
 $(document).ready(function(){
+	
 	
 	$("#category").getCtrl().onChange(function(value){
         console.log(value, ' selected');
@@ -28,7 +34,7 @@ $(document).ready(function(){
      });*/
 	
 	$("#main-cta").getCtrl().onClick(function(){
-		changeTab("Account");
+		changeTab(1);
      });
 	
 	
