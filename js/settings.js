@@ -12,6 +12,8 @@ function getCategories()	{
 
 function setPanelNotifications($appTabs, eventId, authKey){
 	
+	
+	
 	//Check if TextInput is populated, otherwise show tab notification
 	if(eventId.length == 0 && authKey.length == 0)	{
 		
@@ -79,6 +81,7 @@ $(document).ready(function(){
 	
 	var auth = {};
 	
+	console.log(getEventId());
 	auth.eventId = getEventId();
 	auth.authKey = getAuthKey();
 		
