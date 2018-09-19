@@ -38,7 +38,7 @@ function getAuthKey(authKeyTextInputCtrl)	{
 }
 
 function setPanelNotifications($appTabs, eventId, authKey){
-	
+	console.log(eventId+' '+authKey)
 	//Check if TextInput is populated, otherwise show tab notification
 	if(eventId == null && authKey == null)	{
 		
