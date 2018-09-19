@@ -10,6 +10,7 @@ function getCategories()	{
 	
 }
 
+//get Event ID from Wix Public Data
 function getEventId($appTabs, eventIdTextInputCtrl)	{
 	
 	//Populate TextInput with Event Id and Authorization Key. 
@@ -29,6 +30,7 @@ function getEventId($appTabs, eventIdTextInputCtrl)	{
 	
 }
 
+//get Authorization Key from Wix Public Data
 function getAuthKey($appTabs, authKeyTextInputCtrl)	{
 	
 	Wix.Data.Public.get("authKey", { scope: 'COMPONENT' }, function(d){
@@ -46,6 +48,7 @@ function getAuthKey($appTabs, authKeyTextInputCtrl)	{
 	
 }
 
+//Manage Panel Notifications to alert user that Event ID/Authorization Key is missing
 function setPanelNotifications($appTabs, eventId, authKey){
 	
 	//Check if TextInput is populated, otherwise show tab notification
@@ -64,15 +67,13 @@ function setPanelNotifications($appTabs, eventId, authKey){
 		$appTabs.showTabNotification(1, 'Event ID missing!');
 		
 	}
-	else	{
+	else if(eventId != '' && authKey != '')	{
 		
 		$appTabs.removeTabNotification(1);
 		
 	}
 
-	
 }
-
 
 
 $(document).ready(function(){
@@ -82,7 +83,7 @@ $(document).ready(function(){
 	var eventIdTextInputCtrl 	= $("#eventId").getCtrl();
 	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
 
-	
+	//get Event ID and Authorization Key
 	var eventId = getEventId($appTabs, eventIdTextInputCtrl);
 	var authKey = getAuthKey($appTabs, authKeyTextInputCtrl);
 	
