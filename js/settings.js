@@ -89,7 +89,7 @@ $(document).ready(function(){
      });
 	
 	function showData()	{
-		
+		console.log('showData');
 		auth.eventId = getEventId(eventIdTextInputCtrl);
 		auth.authKey = getAuthKey(authKeyTextInputCtrl);
 		
@@ -100,7 +100,7 @@ $(document).ready(function(){
 	}
 	
 	function getEventId()	{
-		
+		console.log('getEventId');
 		var eventId;
 		
 		//Populate TextInput with Event Id and Authorization Key. 
@@ -120,7 +120,7 @@ $(document).ready(function(){
 	}
 
 	function getAuthKey()	{
-		
+		console.log('getAuthKey');
 		var authKey;
 		
 		Wix.Data.Public.get("authKey", { scope: 'COMPONENT' }, function(d){
