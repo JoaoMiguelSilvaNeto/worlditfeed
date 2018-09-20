@@ -63,15 +63,15 @@ function setFeed(updates)	{
 
 	var html = '<!--<h2>Notícias</h2>-->';
 	
-	var link = entry['LINK'];
-	var image = entry['Images_many'][0]['IMAGE_URL'];
-	var imageAlt = entry['Images_many'][0]['IMAGE_NAME'];
-	var title = entry['TITLE'];
-	var content = entry['HTML_EDITOR'];
-	
-	console.log(image);
-	
 	updates.forEach(function (entry)	{
+		
+		var link = entry['LINK'];
+		var image = entry['Images_many'][0]['IMAGE_URL'];
+		var imageAlt = entry['Images_many'][0]['IMAGE_NAME'];
+		var title = entry['TITLE'];
+		var content = entry['HTML_EDITOR'];
+		
+		console.log(image);
 		
 		html += '<tr>';
 		html += '<td rowspan="2" style="text-align: top;"><a href="'+link+'"><img style="width: 100%; height: auto;" src="'+image+'" alt="'+imageAlt+'" /></a></td>';
