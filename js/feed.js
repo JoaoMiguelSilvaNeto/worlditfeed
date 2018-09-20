@@ -144,15 +144,3 @@ function getFeed(categories, resultsPerPage)
 
 			});
 }
-
-$(document).ready(function()	{
-	
-	//get title caption from Wix Public Data
-	Wix.Data.Public.get("titleCaption", { scope: 'COMPONENT' }, function(d){
-		
-		document.getElementById("title").innerHTML = d['titleCaption'];		
-		
-	},function(f){console.log(f)});
-	
-	
-});
