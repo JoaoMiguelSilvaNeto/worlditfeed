@@ -180,7 +180,7 @@ $(document).ready(function(){
 		//set variable on Wix Public Data
         Wix.Data.Public.set("titleCaption", value, { scope: 'COMPONENT' }, function(d){
         	
-        	//do nothing
+        	console.log(d['titleCaption']);
         	
         },function(f){console.log(f)});
     });
