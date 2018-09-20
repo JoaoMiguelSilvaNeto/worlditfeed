@@ -79,7 +79,7 @@ function getToken()	{
 */
 function setFeed(updates)	{
 
-	var html = '<!--<h2>Notícias</h2>-->';
+	var html = '<h2 id="title" class="sample-content-title">Notícias</h2>';
 	
 	updates.forEach(function (entry)	{
 		
