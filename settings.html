@@ -274,6 +274,27 @@
 
         	<hr class="divider-long"/>
 
+			<div id="TitleToggleSwitch" class="animations_oppositeEffect"
+            	wix-ctrl="ToggleSwitch"
+             	wix-param = "_toggleTitle" 
+            	wix-options="{
+                        label: 'Show Title',
+                        defaultValue: true,
+                        infoText: 'Title on top of the feed can be disabled, to better adapt you site design.'
+                    }"
+        	></div>
+        	
+        	<div class="settings_textFieldContent"
+        	 	id="titleCaption" 
+        	 	wix-param = "_captionTitle" 
+             	wix-ctrl="Input"
+             	wix-options="{
+                    title: 'Title:',
+                    placeholder: 'Title',
+                    infoText: 'Write a title that will appear on the top of the feed.'
+                },"
+        	></div>
+        	
         	<div id="titleFont" 
         	 	wix-param-font="_titleFont"
              	wix-param-color="_titleColor"
@@ -284,16 +305,6 @@
                     startWithTheme:'font_4',
                     infoText: 'Choose the Font style and color for the text of the title on top of the feed.'
                 }"
-        	></div>
-        
-        	<div id="TitleToggleSwitch" class="animations_oppositeEffect"
-            	wix-ctrl="ToggleSwitch"
-             	wix-param = "_toggleTitle" 
-            	wix-options="{
-                        label: 'Show Title',
-                        defaultValue: true,
-                        infoText: 'Title on top of the feed can be disabled, to better adapt you site design.'
-                    }"
         	></div>
 
         	<hr class="divider-long"/>

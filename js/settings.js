@@ -129,15 +129,22 @@ function setPanelNotifications($appTabs, eventId, authKey){
 $(document).ready(function(){
 	
 	//Variables
-	var $appTabs 				= $("#panelTabs").getCtrl();
-	var eventIdTextInputCtrl 	= $("#eventId").getCtrl();
-	var authKeyTextInputCtrl 	= $("#authKey").getCtrl();
+	var $appTabs 					= $("#panelTabs").getCtrl();
+	var eventIdTextInputCtrl 		= $("#eventId").getCtrl();
+	var authKeyTextInputCtrl 		= $("#authKey").getCtrl();
+	var titleCaptionTextInputCtrl 	= $("#titleCaption").getCtrl();
 
 	//get Event ID and Authorization Key from Wix Public Data,
 	//and set them in the TextInputs
 	var eventId = getEventId($appTabs, eventIdTextInputCtrl);
 	var authKey = getAuthKey($appTabs, authKeyTextInputCtrl);
 	
+	//get title caption from Wix Public Data
+	Wix.Data.Public.get("titleCaption", { scope: 'COMPONENT' }, function(d){
+		
+		titleCaptionTextInputCtrl.setValue(d['titleCaption']);			
+		
+	},function(f){console.log(f)});
 	
 	//Check events on TextInput Event Id
 	eventIdTextInputCtrl.onChange(function(value){
@@ -163,6 +170,17 @@ $(document).ready(function(){
         	
         	//change panel tab notification
         	setPanelNotifications($appTabs, eventId, authKey);
+        	
+        },function(f){console.log(f)});
+    });
+	
+	//Check events on TextInput Title Caption
+	titleCaptionTextInputCtrl.onChange(function(value){
+        
+		//set variable on Wix Public Data
+        Wix.Data.Public.set("titleCaption", value, { scope: 'COMPONENT' }, function(d){
+        	
+        	//do nothing
         	
         },function(f){console.log(f)});
     });
