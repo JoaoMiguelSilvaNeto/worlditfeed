@@ -73,7 +73,7 @@ function setFeed(updates)	{
 
 		html += '<tr>';
 		html += '<td rowspan="2"><a href="'+link+'"><div><img src="'+image+'" alt="'+imageAlt+'" /></div></a></td>';
-		html += '<td class="tg-0pky"><a class="sample-content-link" href="'+link+'"><h1>'+title+'</h1></a></td></tr>';
+		html += '<td class="tg-0pky"><a class="sample-content-link" href="'+link+'">'+title+'</a></td></tr>';
 		html += '<tr><td><span class="sample-content">'+content+'</span></td></tr>';
 		
 	});
