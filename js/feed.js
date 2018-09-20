@@ -66,7 +66,7 @@ function setFeed(updates)	{
 	updates.forEach(function (entry)	{
 		
 		html += '<tr>';
-		html += '<td rowspan="2" style="text-align: center;"><div class="container"><a href="'+entry['LINK']+'"><img src="'+entry['Images_many'][0]['IMAGE_URL']+'" alt="'+entry['Images_many'][0]['IMAGE_NAME']+'" /></a></div></td>';
+		html += '<td rowspan="2"><div class="container"><a href="'+entry['LINK']+'"><img src="'+entry['Images_many'][0]['IMAGE_URL']+'" alt="'+entry['Images_many'][0]['IMAGE_NAME']+'" /></a></div></td>';
 		html += '<td class="tg-0pky"><a class="sample-content-link" href="'+entry['LINK']+'">'+entry['TITLE']+'</a></td>';
 		html += '<td><span class="sample-content">'+entry['HTML_EDITOR']+'</span></td>';
 		html += '</tr>';
