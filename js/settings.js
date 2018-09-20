@@ -1,5 +1,15 @@
 // Javascript file for settings.html
 
+/**
+ * getCategories receives the categories set in azapp from a web service, 
+ * in order to set the desired feed, and returns a list of the categories 
+ * that will be shown on the settings page.
+ *
+ * <p>Bugs: still doesn't receive from web service, since it doesn't exist.
+ * Variable categories its fixed value.
+ *
+ * @author João Neto - WorldIT
+ */
 function getCategories()	{
 	
 	//Call WebService that returns Categories
@@ -10,7 +20,14 @@ function getCategories()	{
 	
 }
 
-//get Event ID from Wix Public Data
+/**
+ * getEventId returns the value of the Event ID saved in the Wix Public Data, 
+ * in order to populate the Text Input in the settings page. If the value is 
+ * undefined, it shows an alert in the "Account" tab on the settings page.
+ *
+ *
+ * @author João Neto - WorldIT
+ */
 function getEventId($appTabs, eventIdTextInputCtrl)	{
 	
 	//Populate TextInput with Event Id and Authorization Key. 
@@ -30,7 +47,15 @@ function getEventId($appTabs, eventIdTextInputCtrl)	{
 	
 }
 
-//get Authorization Key from Wix Public Data
+/**
+ * getAuthKey returns the value of the Authorization Key stored in the 
+ * Wix Public Data, in order to populate the Text Input in the settings page.
+ * If the value is undefined, it shows an alert in the "Account" tab on 
+ * the settings page.
+ *
+ *
+ * @author João Neto - WorldIT
+ */
 function getAuthKey($appTabs, authKeyTextInputCtrl)	{
 	
 	Wix.Data.Public.get("authKey", { scope: 'COMPONENT' }, function(d){
@@ -48,6 +73,16 @@ function getAuthKey($appTabs, authKeyTextInputCtrl)	{
 	
 }
 
+/**
+ * setPanelNotifications manages the Panel Tab notifications on the settings 
+ * page to alert the user that Event ID/Authorization Key is missing in the 
+ * Text Inputs.
+ *
+ * <p>Bugs: gives error on first run because authKey is not set yet. Must be 
+ * improved.
+ *
+ * @author João Neto - WorldIT
+ */
 //Manage Panel Notifications to alert user that Event ID/Authorization Key is missing
 function setPanelNotifications($appTabs, eventId, authKey){
 	
@@ -85,7 +120,12 @@ function setPanelNotifications($appTabs, eventId, authKey){
 
 }
 
-
+/**
+ * Runs when settings.html loads.
+ * 
+ *
+ * @author João Neto - WorldIT
+ */
 $(document).ready(function(){
 	
 	//Variables

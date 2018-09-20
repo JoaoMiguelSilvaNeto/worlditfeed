@@ -1,8 +1,10 @@
-/* 
-	getToken(): to obtain token from endpoint, using POST method, to be used
-	in getNews().
+/**
+ * getToken obtains a token key from an azapp webservice that will be used to 
+ * call another web services, namely the one called in the function getNews
+ *
+ *
+ * @author João Neto - WorldIT
  */
-
 function getToken()	{
 
 	const tokenEndpoint =  'https://azapp-services.azurewebsites.net/api/security/token';
@@ -29,6 +31,15 @@ function getToken()	{
 	to be displayed in the webpage
  */
  
+/**
+ * getNews receives the desired feed data from azapp web services.
+ * it uses the token obtained in getToken, the desired category, and 
+ * the number of results to be shown.
+ * 
+ * <p>Bugs: dateISO its still fixed value. Still not decided what should be.
+ *
+ * @author João Neto - WorldIT
+ */
  function getNews(token, category, results)	{
 
 	let key = token['access_token'];
@@ -59,6 +70,13 @@ function getToken()	{
 	
 };
 
+/**
+* setFeed receives data from web service containing news updates.
+* It sets the html to be inserted inside table1 in index.html
+*
+*
+* @author João Neto - WorldIT
+*/
 function setFeed(updates)	{
 
 	var html = '<!--<h2>Notícias</h2>-->';
@@ -86,27 +104,21 @@ function setFeed(updates)	{
 		
 	});
 
-	/*updates.forEach(function (entry) {
-		html += '<tr>';
-		html += '<th class="tg-0pky"><a class="sample-content-link" href="'+entry['LINK']+'"><h1>'+entry['TITLE']+'</h1></a><span class="sample-content">'+entry['HTML_EDITOR'];+'</span></th>';
-		//html += entry['HTML_EDITOR'];
-		html += '</tr>';
-	});*/
-
 	document.getElementById("table1").innerHTML = html;
 	
 };
 
-function getCategories()	{
-	
-	//Call WebService that returns Categories
-	
-	var categories = "[{ value: 'Noticias', label: 'Notícias'},{ value: 'Tweets', label: 'Tweets'},{value: 'Outras', label: 'Outras'}]";
-	
-	return categories;
-	
-}
-
+/**
+ * getFeed returns the desired feed from azapp web services. It receives 
+ * the desired category of the feed, and the number of results per page.
+ * First it calls getToken, in order to obtain the token that will allow to call 
+ * the webservice to obtain the feed through getNews. The received data is then sent 
+ * to setFeed, so that the table1 in index.html gets populated.
+ *
+ * <p>Bugs: (a list of bugs and other problems)
+ *
+ * @author (your name)
+ */
 function getFeed(categories, resultsPerPage)
 {
 	//Get token and news feed
@@ -118,12 +130,12 @@ function getFeed(categories, resultsPerPage)
 			//Send token and chosen category to Endpoint in order to retrieve feed
 			getNews(token, categories, resultsPerPage)
 				.then(news => {
-			
-					console.log(news);
 
+					//console.log(news);
+					
 					const updates = news['updates'];
 
-					console.log(news['updates'][0]['HTML_EDITOR']);
+					//console.log(news['updates'][0]['HTML_EDITOR']);
 				
 					//update table1
 					setFeed(updates);

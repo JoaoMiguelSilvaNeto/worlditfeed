@@ -13,171 +13,172 @@
     
 </head>
 <body>
-<div wix-ctrl="appSettings"></div>
-<div id="panelTabs" wix-ctrl="panelTabs" wix-options="{defaultTabIndex:0}">
+	<div wix-ctrl="appSettings"></div>
+	<div id="panelTabs" wix-ctrl="panelTabs" wix-options="{defaultTabIndex:0}">
 
-    <!--main tab-->
+    	<!--main tab-->
 
-    <div tab="Main" class="main-tab">
-        <center>
-        	<img class="app-logo" style="padding: 20px;" src="images/logo_azapp_wix.svg" alt="app logo"/>
-        	<p class="app-description">
-            	<h1>azapp Feed</h1>
-            	<p>Settings to personalize the azapp Feed to fit your website.</p>
-        	</p>
+    	<div tab="Main" class="main-tab">
+        	<center>
+        		<img class="app-logo" style="padding: 20px;" src="images/logo_azapp_wix.svg" alt="app logo"/>
+        		<p class="app-description">
+            		<h1>azapp Feed</h1>
+            		<p>
+            			Settings to personalize the azapp Feed to fit your website.
+            		</p>
+        		</p>
 
-        	<div class="main-cta-button"
-             	wix-ctrl="Button"
-             	wix-options="{
+        		<div class="main-cta-button"
+             		wix-ctrl="Button"
+             		wix-options="{
                     	label: 'azapp Credentials',
                     	className: 'btn-confirm-primary'
                 	}"
-             	id="main-cta"
-        	></div>
-        </center>
+             		id="main-cta"
+        		></div>
+        	</center>
 
-        <!-- <div class="main-bottom">
-          <hr class="divider-long"/>
-          <p>
-            Upgrade!
-          </p>
-          <div wix-ctrl="Button"
-               wix-options="{
-                      label: 'Upgrade Now',
-                      className: 'btn-upgrade-banner'
+        <!--<div class="main-bottom">
+          		<hr class="divider-long"/>
+          		<p>
+            		Upgrade!
+          		</p>
+          		<div wix-ctrl="Button"
+               		wix-options="{
+                    	label: 'Upgrade Now',
+                      	className: 'btn-upgrade-banner'
 
-                  }"
-                onClick="Wix.Settings.openBillingPage()"
-          ></div>
-      </div>-->
-    </div>
+                  	}"
+                	onClick="Wix.Settings.openBillingPage()"
+          		></div>
+      		</div>-->
+    	</div>
 
-    <!-- Account settings tab-->
+    	<!-- Account settings tab-->
 
-    <div tab="Account">
+    	<div tab="Account">
         
-		<div wix-ctrl="SectionDividerLabeled"
-             wix-options="{label: 'azapp Credentials'}">
-        </div>
+			<div wix-ctrl="SectionDividerLabeled"
+             	wix-options="{label: 'azapp Credentials'}">
+        	</div>
         
-        <div class="settings_textFieldContent"
-        	 id="eventId" 
-             wix-ctrl="Input"
-             wix-options="{
+        	<div class="settings_textFieldContent"
+        	 	id="eventId" 
+             	wix-ctrl="Input"
+             	wix-options="{
                     title: 'Event Id:',
                     placeholder: 'Event Id'
                 }"
-        ></div>
+        	></div>
         
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div class="settings_textFieldContent"
-        	 id="authKey" 
-             wix-ctrl="Input"
-             wix-options="{
+        	<div class="settings_textFieldContent"
+        	 	id="authKey" 
+             	wix-ctrl="Input"
+             	wix-options="{
                     title: 'Authentication Key:',
                     placeholder: 'Authenticantion Key'
                 }"
-        ></div>
+       		></div>
         
-      	<!-- <hr class="divider-long"/> -->
-      	<div wix-ctrl="SectionDividerLabeled"
-             wix-options="{label: 'azapp Feed Category'}">
-        </div>
+      	<!--<hr class="divider-long"/> -->
+      		<div wix-ctrl="SectionDividerLabeled"
+             	wix-options="{label: 'azapp Feed Category'}">
+        	</div>
         
-        <div class="settings_onImageClick" 
-        	 id="category" 
-             wix-ctrl="DropDown"
-             wix-param="_categories" 
-             >
-        </div>
-        <script>
+        	<div class="settings_onImageClick" 
+        	 	id="category" 
+             	wix-ctrl="DropDown"
+             	wix-param="_categories" 
+             ></div>
+        	<script>
         	
-        	document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
-				"defaultValue: 'Noticias', " +
-				"options: "+getCategories()+","+
-				"infoText: 'Category of the feed to show.'" +
-				"}"
-			);
+        		document.getElementById('category').setAttribute("wix-options", "{title: 'Category', " +
+					"defaultValue: 'Noticias', " +
+					"options: "+getCategories()+","+
+					"infoText: 'Category of the feed to show.'" +
+					"}"
+				);
         	
-		</script>
-        <!-- <div wix-ctrl="SectionDividerLabeled"
-             wix-options="{label: 'Enable functionality'}">
-        </div>
+			</script>
+        <!--<div wix-ctrl="SectionDividerLabeled"
+             	wix-options="{label: 'Enable functionality'}">
+        	</div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div>
-            <div class="settings_allowEditing"
-                 wix-ctrl="ToggleSwitch"
-                 wix-param="editingToggle"
-                 wix-options="{
+        	<div>
+            	<div class="settings_allowEditing"
+                 	wix-ctrl="ToggleSwitch"
+                 	wix-param="editingToggle"
+                 	wix-options="{
                         label: 'Allow editing',
                         defaultValue: true
                     }"
-            ></div>
-        </div>
+            	></div>
+        	</div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div>
-            <div class="settings_allowDeleting"
-                 wix-ctrl="ToggleSwitch"
-                 wix-param="deletingToggle"
-                 wix-options="{
+        	<div>
+            	<div class="settings_allowDeleting"
+                 	wix-ctrl="ToggleSwitch"
+                 	wix-param="deletingToggle"
+                 	wix-options="{
                         label: 'Allow deleting',
                         defaultValue: true
                     }"
-            ></div>
-        </div>
+            	></div>
+        	</div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div wix-ctrl="SectionDividerLabeled"
-             wix-options="{label: 'Display info'}">
-        </div>
+        	<div wix-ctrl="SectionDividerLabeled"
+             	wix-options="{label: 'Display info'}">
+        	</div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div>
-            <div class="settings_displayName"
-                 wix-ctrl="Checkbox"
-                 wix-param="nameCheckbox"
-                 wix-options="{
+        	<div>
+            	<div class="settings_displayName"
+                 	wix-ctrl="Checkbox"
+                 	wix-param="nameCheckbox"
+                 	wix-options="{
                         label: 'Name',
                         defaultValue: false
                     }"
-            ></div>
-        </div>
+            	></div>
+        	</div>
 
-        <div>
-            <div class="settings_displayTitle"
-                 wix-ctrl="Checkbox"
-                 wix-param="titleCheckbox"
-                 wix-options="{
+        	<div>
+            	<div class="settings_displayTitle"
+                 	wix-ctrl="Checkbox"
+                 	wix-param="titleCheckbox"
+                 	wix-options="{
                         label: 'Title',
                         defaultValue: true
                     }"
-            ></div>
-        </div>
+            	></div>
+        	</div>
 
-        <div>
-            <div class="settings_displayDescription"
-                 wix-ctrl="Checkbox"
-                 wix-param="dscCheckbox"
-                 wix-options="{
+        	<div>
+            	<div class="settings_displayDescription"
+                 	wix-ctrl="Checkbox"
+                 	wix-param="dscCheckbox"
+                 	wix-options="{
                         label: 'Description',
                         defaultValue: true
                     }"
-            ></div>
-        </div>
+            	></div>
+        	</div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div id= "radio" class="settings_taxOnImage"
-             wix-ctrl="RadioButtons"
-             wix-param="radioBtns"
-             wix-options="{
+        	<div id= "radio" class="settings_taxOnImage"
+             	wix-ctrl="RadioButtons"
+             	wix-param="radioBtns"
+             	wix-options="{
                     title: 'Do images show text?',
                     defaultValue: 'both',
                     options: [
@@ -186,285 +187,284 @@
                         { value: '3', label: 'Just a description'}
                     ]
                 }"
-        ></div>
+        	></div>
 
+        	<hr class="divider-long"/>
 
-        <hr class="divider-long"/>
-
-        <div class="settings_textFieldContent"
-             wix-ctrl="Input"
-             wix-options="{
+        	<div class="settings_textFieldContent"
+             	wix-ctrl="Input"
+             	wix-options="{
                     title: 'Text field',
                     defaultText: 'Title'
                 }"
-        ></div>
+        	></div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div class="settings_textAreaContent"
-             wix-ctrl="Input"
-             wix-options="{
+        	<div class="settings_textAreaContent"
+             	wix-ctrl="Input"
+             	wix-options="{
                     title: 'Text area',
                     focus: true,
                     defaultText: 'Paragraph',
                     isMultiLine: true
                 }"
-        ></div>-->
-    </div>
+        	></div>-->
+    	</div>
 
-    <!--layout tab-->
+    	<!--layout tab-->
 
-    <!-- <div tab="Layout">
-        <hr class="divider-long"/>
+    <!--<div tab="Layout">
+        	<hr class="divider-long"/>
 
-        <div wix-ctrl="SectionDividerLabeled"
-             wix-options="{label: 'How does this gallery look?'}">
-        </div>
+        	<div wix-ctrl="SectionDividerLabeled"
+             	wix-options="{label: 'How does this gallery look?'}">
+        	</div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div class="layout_columns"
-             id="slide_column"
-             wix-ctrl="Slider"
-             wix-param="columnSlider"
-             wix-options="{
+        	<div class="layout_columns"
+             	id="slide_column"
+             	wix-ctrl="Slider"
+             	wix-param="columnSlider"
+             	wix-options="{
                     title: 'Columns',
                     min: 1,
                     max: 36,
                     defaultValue: 7
                 }"
-        ></div>
+        	></div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div class="layout_spacing"
-             wix-ctrl="Slider"
-             wix-param="spaceSlider"
-             wix-options="{
+        	<div class="layout_spacing"
+             	wix-ctrl="Slider"
+             	wix-param="spaceSlider"
+             	wix-options="{
                     title: 'Spacing (px)',
                     min: 0,
                     max: 50,
                     defaultValue: 10
                 }"
-        ></div>
-    </div>-->
+        	></div>
+    	</div>-->
 
-    <!--Design tab-->
+    	<!--Design tab-->
 
-    <div tab="Design" style="margin-bottom: 20px">
+    	<div tab="Design" style="margin-bottom: 20px">
     
-    	<div id="resultsPerPage" class="layout_spacing"
-             wix-ctrl="Slider"
-             wix-param="_resultsPerPage"
-             wix-options="{
+    		<div id="resultsPerPage" class="layout_spacing"
+             	wix-ctrl="Slider"
+             	wix-param="_resultsPerPage"
+             	wix-options="{
                     title: 'Number of Results',
                     min: 0,
                     max: 50,
-                    step: 10,
+                    step: 5,
                     defaultValue: 10,
                     infoText: 'Choose the number of result to retrieve from the feed.'
                 }"
-        ></div>
+       	 	></div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div wix-ctrl="SectionDividerLabeled"
-             wix-options="{label: 'Text & Background'}">
-        </div>
+        	<div wix-ctrl="SectionDividerLabeled"
+             	wix-options="{label: 'Text & Background'}">
+        	</div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div id="titleFont" 
-        	 wix-param-font="_titleFont"
-             wix-param-color="_titleColor"
-             wix-ctrl="FontAndColorPicker"
-             wix-options="{
+        	<div id="titleFont" 
+        	 	wix-param-font="_titleFont"
+             	wix-param-color="_titleColor"
+             	wix-ctrl="FontAndColorPicker"
+             	wix-options="{
                     title: 'Title Font style and color',
                     startWithColor: 'color-5',
                     startWithTheme:'font_4',
                     infoText: 'Choose the Font style and color for the text of the title on top of the feed.'
                 }"
-        ></div>
+        	></div>
         
-        <div id="TitleToggleSwitch" class="animations_oppositeEffect"
-             wix-ctrl="ToggleSwitch"
-             wix-param = "_toggleTitle" 
-             wix-options="{
+        	<div id="TitleToggleSwitch" class="animations_oppositeEffect"
+            	wix-ctrl="ToggleSwitch"
+             	wix-param = "_toggleTitle" 
+            	wix-options="{
                         label: 'Show Title',
                         defaultValue: true,
                         infoText: 'Title on top of the feed can be disabled, to better adapt you site design.'
                     }"
-        ></div>
+        	></div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div wix-param-font="_descFont"
-             wix-param-color="_descColor"
-             wix-ctrl="FontAndColorPicker"
-             wix-options="{
+        	<div wix-param-font="_descFont"
+            	wix-param-color="_descColor"
+             	wix-ctrl="FontAndColorPicker"
+             	wix-options="{
                     title: 'Description Font style & color',
                     startWithColor: 'color-4',
                     startWithTheme:'font_8',
                     infoText: 'Choose the Font style and color for the text of every feed.'
                 }"
-        ></div>
+        	></div>
         
-        <!-- <div id="DescToggleSwitch" class="animations_oppositeEffect"
-             wix-ctrl="ToggleSwitch"
-             wix-param = "_toggleDesc" 
-             wix-options="{
+        <!--<div id="DescToggleSwitch" class="animations_oppositeEffect"
+             	wix-ctrl="ToggleSwitch"
+             	wix-param = "_toggleDesc" 
+             	wix-options="{
                         label: 'Show Description',
                         defaultValue: true,
                         infoText: 'Description of each feed can be disabled, to better adapt you site design.'
                     }"
-        ></div>-->
+        	></div>-->
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
         
-        <div wix-param-font="_linkFont"
-             wix-param-color="_linkColor"
-             wix-ctrl="FontAndColorPicker"
-             wix-options="{
+        	<div wix-param-font="_linkFont"
+             	wix-param-color="_linkColor"
+             	wix-ctrl="FontAndColorPicker"
+             	wix-options="{
                     title: 'Link Font style & color',
                     startWithColor: 'color-4',
                     startWithTheme:'font_8',
                     infoText: 'Choose the Font style and color for the hyperlink text of every feed.'
                 }"
-        ></div>
+        	></div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div wix-param="_backgroundColor"
-             wix-ctrl="ColorPickerSlider"
-             wix-options="{
+        	<div wix-param="_backgroundColor"
+             	wix-ctrl="ColorPickerSlider"
+             	wix-options="{
                     title: 'Background Color',
                     startWithColor: 'color-1'
                 }"
-        ></div>
+        	></div>
 
-        <!-- <hr class="divider-long"/>
+        <!--<hr class="divider-long"/>
 
-        <div wix-ctrl="SectionDividerLabeled"
-             wix-options="{label: 'Search fields'}">
-        </div>
+        	<div wix-ctrl="SectionDividerLabeled"
+             	wix-options="{label: 'Search fields'}">
+        	</div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div wix-param-font="_inputFont"
-             wix-param-color="_inputColor"
-             wix-ctrl="FontAndColorPicker"
-             wix-options="{
+        	<div wix-param-font="_inputFont"
+             	wix-param-color="_inputColor"
+             	wix-ctrl="FontAndColorPicker"
+             	wix-options="{
                     title: 'Input field text font and color',
                     startWithColor: 'color-1',
                     startWithTheme:'font_8',
                     infoText: 'some information text should be here'
                 }"
-        ></div>
+        	></div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div wix-param="_inputFieldBackground"
-             wix-ctrl="ColorPickerSlider"
-             wix-options="{
+        	<div wix-param="_inputFieldBackground"
+             	wix-ctrl="ColorPickerSlider"
+             	wix-options="{
                     title: 'Input Field Background',
                     startWithColor: 'color-4',
                     startWithOpacity: 1
                 }"
-        ></div>
+        	></div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div wix-param="_borderColor"
-             wix-ctrl="ColorPickerSlider"
-             wix-options="{
+        	<div wix-param="_borderColor"
+             	wix-ctrl="ColorPickerSlider"
+             	wix-options="{
                     title: 'Border Color',
                     startWithColor: 'color-2',
                     startwithOpacity: 1
                 }"
-        ></div>
+        	></div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div wix-param="_hrColor"
-             wix-ctrl="ColorPickerSlider"
-             wix-options="{
+        	<div wix-param="_hrColor"
+             	wix-ctrl="ColorPickerSlider"
+             	wix-options="{
                     title: 'Divider Color',
                     startWithColor: 'color-2',
                     startwithOpacity: 1
                 }"
-        ></div>
+        	></div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div wix-ctrl="SectionDividerLabeled"
-             wix-options="{label: 'Button'}">
-        </div>
+        	<div wix-ctrl="SectionDividerLabeled"
+             	wix-options="{label: 'Button'}">
+        	</div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div wix-param-font="_btnFont"
-             wix-param-color="_btnTextColor"
-             wix-ctrl="FontAndColorPicker"
-             wix-options="{
+        	<div wix-param-font="_btnFont"
+             	wix-param-color="_btnTextColor"
+             	wix-ctrl="FontAndColorPicker"
+             	wix-options="{
                     title: 'Button Font  & Color',
                     startWithColor: 'color-1',
                     startWithTheme:'font_8',
                     startWithSize:15,
                     infoText: 'some information text should be here'
                 }"
-        ></div>
+        	></div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div wix-param="_btnBgColor"
-             wix-ctrl="ColorPickerSlider"
-             wix-options="{
+        	<div wix-param="_btnBgColor"
+             	wix-ctrl="ColorPickerSlider"
+             	wix-options="{
                     title: 'Button Background',
                     startWithColor: 'color-8'
                 }"
-        ></div>
-    </div>
+        	></div>
+    	</div>
 
-    <!--Animations tab-->
+    	<!--Animations tab-->
 
-    <!-- <div tab="Animations" class="animations-tab">
-        <div id=dropdown class="animations_type"
-             wix-ctrl="DropDown"
-             wix-param="animation"
-             wix-options="{
-                title: 'Animation',
-                defaultValue: '0',
-                options: [
-                    { value: '0', label: 'Slide'},
-                    { value: '1', label: 'Fade'},
-                    { value: '2', label: 'Something else'}
-                ]}"
-        ></div>
+    <!--<div tab="Animations" class="animations-tab">
+        	<div id=dropdown class="animations_type"
+             	wix-ctrl="DropDown"
+            	wix-param="animation"
+             	wix-options="{
+                	title: 'Animation',
+                	defaultValue: '0',
+                	options: [
+                    	{ value: '0', label: 'Slide'},
+                    	{ value: '1', label: 'Fade'},
+                    	{ value: '2', label: 'Something else'}
+                	]}"
+        	></div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div wix-ctrl="SectionDividerLabeled"
-             wix-options="{label: 'Animation settings', infoText: 'info text'}">
-        </div>
+        	<div wix-ctrl="SectionDividerLabeled"
+             	wix-options="{label: 'Animation settings', infoText: 'info text'}">
+        	</div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div class="button-wrapper-center">
-            <div class="animations_button"
-                 wix-ctrl="Button"
-                 wix-options="{
+        	<div class="button-wrapper-center">
+            	<div class="animations_button"
+                 	wix-ctrl="Button"
+                 	wix-options="{
                         label: 'Play Animation',
                         className: 'btn-confirm-secondary',
                         icon: 'playAnimation'
                     }"
-            ></div>
-        </div>
+            	></div>
+        	</div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div class="animations_direction"
-             wix-ctrl="DropDown"
-             wix-options="{
+        	<div class="animations_direction"
+             	wix-ctrl="DropDown"
+             	wix-options="{
                     title: 'Direction',
                     defaultValue: 'right',
                     options: [
@@ -474,135 +474,133 @@
                         { value: '4', label: 'From Left'}
                     ]
                 }"
-        ></div>
+        	></div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div class="animations_delay"
-             wix-ctrl="Slider"
-             wix-options="{
+        	<div class="animations_delay"
+             	wix-ctrl="Slider"
+             	wix-options="{
                     title: 'Delay (secs)',
                     min: 0,
                     max: 2,
                     step: 0.1,
                     defaultValue: 0.6
                 }"
-        ></div>
+        	></div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div id="ToggleSwitch" class="animations_oppositeEffect"
-             wix-ctrl="ToggleSwitch"
-             wix-options="{
-                        label: 'Opposite effect',
-                        defaultValue: true,
-                        infoText: 'some information text should be here'
-                    }"
-        ></div>-->
-    </div>
+        	<div id="ToggleSwitch" class="animations_oppositeEffect"
+             	wix-ctrl="ToggleSwitch"
+             	wix-options="{
+                 	label: 'Opposite effect',
+                    defaultValue: true,
+                    infoText: 'some information text should be here'
+             	}"
+        	></div>-->
+    	</div>
 
-    <hr class="divider-short"/>
+    	<hr class="divider-short"/>
 
-    <!--Support tab-->
+    	<!--Support tab-->
 
-    <div tab="Support" class="support-tab">
-        <hr class="divider-long"/>
+    	<div tab="Support" class="support-tab">
+        	<hr class="divider-long"/>
 
-        <div wix-ctrl="SectionDividerLabeled"
-             wix-options="{label: 'Developer info'}">
-        </div>
+        	<div wix-ctrl="SectionDividerLabeled"
+             	wix-options="{label: 'Developer info'}">
+        	</div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <ul class="developer-info">
-            <li>
-                <div wix-ctrl="Symbol" wix-options="{name: 'email'}"></div>
-                <a href="mailto:info@worldit.pt">info@worldit.pt</a>
-            </li>
-            <li>
-                <div wix-ctrl="Symbol" wix-options="{name: 'globe'}"></div>
-                <a href="https://worldit.pt">WorldIT</a>
-            </li>
-            <li>
-                <div wix-ctrl="Symbol" wix-options="{name: 'phone'}"></div>
-                <a href="tel:21 793 36 30">21 793 36 30</a>
-            </li>
-        </ul>
+        	<ul class="developer-info">
+            	<li>
+                	<div wix-ctrl="Symbol" wix-options="{name: 'email'}"></div>
+                	<a href="mailto:info@worldit.pt">info@worldit.pt</a>
+            	</li>
+            	<li>
+                	<div wix-ctrl="Symbol" wix-options="{name: 'globe'}"></div>
+                	<a href="https://worldit.pt">WorldIT</a>
+            	</li>
+            	<li>
+                	<div wix-ctrl="Symbol" wix-options="{name: 'phone'}"></div>
+                	<a href="tel:21 793 36 30">21 793 36 30</a>
+            	</li>
+        	</ul>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div wix-ctrl="SectionDividerLabeled"
-             wix-options="{label: 'Review our app'}">
-        </div>
+        	<div wix-ctrl="SectionDividerLabeled"
+             	wix-options="{label: 'Review our app'}">
+        	</div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <p class="review-paragraph">Enjoying <APP NAME>? Leave us a review in the App Market.</p>
+        	<p class="review-paragraph">Enjoying <APP NAME>? Leave us a review in the App Market.</p>
 
-        <div class="button-wrapper-center">
-            <div class="support_rateUs"
-                 wix-ctrl="Button"
-                 wix-options="{
+        	<div class="button-wrapper-center">
+            	<div class="support_rateUs"
+                 	wix-ctrl="Button"
+                 	wix-options="{
                         label: 'Rate Us',
                         className: 'btn-confirm-primary'
                     }"
                     onClick="Wix.Settings.openReviewInfo()"
-            ></div>
-        </div>
+            	></div>
+        	</div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <div wix-ctrl="SectionDividerLabeled"
-             wix-options="{label: 'Send us a message'}">
-        </div>
+        	<div wix-ctrl="SectionDividerLabeled"
+             	wix-options="{label: 'Send us a message'}">
+        	</div>
 
-        <hr class="divider-long"/>
+        	<hr class="divider-long"/>
 
-        <!-- <div class="support_email"
-             wix-ctrl="Input"
-             wix-options="{
+        <!--<div class="support_email"
+             	wix-ctrl="Input"
+             	wix-options="{
                     title: 'What\'s your email?',
                     placeholder: 'Email',
                     validateOnBlurOnly: true,
                     invalidMessage: 'Invalid Email Address'
                 }"
-        ></div>
+        	></div>
 
-        <hr class="divider-short"/>
+        	<hr class="divider-short"/>
 
-        <div class="support_message"
-             wix-ctrl="Input"
-             wix-options="{
+        	<div class="support_message"
+             	wix-ctrl="Input"
+             	wix-options="{
                     title: 'What do you want to tell us?',
                     placeholder: 'Write us your message (new feature idea / other issues)',
                     isMultiLine: true
                 }"
-        ></div>-->
+        	></div>-->
 
-        <hr class="divider-short"/>
+        	<hr class="divider-short"/>
 
-        <div class="button-wrapper-center">
-            <div class="support_sendButton"
-                 wix-ctrl="Button"
-                 wix-options="{
+        	<div class="button-wrapper-center">
+            	<div class="support_sendButton"
+                 	wix-ctrl="Button"
+                 	wix-options="{
                         label: 'info@worldit.pt',
                         disabled: false
                     }"
-                 id="supportButton"
-            ></div>
-        </div>
-    </div>
+                 	id="supportButton"
+            	></div>
+        	</div>
+    	</div>
 
-
-
-    <!-- <div wix-ctrl="Button"
-         wix-options="{
+    <!--<div wix-ctrl="Button"
+         	wix-options="{
                 className: 'btn-upgrade-nav',
                 label: 'Upgrade'
             }"
-        onClick="Wix.Settings.openBillingPage()"
-    ></div>
-</div>-->
+        	onClick="Wix.Settings.openBillingPage()"
+    	></div>
+	</div>-->
 
 </body>
 </html>
