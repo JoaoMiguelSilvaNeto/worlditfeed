@@ -55,12 +55,11 @@
 				//Wix listener to monitor any changes in the settings panel, not related to styles (numbers, booleans, fonts, etc)
 		    	Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function(event) {
 		    		
-		    		console.log(event);
+		    		//console.log(event);
 		        	
 		    		//Read wix stored variables
 		        	var titlebol 		= event['booleans']['_toggleTitle'];
 		        	resultsPerPage 		= event['numbers']['_resultsPerPage'];
-		        	var titleCaption;
 
 		        	
 		        	//Check if title is to show or hide
@@ -83,15 +82,10 @@
 					//get title caption from Wix Public Data
 					Wix.Data.Public.get("titleCaption", { scope: 'COMPONENT' }, function(d){
 						
-						document.getElementById("title").innerHTML = d['titleCaption'];	
-						titleCaption = d['titleCaption'];	
-						
+						document.getElementById("title").innerHTML = d['titleCaption'];							
 						
 					},function(f){console.log(f)});
 		        	
-					$( "#titleCaption" ).click(function() {
-						document.getElementById("title").innerHTML = titleCaption;
-					});
 		        	
 		    	});
 
