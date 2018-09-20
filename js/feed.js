@@ -70,11 +70,9 @@ function setFeed(updates)	{
 		var imageAlt = entry['Images_many'][0]['IMAGE_NAME'];
 		var title = entry['TITLE'];
 		var content = entry['HTML_EDITOR'];
-		
-		console.log(image);
-		
+
 		html += '<tr>';
-		html += '<td rowspan="2" style="text-align: top;"><a href="'+link+'"><img style="width: 100%; height: auto;" src="'+image+'" alt="'+imageAlt+'" /></a></td>';
+		html += '<td rowspan="2" style="text-align: top;"><a href="'+link+'"><img src="'+image+'" alt="'+imageAlt+'" /></a></td>';
 		html += '<td class="tg-0pky"><a class="sample-content-link" href="'+link+'"><h1>'+title+'</h1></a></td></tr>';
 		html += '<tr><td><span class="sample-content">'+content+'</span></td></tr>';
 		
