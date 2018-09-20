@@ -66,13 +66,27 @@ function setFeed(updates)	{
 	updates.forEach(function (entry)	{
 		
 		var link = entry['LINK'];
-		var image = entry['Images_many'][0]['IMAGE_URL'];
-		var imageAlt = entry['Images_many'][0]['IMAGE_NAME'];
+		
+		html += '<tr>';
+		html += '<td rowspan="2"><a href="'+link+'"><div>';
+		
+		var image;
+		var images_many = entry['Images_many'];
+		
+		images_many.forEach(function (image)	{
+			
+			html += '<img src="'+image['IMAGE_URL']+'" alt="'+image['IMAGE_NAME']+'" />';
+			
+		});
+		
+		html += '</div></a></td>';
+		
+		//var imageAlt = entry['Images_many'][0]['IMAGE_NAME'];
 		var title = entry['TITLE'];
 		var content = entry['HTML_EDITOR'];
 
-		html += '<tr>';
-		html += '<td rowspan="2"><a href="'+link+'"><div><img src="'+image+'" alt="'+imageAlt+'" /></div></a></td>';
+		
+		//html += '<td rowspan="2"><a href="'+link+'"><div><img src="'+image+'" alt="'+imageAlt+'" /></div></a></td>';
 		html += '<td class="tg-0pky"><a class="sample-content-link" href="'+link+'">'+title+'</a></td></tr>';
 		html += '<tr><td><span class="sample-content">'+content+'</span></td></tr>';
 		
