@@ -62,13 +62,23 @@ function getToken()	{
 function setFeed(updates)	{
 
 	var html = '<!--<h2>Notícias</h2>-->';
+	
+	updates.forEach(function (entry)	{
+		
+		html += '<tr>';
+		html += '<td rowspan="2" style="text-align: center;"><a href="'+entry['LINK']+'"><img src="'+entry['Images_many'][0]['IMAGE_URL']+'" alt="'+entry['Images_many'][0]['IMAGE_NAME']+'" /></a></td>';
+		html += '<td><a class="sample-content-link" href="'+entry['LINK']+'">'+entry['TITLE']+'</a></td>';
+		html += '<td><span class="sample-content">'+entry['HTML_EDITOR']+'</span></td>';
+		html += '</tr>';
+		
+	});
 
-	updates.forEach(function (entry) {
+	/*updates.forEach(function (entry) {
 		html += '<tr>';
 		html += '<th class="tg-0pky"><a class="sample-content-link" href="'+entry['LINK']+'"><h1>'+entry['TITLE']+'</h1></a><span class="sample-content">'+entry['HTML_EDITOR'];+'</span></th>';
 		//html += entry['HTML_EDITOR'];
 		html += '</tr>';
-	});
+	});*/
 	
 	document.getElementById("table1").innerHTML = html;
 	
