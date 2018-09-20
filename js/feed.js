@@ -72,7 +72,7 @@ function setFeed(updates)	{
 		var content = entry['HTML_EDITOR'];
 
 		html += '<tr>';
-		html += '<td rowspan="2" style="text-align: top;"><a href="'+link+'"><img src="'+image+'" alt="'+imageAlt+'" /></a></td>';
+		html += '<td rowspan="2" style="text-align: top;"><a href="'+link+'"><div><img src="'+image+'" alt="'+imageAlt+'" /></div></a></td>';
 		html += '<td class="tg-0pky"><a class="sample-content-link" href="'+link+'"><h1>'+title+'</h1></a></td></tr>';
 		html += '<tr><td><span class="sample-content">'+content+'</span></td></tr>';
 		
