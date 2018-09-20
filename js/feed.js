@@ -79,7 +79,7 @@ function setFeed(updates)	{
 		//html += entry['HTML_EDITOR'];
 		html += '</tr>';
 	});*/
-	
+	console.log(html);
 	document.getElementById("table1").innerHTML = html;
 	
 };
