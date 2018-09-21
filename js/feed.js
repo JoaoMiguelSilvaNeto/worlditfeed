@@ -89,18 +89,34 @@ function setFeed(updates)	{
 		var title = entry['TITLE'];
 		var content = entry['HTML_EDITOR'];
 		
-		html += '<tr>';
-		html += '<td rowspan="2"><a href="'+link+'"><div>';
+		html += '<div class="cont"><div class="large-row">';
 		
 		images_many.forEach(function (image)	{
+
+			html += '<div><img style="padding:1px;" src="'
+				+image['IMAGE_URL']+'" alt="'+image['IMAGE_NAME']+'" /></div>';
 			
+		});
+		
+		html += '</div></div>';
+		
+		html += '<div class="cont"><div class="small-row"><a href="'+link+
+			'"></div><div class="small-row"><span class="sample-content">'+content+'</span></div></div>';
+		
+		
+		/*html += '<tr>';
+		html += '<td rowspan="2"><a href="'+link+'"><div>';
+		
+		
+		images_many.forEach(function (image)	{
+
 			html += '<img style="padding:1px;" src="'+image['IMAGE_URL']+'" alt="'+image['IMAGE_NAME']+'" />';
 			
 		});
 		
 		html += '</div></a></td>';
 		html += '<td class="tg-0pky"><a class="sample-content-link" href="'+link+'">'+title+'</a></td></tr>';
-		html += '<tr><td><span class="sample-content">'+content+'</span></td></tr>';
+		html += '<tr><td><span class="sample-content">'+content+'</span></td></tr>';*/
 		
 	});
 
