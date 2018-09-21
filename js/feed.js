@@ -87,24 +87,9 @@ function setFeed(updates)	{
 		var image;
 		var images_many = entry['Images_many'];
 		var title = entry['TITLE'];
-		var content = entry['HTML_EDITOR'];
+		var content = entry['HTML_EDITOR'];		
 		
-		html += '<div class="cont"><div class="large-row">';
-		
-		images_many.forEach(function (image)	{
-
-			html += '<img style="padding:1px;" src="'
-				+image['IMAGE_URL']+'" alt="'+image['IMAGE_NAME']+'" />';
-			
-		});
-		
-		html += '</div></div>';
-		
-		html += '<div class="cont"><div class="small-row"><a href="'+link+
-			'"></div><div class="small-row"><span class="sample-content">'+content+'</span></div></div>';
-		
-		
-		/*html += '<tr>';
+		html += '<tr>';
 		html += '<td rowspan="2"><a href="'+link+'"><div>';
 		
 		
@@ -116,7 +101,7 @@ function setFeed(updates)	{
 		
 		html += '</div></a></td>';
 		html += '<td class="tg-0pky"><a class="sample-content-link" href="'+link+'">'+title+'</a></td></tr>';
-		html += '<tr><td><span class="sample-content">'+content+'</span></td></tr>';*/
+		html += '<tr><td><span class="sample-content">'+content+'</span></td></tr>';
 		
 	});
 
