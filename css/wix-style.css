@@ -1,32 +1,26 @@
-/**
- * CSS Style page for Wix components/UI controls
- *
- * @João Neto - WorldIT
- */
-
 .wix-style-sample {
-	background: {{style._backgroundColor color-1}};
-}
+            	background: {{style._backgroundColor color-1}};
+       		}
        		
-.sample-content {
+       		.sample-content {
        		
-	{{style._descFont Body-M}}
-    color: {{style._descColor color-4}};
+            	{{style._descFont Body-M}}
+            	color: {{style._descColor color-4}};
             	
-}
+        	}
         	
-.sample-content-title	{
+        	.sample-content-title	{
         		
-	{{style._titleFont Body-M}}
-    color: {{style._titleColor color-4}};
-    visibility: {{style._toggleTitle visible}};
+        		{{style._titleFont Body-M}}
+            	color: {{style._titleColor color-4}};
+            	visibility: {{style._toggleTitle visible}};
         	
-}
+        	}
         	
-.sample-content-link	{
+        	.sample-content-link	{
         		
-	{{style._linkFont Body-M}}
-    color: {{style._linkColor color-4}};
-    text-decoration: none;
+        		{{style._linkFont Body-M}}
+            	color: {{style._linkColor color-4}};
+            	text-decoration: none;
         	
-}
+        	}
