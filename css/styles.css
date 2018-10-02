@@ -1,7 +1,7 @@
 /**
  * index.html page styles
  *
- * @Jo√£o Neto - WorldIT
+ * @Jo„o Neto - WorldIT
  */
 
 .tg
@@ -60,30 +60,4 @@
 	border-color:inherit;
 	text-align:left;
 	vertical-align:top
-}
-
-/* Scroll Width */
-::-webkit-scrollbar
-{
-	width: 5px;
-}
-
-/* Scroll Track */
-::-webkit-scrollbar-track
-{
-	box-shadow: inset 0 0 5px grey;
-	border-radius: 10px;
-}
-
-/* Scroll Handle */
-::-webkit-scrollbar-thumb
-{
-	background: grey;
-	border-radius: 10px;
-}
-
-/* Scroll Handle on hover */
-::-webkit-scrollbar-thumb:hover
-{
-	background: black;
 }
